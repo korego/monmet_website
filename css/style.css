@@ -199,7 +199,7 @@ body {
   background: linear-gradient(
     135deg,
     rgba(15, 123, 255, 0.65) 0%,
-    rgba(0, 102, 204, 0.60) 100%
+    rgba(0, 102, 204, 0.6) 100%
   );
 }
 
@@ -344,7 +344,7 @@ body {
 /* CTA Section */
 .cta-section {
   padding: 4rem 0;
-  background: white;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
   text-align: center;
 }
 
@@ -371,6 +371,22 @@ body {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.cta-section .btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.cta-section .btn-secondary {
+  background: var(--primary-color);
+  color: white;
+  border: 2px solid var(--primary-color);
+}
+
+.cta-section .btn-secondary:hover {
+  background: transparent;
+  color: var(--primary-color);
 }
 
 /* Animations */
@@ -450,7 +466,7 @@ body {
    =========================== */
 .features {
   padding: 80px 0;
-  background: var(--white);
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
 }
 
 .features-grid {

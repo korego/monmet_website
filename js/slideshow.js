@@ -1,8 +1,8 @@
 // Slideshow Controller
 class Slideshow {
   constructor() {
-    this.slides = document.querySelectorAll('.slide');
-    this.dots = document.querySelectorAll('.slider-dot');
+    this.slides = document.querySelectorAll(".slide");
+    this.dots = document.querySelectorAll(".slider-dot");
     this.currentSlide = 0;
     this.autoPlayInterval = 6000; // 6 seconds per slide
     this.init();
@@ -11,31 +11,31 @@ class Slideshow {
   init() {
     // Add click listeners to dots
     this.dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => this.goToSlide(index));
+      dot.addEventListener("click", () => this.goToSlide(index));
     });
 
     // Start auto-play
     this.startAutoPlay();
 
     // Pause on hover
-    const heroSlider = document.querySelector('.hero-slider');
+    const heroSlider = document.querySelector(".hero-slider");
     if (heroSlider) {
-      heroSlider.addEventListener('mouseenter', () => this.stopAutoPlay());
-      heroSlider.addEventListener('mouseleave', () => this.startAutoPlay());
+      heroSlider.addEventListener("mouseenter", () => this.stopAutoPlay());
+      heroSlider.addEventListener("mouseleave", () => this.startAutoPlay());
     }
   }
 
   goToSlide(index) {
     // Remove active class from current slide and dot
-    this.slides[this.currentSlide].classList.remove('active');
-    this.dots[this.currentSlide].classList.remove('active');
+    this.slides[this.currentSlide].classList.remove("active");
+    this.dots[this.currentSlide].classList.remove("active");
 
     // Set new current slide
     this.currentSlide = index;
 
     // Add active class to new slide and dot
-    this.slides[this.currentSlide].classList.add('active');
-    this.dots[this.currentSlide].classList.add('active');
+    this.slides[this.currentSlide].classList.add("active");
+    this.dots[this.currentSlide].classList.add("active");
 
     // Reset auto-play timer
     this.stopAutoPlay();
@@ -48,7 +48,10 @@ class Slideshow {
   }
 
   startAutoPlay() {
-    this.autoPlayTimer = setInterval(() => this.nextSlide(), this.autoPlayInterval);
+    this.autoPlayTimer = setInterval(
+      () => this.nextSlide(),
+      this.autoPlayInterval
+    );
   }
 
   stopAutoPlay() {
@@ -59,6 +62,6 @@ class Slideshow {
 }
 
 // Initialize slideshow when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   new Slideshow();
 });
