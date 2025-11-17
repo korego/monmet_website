@@ -8,7 +8,7 @@
 
 /* Sidebar Styles */
 .products-sidebar {
-  width: 280px;
+  width: 220px;
   background: var(--white);
   border-right: 1px solid #e5e7eb;
   position: fixed;
@@ -21,33 +21,33 @@
 }
 
 .sidebar-header {
-  padding: 2rem 1.5rem 1rem;
+  padding: 1.25rem 1rem 0.75rem;
   border-bottom: 1px solid #e5e7eb;
   background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
 }
 
 .sidebar-header h3 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--dark-color);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.1rem;
   font-weight: 700;
 }
 
 .sidebar-header p {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: var(--gray-color);
   margin: 0;
   font-weight: 500;
 }
 
 .manufacturer-nav {
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
 }
 
 .manufacturer-link {
   display: flex;
   align-items: center;
-  padding: 0.875rem 1.5rem;
+  padding: 0.6rem 1rem;
   color: var(--dark-color);
   text-decoration: none;
   transition: all 0.2s ease;
@@ -56,15 +56,15 @@
 }
 
 .manufacturer-link i {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--gray-color);
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
   transition: all 0.2s ease;
 }
 
 .manufacturer-link span {
   font-weight: 500;
-  font-size: 0.938rem;
+  font-size: 0.85rem;
 }
 
 .manufacturer-link:hover {
@@ -99,8 +99,8 @@
 /* Main Content Area */
 .products-main {
   flex: 1;
-  margin-left: 280px;
-  padding: 3rem 2rem;
+  margin-left: 220px;
+  padding: 2.5rem 2rem;
   background: var(--bg-soft);
   overflow-y: auto;
   height: calc(100vh - 70px);
