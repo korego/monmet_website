@@ -705,6 +705,21 @@ const productsData = {
       },
     ],
   },
+  "pellet-stove-parts": {
+    title: "Pellet Stove Parts",
+    description:
+      "Replacement parts and components for pellet stoves.",
+    products: [
+      {
+        code: "PELLET-PARTS-001",
+        name: "Pellet Stove Parts - Coming Soon",
+        image: "img/products_catalog/placeholder.jpg",
+        oem: "Various",
+        dimensions: "N/A",
+        cfm: "N/A",
+      },
+    ],
+  },
 };
 
 // Initialize products page
