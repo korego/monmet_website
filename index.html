@@ -47,17 +47,53 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Slideshow -->
     <section class="hero" id="home">
-      <div class="hero-overlay"></div>
+      <div class="hero-slider">
+        <div class="slide active" style="background-image: url('../img/slideshow/Monmettech_Slideshow_0.jpg')">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <h2 class="slide-title">Efficient Heat Distribution</h2>
+            <p class="slide-subtitle">Circulate warm air evenly throughout your home</p>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('../img/slideshow/Monmettech_Slideshow_1.jpg')">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <h2 class="slide-title">Quiet, Reliable Performance</h2>
+            <p class="slide-subtitle">Enjoy the warmth without the noise</p>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('../img/slideshow/Monmettech_Slideshow_2.jpg')">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <h2 class="slide-title">Safe for Families & Pets</h2>
+            <p class="slide-subtitle">Designed for safe, consistent operation</p>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('../img/slideshow/Monmettech_Slideshow_3.jpg')">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <h2 class="slide-title">Premium Quality Components</h2>
+            <p class="slide-subtitle">Built with premium materials for years of reliable performance</p>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url('../img/slideshow/Monmettech_Slideshow_4.jpg')">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <h2 class="slide-title">Easy, Universal Installation</h2>
+            <p class="slide-subtitle">Simple to install on most fireplaces — no special tools required</p>
+          </div>
+        </div>
+      </div>
+
       <div class="hero-content">
         <div class="container">
           <h1 class="hero-title animate-fade-in">
             PROUDLY BUILT IN<br /><span class="highlight">NORTH AMERICA</span>
           </h1>
           <p class="hero-subtitle animate-fade-in-delay">
-            High-performance fireplace fans and blowers with superior quality
-            and prompt service
+            High-performance fireplace fans and blowers with superior quality and prompt service
           </p>
           <div class="hero-buttons animate-fade-in-delay-2">
             <a href="products.html" class="btn btn-primary">View Products</a>
@@ -65,6 +101,15 @@
           </div>
         </div>
       </div>
+
+      <div class="slider-nav">
+        <button class="slider-dot active" data-slide="0"></button>
+        <button class="slider-dot" data-slide="1"></button>
+        <button class="slider-dot" data-slide="2"></button>
+        <button class="slider-dot" data-slide="3"></button>
+        <button class="slider-dot" data-slide="4"></button>
+      </div>
+
       <div class="scroll-indicator">
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -392,5 +437,6 @@
     </button>
 
     <script src="js/script.js"></script>
+    <script src="js/slideshow.js"></script>
   </body>
 </html>
