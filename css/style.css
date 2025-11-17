@@ -2,20 +2,20 @@
    Global Styles & Variables
    =========================== */
 :root {
-  --primary-color: #ff6b35;
-  --secondary-color: #004e89;
-  --dark-color: #1a1a2e;
-  --light-color: #f8f9fa;
-  --text-color: #333;
-  --gray-color: #6c757d;
+  --primary-color: #0f7bff;
+  --secondary-color: #1b1f23;
+  --accent-color: #20c997;
+  --border-color: #e5e7eb;
+  --bg-soft: #f9fafb;
+  --dark-color: #111827;
+  --light-color: #ffffff;
+  --text-color: #111827;
+  --gray-color: #6b7280;
   --white: #ffffff;
-  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-  --transition: all 0.3s ease;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 18px 45px rgba(15, 23, 42, 0.15);
+  --transition: all 0.25s ease;
 }
 
 * {
@@ -29,10 +29,11 @@ html {
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--light-color);
+  background-color: var(--bg-soft);
 }
 
 .container {
@@ -53,7 +54,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
   box-shadow: var(--shadow-md);
   z-index: 1000;
   transition: var(--transition);
@@ -152,74 +154,55 @@ body {
 }
 
 /* ===========================
-   Hero Section
-   =========================== */
+  Hero Section (minimalist)
+  =========================== */
 .hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 80vh;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+  background-image: linear-gradient(
+      135deg,
+      rgba(240, 249, 255, 0.95) 0%,
+      rgba(224, 242, 254, 0.95) 50%,
+      rgba(219, 234, 254, 0.95) 100%
+    ),
+    url("../img/slideshow/Monmettech_Slideshow_0.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-  background-size: cover;
-  background-position: bottom;
-  animation: wave 10s infinite linear;
-}
-
-@keyframes wave {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-50px);
-  }
 }
 
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  display: none;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  text-align: center;
-  color: var(--white);
+  z-index: 1;
+  color: var(--dark-color);
+  text-align: left;
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  max-width: 32rem;
+  color: var(--gray-color);
   margin-bottom: 2rem;
-  opacity: 0.95;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.75rem;
 }
 
 .scroll-indicator {
@@ -232,8 +215,8 @@ body {
 }
 
 .scroll-indicator i {
-  font-size: 2rem;
-  color: var(--white);
+  font-size: 1.5rem;
+  color: var(--gray-color);
 }
 
 @keyframes bounce {
@@ -486,7 +469,7 @@ section {
    Customer Service Section
    =========================== */
 .customer-service {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, #0066cc 100%);
   color: var(--white);
   padding: 80px 0;
 }
@@ -538,37 +521,45 @@ section {
 }
 
 .product-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1rem;
-  background: var(--gradient-1);
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  transition: var(--transition);
+}
+
+.product-card:hover .product-icon {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #0066cc 100%);
   color: var(--white);
+  transform: scale(1.05);
 }
 
 .product-card:nth-child(2) .product-icon {
-  background: var(--gradient-2);
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
 }
 
 .product-card:nth-child(3) .product-icon {
-  background: var(--gradient-3);
+  background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
 }
 
 .product-card:nth-child(4) .product-icon {
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
 }
 
 .product-card:nth-child(5) .product-icon {
-  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
 }
 
 .product-card:nth-child(6) .product-icon {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
 }
 
 .product-card h3 {
