@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Back to top button
-    if (window.scrollY > 500) {
+    if (backToTop && window.scrollY > 500) {
       backToTop.classList.add("show");
-    } else {
+    } else if (backToTop) {
       backToTop.classList.remove("show");
     }
 
@@ -45,12 +45,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Back to top button functionality
-  backToTop.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+  if (backToTop) {
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     });
-  });
+  }
 
   // ===========================
   // Active Navigation

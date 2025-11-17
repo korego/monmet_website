@@ -715,8 +715,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.querySelector(".products-sidebar");
   const productsMain = document.querySelector(".products-main");
 
+  console.log("Products page loaded");
+  console.log("Container found:", productsContainer);
+  console.log("Products data keys:", Object.keys(productsData));
+
   // Load all manufacturers as sections
   loadAllManufacturers();
+
+  console.log(
+    "Products loaded, container children:",
+    productsContainer.children.length
+  );
 
   // Scroll spy functionality
   let scrollTimeout;
@@ -834,58 +843,143 @@ document.addEventListener("DOMContentLoaded", function () {
     const grid = document.createElement("div");
     grid.className = "products-grid-section";
 
-    data.products.forEach((product) => {
-      const productCard = createProductCard(product);
+    data.products.forEach((product, productIndex) => {
+      const productCard = createProductCard(product, productIndex);
       grid.appendChild(productCard);
     });
 
     section.appendChild(header);
     section.appendChild(grid);
 
-    // Stagger animation
+    // Stagger animation for section
     setTimeout(() => {
       section.style.opacity = "1";
       section.style.transform = "translateY(0)";
       section.style.transition = "all 0.6s ease";
+
+      // Animate product cards
+      const cards = section.querySelectorAll(".product-card");
+      cards.forEach((card, cardIndex) => {
+        setTimeout(() => {
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        }, cardIndex * 50);
+      });
     }, index * 100);
 
     return section;
   }
 
   // Create product card element
-  function createProductCard(product) {
+  function createProductCard(product, productIndex) {
     const card = document.createElement("div");
     card.className = "product-card";
-    card.style.opacity = "0";
-    card.style.transform = "translateY(20px)";
-    card.style.transition = "all 0.3s ease";
 
     card.innerHTML = `
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}" onerror="this.src='img/products/fireplacekit_product.png'">
             </div>
             <div class="product-info">
-                <h3>${product.name}</h3>
-                <div class="product-code">${product.code}</div>
+                <div class="product-header">
+                    <h3>${product.name}</h3>
+                    <div class="product-code">${product.code}</div>
+                </div>
                 <div class="product-specs">
                     <div class="spec">
-                        <i class="fas fa-industry"></i>
-                        <span><strong>OEM:</strong> ${product.oem}</span>
+                        <i class="fas fa-building"></i>
+                        <div class="spec-content">
+                            <strong>OEM Cross-Reference</strong>
+                            <p>${product.oem}</p>
+                        </div>
                     </div>
                     <div class="spec">
-                        <i class="fas fa-ruler-combined"></i>
-                        <span><strong>Size:</strong> ${product.dimensions}</span>
+                        <i class="fas fa-ruler"></i>
+                        <div class="spec-content">
+                            <strong>Dimensions of Blower (inches)</strong>
+                            <p>${product.dimensions}</p>
+                        </div>
                     </div>
                     <div class="spec">
-                        <i class="fas fa-wind"></i>
-                        <span><strong>CFM:</strong> ${product.cfm}</span>
+                        <i class="fas fa-fan"></i>
+                        <div class="spec-content">
+                            <strong>CFM</strong>
+                            <p>${product.cfm}</p>
+                        </div>
                     </div>
                 </div>
-                <a href="index.html#contact" class="btn-quote">Request Quote</a>
+                <button class="btn-quote" onclick="openQuoteModal('${product.code}', '${product.name}')">Request a quote</button>
             </div>
         `;
 
     return card;
+  }
+  
+  // Quote Modal Functions
+  window.openQuoteModal = function(productCode, productName) {
+    const modal = document.getElementById('quoteModal');
+    if (modal) {
+      document.getElementById('modalProductCode').textContent = productCode;
+      document.getElementById('modalProductName').textContent = productName;
+      document.getElementById('quoteForm').reset();
+      document.getElementById('quantity').value = '1';
+      modal.classList.add('show');
+    }
+  };
+
+  window.closeQuoteModal = function() {
+    const modal = document.getElementById('quoteModal');
+    if (modal) {
+      modal.classList.remove('show');
+    }
+  };
+
+  // Close modal when clicking outside
+  window.addEventListener('click', function(event) {
+    const modal = document.getElementById('quoteModal');
+    if (modal && event.target == modal) {
+      modal.classList.remove('show');
+    }
+  });
+
+  // Handle quote form submission
+  const quoteForm = document.getElementById('quoteForm');
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const productCode = document.getElementById('modalProductCode').textContent;
+      const productName = document.getElementById('modalProductName').textContent;
+      const quantity = document.getElementById('quantity').value;
+      const company = document.getElementById('company').value;
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const comments = document.getElementById('comments').value;
+      
+      // Create request object
+      const quoteRequest = {
+        product: {
+          code: productCode,
+          name: productName
+        },
+        quantity: quantity,
+        contact: {
+          company: company,
+          name: name,
+          email: email,
+          phone: phone
+        },
+        comments: comments
+      };
+      
+      // Log the request (in real implementation, would send to backend)
+      console.log('Quote Request:', quoteRequest);
+      
+      // Show success message
+      alert(`Thank you ${name}! Your quote request for ${productCode} has been sent. We will contact you soon at ${email}.`);
+      
+      // Close modal
+      closeQuoteModal();
+    });
   }
 
   // Handle hash changes for direct links

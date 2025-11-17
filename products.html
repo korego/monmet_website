@@ -16,11 +16,9 @@
     <nav class="navbar" id="navbar">
       <div class="container nav-container">
         <div class="logo">
-          <h2>
-            <a href="index.html" style="text-decoration: none; color: inherit"
-              >MONMET <span class="highlight">TECHNOLOGIES</span></a
-            >
-          </h2>
+          <a href="index.html" style="text-decoration: none;">
+            <img src="img/logos/logo.png" alt="Monmet Technologies" height="50">
+          </a>
         </div>
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html" class="nav-link">Home</a></li>
@@ -203,6 +201,45 @@
 
         <div id="products-container" class="products-sections-container">
           <!-- Manufacturer sections will be dynamically loaded here -->
+
+          <!-- Test product card -->
+          <section id="test" class="manufacturer-section">
+            <div class="section-header-products">
+              <h2>Test Section</h2>
+              <p>If you see this, HTML and CSS are working</p>
+            </div>
+            <div class="products-grid-section">
+              <div class="product-card">
+                <div class="product-image">
+                  <img
+                    src="img/products_catalog/product_2.jpg"
+                    alt="Test Product"
+                  />
+                </div>
+                <div class="product-info">
+                  <h3>Test Product</h3>
+                  <div class="product-code">TEST-123</div>
+                  <div class="product-specs">
+                    <div class="spec">
+                      <i class="fas fa-industry"></i>
+                      <span><strong>OEM:</strong> Test Manufacturer</span>
+                    </div>
+                    <div class="spec">
+                      <i class="fas fa-ruler-combined"></i>
+                      <span><strong>Size:</strong> 2.5" x 9.5"</span>
+                    </div>
+                    <div class="spec">
+                      <i class="fas fa-wind"></i>
+                      <span><strong>CFM:</strong> 140</span>
+                    </div>
+                  </div>
+                  <a href="index.html#contact" class="btn-quote"
+                    >Request Quote</a
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
     </div>
@@ -218,5 +255,59 @@
 
     <script src="js/script.js"></script>
     <script src="js/products.js"></script>
+
+    <!-- Quote Request Modal -->
+    <div id="quoteModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Request a Quote</h2>
+          <span class="close" onclick="closeQuoteModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="product-info-modal">
+            <strong>Product:</strong>
+            <p><span id="modalProductCode" style="color: #0f7bff; font-weight: 700;"></span> - <span id="modalProductName"></span></p>
+          </div>
+
+          <form id="quoteForm">
+            <div class="form-group">
+              <label for="quantity">Quantity: <span class="required">*</span></label>
+              <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+            </div>
+
+            <div class="form-section">
+              <h3>Enter your information</h3>
+              
+              <div class="form-group">
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="name">Name: <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email: <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="comments">Comments/Questions:</label>
+              <textarea id="comments" name="comments" rows="6" placeholder=""></textarea>
+            </div>
+
+            <button type="submit" class="btn-send">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
