@@ -16,8 +16,12 @@
     <nav class="navbar" id="navbar">
       <div class="container nav-container">
         <div class="logo">
-          <a href="index.html" style="text-decoration: none;">
-            <img src="img/logos/logo.png" alt="Monmet Technologies" height="50">
+          <a href="index.html" style="text-decoration: none">
+            <img
+              src="img/logos/logo.png"
+              alt="Monmet Technologies"
+              height="50"
+            />
           </a>
         </div>
         <ul class="nav-links" id="navLinks">
@@ -227,42 +231,64 @@
         <div class="modal-body">
           <div class="product-info-modal">
             <strong>Product:</strong>
-            <p><span id="modalProductCode" style="color: #0f7bff; font-weight: 700;"></span> - <span id="modalProductName"></span></p>
+            <p>
+              <span
+                id="modalProductCode"
+                style="color: #0f7bff; font-weight: 700"
+              ></span>
+              - <span id="modalProductName"></span>
+            </p>
           </div>
 
           <form id="quoteForm">
-            <div class="form-group" style="margin-bottom: 0.875rem;">
-              <label for="quantity" style="font-size: 0.875rem;">Qty: <span class="required">*</span></label>
-              <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+            <div class="form-group" style="margin-bottom: 0.875rem">
+              <label for="quantity" style="font-size: 0.875rem"
+                >Qty: <span class="required">*</span></label
+              >
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                value="1"
+                required
+              />
             </div>
 
             <div class="form-section">
               <h3>Enter your information</h3>
-              
+
               <div class="form-group">
                 <label for="company">Company:</label>
-                <input type="text" id="company" name="company" placeholder="">
+                <input type="text" id="company" name="company" placeholder="" />
               </div>
 
               <div class="form-group">
                 <label for="name">Name: <span class="required">*</span></label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required />
               </div>
 
               <div class="form-group">
-                <label for="email">Email: <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required>
+                <label for="email"
+                  >Email: <span class="required">*</span></label
+                >
+                <input type="email" id="email" name="email" required />
               </div>
 
               <div class="form-group">
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" name="phone" />
               </div>
             </div>
 
             <div class="form-group">
               <label for="comments">Comments:</label>
-              <textarea id="comments" name="comments" rows="3" placeholder=""></textarea>
+              <textarea
+                id="comments"
+                name="comments"
+                rows="2"
+                placeholder=""
+              ></textarea>
             </div>
 
             <button type="submit" class="btn-send">Send</button>

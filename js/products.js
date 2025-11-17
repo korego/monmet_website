@@ -913,70 +913,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
     return card;
   }
-  
+
   // Quote Modal Functions
-  window.openQuoteModal = function(productCode, productName) {
-    const modal = document.getElementById('quoteModal');
+  window.openQuoteModal = function (productCode, productName) {
+    const modal = document.getElementById("quoteModal");
     if (modal) {
-      document.getElementById('modalProductCode').textContent = productCode;
-      document.getElementById('modalProductName').textContent = productName;
-      document.getElementById('quoteForm').reset();
-      document.getElementById('quantity').value = '1';
-      modal.classList.add('show');
+      document.getElementById("modalProductCode").textContent = productCode;
+      document.getElementById("modalProductName").textContent = productName;
+      document.getElementById("quoteForm").reset();
+      document.getElementById("quantity").value = "1";
+      modal.classList.add("show");
     }
   };
 
-  window.closeQuoteModal = function() {
-    const modal = document.getElementById('quoteModal');
+  window.closeQuoteModal = function () {
+    const modal = document.getElementById("quoteModal");
     if (modal) {
-      modal.classList.remove('show');
+      modal.classList.remove("show");
     }
   };
 
   // Close modal when clicking outside
-  window.addEventListener('click', function(event) {
-    const modal = document.getElementById('quoteModal');
+  window.addEventListener("click", function (event) {
+    const modal = document.getElementById("quoteModal");
     if (modal && event.target == modal) {
-      modal.classList.remove('show');
+      modal.classList.remove("show");
     }
   });
 
   // Handle quote form submission
-  const quoteForm = document.getElementById('quoteForm');
+  const quoteForm = document.getElementById("quoteForm");
   if (quoteForm) {
-    quoteForm.addEventListener('submit', function(e) {
+    quoteForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      const productCode = document.getElementById('modalProductCode').textContent;
-      const productName = document.getElementById('modalProductName').textContent;
-      const quantity = document.getElementById('quantity').value;
-      const company = document.getElementById('company').value;
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const comments = document.getElementById('comments').value;
-      
+      const productCode =
+        document.getElementById("modalProductCode").textContent;
+      const productName =
+        document.getElementById("modalProductName").textContent;
+      const quantity = document.getElementById("quantity").value;
+      const company = document.getElementById("company").value;
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const comments = document.getElementById("comments").value;
+
       // Create request object
       const quoteRequest = {
         product: {
           code: productCode,
-          name: productName
+          name: productName,
         },
         quantity: quantity,
         contact: {
           company: company,
           name: name,
           email: email,
-          phone: phone
+          phone: phone,
         },
-        comments: comments
+        comments: comments,
       };
-      
+
       // Log the request (in real implementation, would send to backend)
-      console.log('Quote Request:', quoteRequest);
-      
+      console.log("Quote Request:", quoteRequest);
+
       // Show success message
-      alert(`Thank you ${name}! Your quote request for ${productCode} has been sent. We will contact you soon at ${email}.`);
-      
+      alert(
+        `Thank you ${name}! Your quote request for ${productCode} has been sent. We will contact you soon at ${email}.`
+      );
+
       // Close modal
       closeQuoteModal();
     });
