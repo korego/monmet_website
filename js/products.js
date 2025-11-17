@@ -34,7 +34,7 @@ const productsData = {
   continental: {
     title: "Continental",
     description:
-      "Replacement fan kits and blowers for Continental and Napoleon fireplace models.",
+      "Replacement fan kits and blowers for Napoleon fireplace models.",
     products: [
       {
         code: "MFK-550",
@@ -707,8 +707,7 @@ const productsData = {
   },
   "pellet-stove-parts": {
     title: "Pellet Stove Parts",
-    description:
-      "Replacement parts and components for pellet stoves.",
+    description: "Replacement parts and components for pellet stoves.",
     products: [
       {
         code: "PELLET-PARTS-001",
