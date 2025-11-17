@@ -343,9 +343,11 @@ body {
 
 /* CTA Section */
 .cta-section {
-  padding: 4rem 0;
+  padding: 5rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-title {
@@ -467,6 +469,8 @@ body {
 .features {
   padding: 80px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+  position: relative;
+  z-index: 1;
 }
 
 .features-grid {
