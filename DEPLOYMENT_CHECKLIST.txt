@@ -1,0 +1,133 @@
+✅ MONMET WEBSITE - PRE-DEPLOYMENT CHECKLIST
+═════════════════════════════════════════════════════════════════════════════
+
+YOUR WEBSITE IS PRODUCTION-READY! Use this checklist before deploying.
+
+═════════════════════════════════════════════════════════════════════════════
+📋 PRE-DEPLOYMENT CHECKLIST
+═════════════════════════════════════════════════════════════════════════════
+
+SECTION 1: FORMSPREE SETUP (Required for emails)
+─────────────────────────────────────────────────
+☐ 1. Signed up for Formspree.io
+☐ 2. Created form project
+☐ 3. Copied Formspree ID (format: f/xxxxx)
+☐ 4. Updated YOUR_FORMSPREE_ID in index.html
+☐ 5. Updated YOUR_FORMSPREE_ID in js/products.js
+☐ 6. Verified email address with Formspree
+
+SECTION 2: WEBSITE FILES (Verify all present)
+──────────────────────────────────────────────
+☐ 1. index.html exists
+☐ 2. about.html exists
+☐ 3. products.html exists
+☐ 4. css/style.css exists
+☐ 5. css/products.css exists
+☐ 6. js/script.js exists
+☐ 7. js/products.js exists
+☐ 8. js/slideshow.js exists
+☐ 9. img/ folder has all images
+☐ 10. Documentation files included
+
+SECTION 3: LOCAL TESTING (Before uploading)
+─────────────────────────────────────────────
+☐ 1. Website opens in browser (index.html)
+☐ 2. All pages load: Home, About, Products
+☐ 3. Navigation works (all links functional)
+☐ 4. Product catalog displays correctly
+☐ 5. Product cards look properly formatted
+☐ 6. Images load (logo, slideshows, products)
+☐ 7. Responsive design works (resize browser)
+☐ 8. Quote request modal opens
+☐ 9. Contact form displays
+☐ 10. No console errors (F12 → Console tab)
+
+SECTION 4: FILE ORGANIZATION (Before upload)
+──────────────────────────────────────────────
+☐ 1. Folder structure matches documentation
+☐ 2. All images in correct folders
+☐ 3. CSS files in /css/ folder
+☐ 4. JavaScript files in /js/ folder
+☐ 5. No duplicate files
+☐ 6. No temporary/backup files
+☐ 7. All filenames use correct case (important!)
+
+SECTION 5: GODADDY PREPARATION
+────────────────────────────────
+☐ 1. GoDaddy account active
+☐ 2. Domain points to GoDaddy nameservers
+☐ 3. cPanel access works
+☐ 4. File Manager accessible
+☐ 5. public_html folder empty (or ready to replace)
+☐ 6. Storage space available (need ~50MB minimum)
+
+SECTION 6: UPLOAD TO GODADDY
+─────────────────────────────
+☐ 1. Open cPanel File Manager
+☐ 2. Navigate to /public_html
+☐ 3. Upload entire website folder
+☐ 4. Wait for upload to complete
+☐ 5. Verify all files uploaded
+☐ 6. Check folder permissions (755 for folders, 644 for files)
+
+SECTION 7: POST-DEPLOYMENT TESTING
+────────────────────────────────────
+☐ 1. Visit domain.com in browser
+☐ 2. Homepage loads correctly
+☐ 3. All images display
+☐ 4. Navigation works
+☐ 5. Test contact form
+☐ 6. First submission triggers Formspree verification email
+☐ 7. Click verification link in email
+☐ 8. Re-test contact form (should work now)
+☐ 9. Test quote request
+☐ 10. Check email inbox for submissions
+
+SECTION 8: TROUBLESHOOTING (If issues)
+───────────────────────────────────────
+☐ 1. Forms not sending?
+   → Check Formspree ID is correct
+   → Verify email in Formspree dashboard
+   → Check browser console for errors (F12)
+
+☐ 2. Images not showing?
+   → Check image filenames case-sensitive
+   → Verify img/ folder uploaded
+   → Check file permissions (644)
+
+☐ 3. Page not loading?
+   → Check all files uploaded
+   → Check folder structure
+   → Verify no .htaccess conflicts
+
+☐ 4. Styles not applying?
+   → Hard refresh browser (Ctrl+Shift+R)
+   → Check CSS file permissions (644)
+   → Check browser cache
+
+═════════════════════════════════════════════════════════════════════════════
+
+🎯 ALL CHECKBOXES CHECKED? YOU'RE READY TO GO!
+
+═════════════════════════════════════════════════════════════════════════════
+
+DOCUMENTATION FILES TO KEEP HANDY
+──────────────────────────────────
+• README_DEPLOYMENT.txt  ← Overview
+• QUICK_START.txt        ← Quick reference
+• FORMSPREE_SETUP.txt    ← Email setup details
+• DEPLOYMENT_SETUP.md    ← Technical details
+
+═════════════════════════════════════════════════════════════════════════════
+
+📞 SUPPORT RESOURCES
+════════════════════
+Formspree Help:  https://formspree.io/docs
+GoDaddy Help:    https://www.godaddy.com/help
+Browser Cache:   Clear with Ctrl+Shift+R (Windows/Linux) or Cmd+Shift+R (Mac)
+
+═════════════════════════════════════════════════════════════════════════════
+
+✨ ONCE YOU COMPLETE THIS CHECKLIST, YOUR WEBSITE IS LIVE! ✨
+
+═════════════════════════════════════════════════════════════════════════════
