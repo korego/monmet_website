@@ -606,7 +606,8 @@ const productsData = {
   },
   "wolf-steel": {
     title: "Wolf Steel",
-    description: "High-performance fan kits and blowers for Wolf Steel fireplaces.",
+    description:
+      "High-performance fan kits and blowers for Wolf Steel fireplaces.",
     products: [
       {
         code: "MFK-FBB4",
@@ -858,7 +859,11 @@ document.addEventListener("DOMContentLoaded", function () {
     grid.className = "products-grid-section";
 
     data.products.forEach((product, productIndex) => {
-      const productCard = createProductCard(product, productIndex, manufacturer);
+      const productCard = createProductCard(
+        product,
+        productIndex,
+        manufacturer
+      );
       grid.appendChild(productCard);
     });
 
@@ -888,11 +893,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function createProductCard(product, productIndex, manufacturer) {
     const card = document.createElement("div");
     card.className = "product-card";
-    
-    // Check if this is an accessory or pellet stove part (hide OEM, Dimensions, CFM)
-    const isAccessoryOrStove = manufacturer === 'accessories' || manufacturer === 'pellet-stove-parts';
 
-    let specsHTML = '';
+    // Check if this is an accessory or pellet stove part (hide OEM, Dimensions, CFM)
+    const isAccessoryOrStove =
+      manufacturer === "accessories" || manufacturer === "pellet-stove-parts";
+
+    let specsHTML = "";
     if (!isAccessoryOrStove) {
       specsHTML = `
                     <div class="spec">
@@ -980,32 +986,46 @@ document.addEventListener("DOMContentLoaded", function () {
       const phone = document.getElementById("phone").value;
       const comments = document.getElementById("comments").value;
 
-      // Create request object
-      const quoteRequest = {
-        product: {
-          code: productCode,
-          name: productName,
-        },
+      // Create formatted email data
+      const quoteData = {
+        _subject: `Quote Request for ${productCode}`,
+        _replyto: email,
+        product_code: productCode,
+        product_name: productName,
         quantity: quantity,
-        contact: {
-          company: company,
-          name: name,
-          email: email,
-          phone: phone,
-        },
+        company: company,
+        name: name,
+        email: email,
+        phone: phone,
         comments: comments,
       };
 
-      // Log the request (in real implementation, would send to backend)
-      console.log("Quote Request:", quoteRequest);
-
-      // Show success message
-      alert(
-        `Thank you ${name}! Your quote request for ${productCode} has been sent. We will contact you soon at ${email}.`
-      );
-
-      // Close modal
-      closeQuoteModal();
+      // Send to Formspree
+      fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(quoteData),
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Show success message
+            alert(
+              `Thank you ${name}! Your quote request for ${productCode} has been sent. We will contact you soon at ${email}.`
+            );
+            closeQuoteModal();
+            quoteForm.reset();
+          } else {
+            alert("Error sending quote request. Please try again.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert(
+            "Error sending quote request. Please contact us directly at 514-788-6007."
+          );
+        });
     });
   }
 

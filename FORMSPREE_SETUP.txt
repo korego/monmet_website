@@ -1,0 +1,101 @@
+================================================================
+FORMSPREE SETUP - REQUIRED FOR EMAIL FUNCTIONALITY
+================================================================
+
+STEP 1: Sign Up for Formspree (FREE)
+=====================================
+1. Go to: https://formspree.io/
+2. Click "Sign Up"
+3. Create account with your email (info@monmettech.com)
+4. Verify your email
+
+STEP 2: Create Forms
+====================
+1. In Formspree dashboard, click "+ New Project"
+2. Name it: "Monmet Website"
+3. Create a new form (you can use same ID for all forms)
+4. You'll get a Formspree ID like: f/xxxxxxxxxxxxx
+   - Copy everything after "f/" (the xxxxx part)
+
+STEP 3: Update Your HTML/JS Files
+==================================
+Replace "YOUR_FORMSPREE_ID" in these files:
+
+FILE 1: index.html
+   Line ~382: Find <form ... action="https://formspree.io/f/YOUR_FORMSPREE_ID" ...>
+   Replace: YOUR_FORMSPREE_ID with your actual ID
+   
+FILE 2: js/products.js
+   Line ~1001: Find fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+   Replace: YOUR_FORMSPREE_ID with your actual ID
+
+Example:
+========
+If your Formspree ID is: f/12345abcde
+Then replace:
+   YOUR_FORMSPREE_ID  -->  12345abcde
+   
+Result: https://formspree.io/f/12345abcde
+
+STEP 4: Test Before Uploading
+==============================
+1. You CANNOT test locally (only works on live domain)
+2. Upload to GoDaddy first
+3. Go to your domain website
+4. Fill out a form and submit
+5. You'll get an email verification link first time
+6. Click link to activate form
+7. Then forms will work for all future submissions
+
+STEP 5: Monitor Submissions
+===========================
+1. All submissions appear in Formspree dashboard
+2. You receive copies in your email inbox
+3. Free tier: 50 submissions/month
+4. Upgrade to paid tier if needed (unlimited)
+
+SECURITY & SPAM PROTECTION
+==========================
+✓ All data is encrypted in transit (SSL/TLS)
+✓ Formspree handles spam detection
+✓ Email verification prevents bots
+✓ Rate limiting built-in
+✓ No data stored on your server
+
+FORMS INCLUDED
+==============
+1. Contact Form (index.html)
+   - Sends to: info@monmettech.com
+   - Subject: Contact from Monmet Website
+   
+2. Quote Request Form (products.html) 
+   - Sends to: info@monmettech.com
+   - Subject: Quote Request for [Product Code]
+
+TROUBLESHOOTING
+===============
+Q: Forms not sending emails?
+A: Make sure you:
+   1. Replaced YOUR_FORMSPREE_ID with actual ID
+   2. Verified email in Formspree dashboard (click verification link)
+   3. Uploaded to live GoDaddy domain (not localhost)
+
+Q: Getting emails but want to change recipient?
+A: 
+   1. Go to Formspree dashboard
+   2. Click form settings
+   3. Change email recipient there
+   4. No code changes needed
+
+Q: Want to limit submissions?
+A: Use reCAPTCHA v3 (optional)
+   - See DEPLOYMENT_SETUP.md for details
+
+SUPPORT
+=======
+Formspree Help: https://formspree.io/docs
+GoDaddy Help: https://www.godaddy.com/help
+
+================================================================
+READY? Follow the steps above and your forms will be live!
+================================================================
