@@ -100,7 +100,7 @@ const productsData = {
       {
         code: "MFK-160",
         name: "Fan Kit MFK-160",
-        image: "img/products_catalog/MFK-160.jpg",
+        image: "img/products_catalog/MFK-160-w.jpg",
         oem: "Heat & Glo (GFK160A)",
         dimensions: '3" x 4"',
         cfm: "140",
@@ -108,7 +108,7 @@ const productsData = {
       {
         code: "BLWR-HGLO",
         name: "Blower BLWR-HGLO",
-        image: "img/products_catalog/BLWR-HGLO.jpg",
+        image: "img/products_catalog/BLWR-HGLO-w.jpg",
         oem: "Heat & Glo",
         dimensions: '3" x 4"',
         cfm: "140",
