@@ -1,0 +1,146 @@
+🚀 MONMET WEBSITE - QUICK START DEPLOYMENT GUIDE
+
+📌 OVERVIEW
+===========
+Your website is a STANDALONE STATIC HTML site - NO PHP, NO BACKEND CODE needed.
+Simply copy the entire folder to GoDaddy cPanel and it works.
+
+Email handling is done through Formspree (FREE service).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 1: SET UP FORMSPREE (5 MINUTES)
+=====================================
+
+1. Go to: https://formspree.io/
+2. Sign Up with: info@monmettech.com
+3. Verify email
+4. Create new form project
+5. Click "Create Form"
+6. You'll get a Formspree ID: f/xxxxx
+   SAVE THIS ID - You'll need it!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 2: UPDATE FORM IDs IN FILES
+====================================
+
+The placeholder YOUR_FORMSPREE_ID appears in:
+
+FILE 1: index.html
+   Search for: YOUR_FORMSPREE_ID
+   Replace with: xxxxx (from Formspree)
+
+FILE 2: js/products.js  
+   Search for: YOUR_FORMSPREE_ID
+   Replace with: xxxxx (from Formspree)
+
+Example:
+  Before: https://formspree.io/f/YOUR_FORMSPREE_ID
+  After:  https://formspree.io/f/xxxxx
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 3: UPLOAD TO GODADDY CPANEL
+====================================
+
+1. Login to GoDaddy cPanel
+2. Open File Manager
+3. Navigate to: public_html
+4. Upload your website folder
+   - Upload ENTIRE folder with all files
+   - Keep folder structure intact
+
+Folder structure should be:
+  /public_html/
+  ├── index.html
+  ├── about.html
+  ├── products.html
+  ├── css/
+  ├── js/
+  ├── img/
+  └── (all other files)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 4: TEST FORMS (IMPORTANT!)
+===================================
+
+1. Go to your live domain: yourdomain.com
+2. Scroll to Contact Form
+3. Fill out: Name, Email, Message
+4. Click "Send Message"
+5. First submission triggers Formspree email verification
+   - Check your email inbox
+   - Click verification link
+6. Forms will work for all future submissions
+7. Test "Request a Quote" button on products page
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ FORMSPREE FAQ
+================
+
+Q: Will people see my email?
+A: NO - Email hidden from HTML source
+
+Q: How do I receive submissions?
+A: Check your Formspree dashboard OR your email inbox
+
+Q: Does it have spam protection?
+A: YES - Email verification + Formspree spam detection
+
+Q: How many submissions?
+A: Free tier = 50/month, Upgrade for unlimited
+
+Q: Will it work on GoDaddy?
+A: YES - Formspree works on all hosts
+
+Q: What if form doesn't send?
+A: 1) Check Formspree ID is correct
+   2) Verify email in Formspree dashboard
+   3) Forms only work on LIVE domain (not localhost)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 FILES INCLUDED IN THIS DEPLOYMENT
+=====================================
+
+✓ index.html - Home page with contact form
+✓ about.html - About page
+✓ products.html - Products page with quote requests
+✓ css/ - All styling (responsive design)
+✓ js/ - All JavaScript (no frameworks needed)
+✓ img/ - All images (logos, slideshow, products)
+✓ DEPLOYMENT_SETUP.md - Full technical guide
+✓ FORMSPREE_SETUP.txt - Detailed Formspree steps
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔒 SECURITY INFORMATION
+=======================
+
+✓ No backend code to hack
+✓ All data encrypted in transit (SSL/TLS)
+✓ Formspree handles spam detection
+✓ Email verification prevents bots
+✓ No databases to compromise
+✓ No server-side code execution
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📞 CONTACT FOR HELP
+===================
+
+Formspree Support: https://formspree.io/docs
+GoDaddy Support: https://www.godaddy.com/help
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 YOU'RE READY TO DEPLOY!
+
+Follow these 4 steps and your website is LIVE.
+No coding, no server setup, no databases.
+Just copy, paste, and go!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
