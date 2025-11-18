@@ -252,14 +252,6 @@ const productsData = {
     description: "Quality replacement blowers for Kozy Heat fireplace systems.",
     products: [
       {
-        code: "MFK-AUB",
-        name: "Fan Kit MFK-AUB",
-        image: "img/products_catalog/MFK-AUB-w.jpg",
-        oem: "Kozy Heat",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
-      },
-      {
         code: "MFK-SLA42",
         name: "Fan Kit MFK-SLA42",
         image: "img/products_catalog/MFK-SLA42-w.jpg",
