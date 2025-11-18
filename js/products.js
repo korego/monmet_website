@@ -634,7 +634,7 @@ const productsData = {
       {
         code: "TEMP-SENS1",
         name: "Temperature Sensor TEMP-SENS1",
-        image: "img/products_catalog/TEMP-SENS1.jpg",
+        image: "img/products_catalog/TEMP-SENS1-w1.jpg",
         oem: "Universal",
         dimensions: "N/A",
         cfm: "N/A",
@@ -642,7 +642,7 @@ const productsData = {
       {
         code: "TEMP-SENS2",
         name: "Temperature Sensor TEMP-SENS2",
-        image: "img/products_catalog/TEMP-SENS2.jpg",
+        image: "img/products_catalog/TEMP-SENS2-w1.jpg",
         oem: "Universal",
         dimensions: "N/A",
         cfm: "N/A",
@@ -650,7 +650,7 @@ const productsData = {
       {
         code: "TEMP-SENS3",
         name: "Temperature Sensor TEMP-SENS3",
-        image: "img/products_catalog/TEMP-SENS3.jpg",
+        image: "img/products_catalog/TEMP-SENS3-w1.jpg",
         oem: "Universal",
         dimensions: "N/A",
         cfm: "N/A",
@@ -658,7 +658,7 @@ const productsData = {
       {
         code: "TEMP-SENSBRKT",
         name: "Temperature Sensor Bracket",
-        image: "img/products_catalog/TEMP-SENSBRKT.jpg",
+        image: "img/products_catalog/TMPSENSbrkt-w1.jpg",
         oem: "Universal",
         dimensions: "N/A",
         cfm: "N/A",
@@ -694,10 +694,26 @@ const productsData = {
     description: "Replacement parts and components for pellet stoves.",
     products: [
       {
-        code: "PELLET-PARTS-001",
-        name: "Pellet Stove Parts - Coming Soon",
-        image: "img/products_catalog/placeholder.jpg",
+        code: "HVAC-PRODUCT-LIST",
+        name: "HVAC Product List",
+        image: "img/products_catalog/HVAC_product_list-nov29-19.jpg",
         oem: "Various",
+        dimensions: "N/A",
+        cfm: "N/A",
+      },
+      {
+        code: "HVAC1-2018",
+        name: "HVAC Component HVAC1-2018",
+        image: "img/products_catalog/HVAC1-2018w.jpg",
+        oem: "Various",
+        dimensions: "N/A",
+        cfm: "N/A",
+      },
+      {
+        code: "QUADRA-FIRE-812-4421",
+        name: "Quadra-Fire 812-4421 Part",
+        image: "img/products_catalog/Quadra-Fire_812-4421.jpg",
+        oem: "Quadra-Fire",
         dimensions: "N/A",
         cfm: "N/A",
       },
