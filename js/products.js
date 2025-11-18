@@ -858,7 +858,7 @@ document.addEventListener("DOMContentLoaded", function () {
     grid.className = "products-grid-section";
 
     data.products.forEach((product, productIndex) => {
-      const productCard = createProductCard(product, productIndex);
+      const productCard = createProductCard(product, productIndex, manufacturer);
       grid.appendChild(productCard);
     });
 
@@ -885,20 +885,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Create product card element
-  function createProductCard(product, productIndex) {
+  function createProductCard(product, productIndex, manufacturer) {
     const card = document.createElement("div");
     card.className = "product-card";
+    
+    // Check if this is an accessory or pellet stove part (hide OEM, Dimensions, CFM)
+    const isAccessoryOrStove = manufacturer === 'accessories' || manufacturer === 'pellet-stove-parts';
 
-    card.innerHTML = `
-            <div class="product-image">
-                <img src="${product.image}" alt="${product.name}" onerror="this.src='img/products/fireplacekit_product.png'">
-            </div>
-            <div class="product-info">
-                <div class="product-header">
-                    <h3>${product.name}</h3>
-                    <div class="product-code">${product.code}</div>
-                </div>
-                <div class="product-specs">
+    let specsHTML = '';
+    if (!isAccessoryOrStove) {
+      specsHTML = `
                     <div class="spec">
                         <i class="fas fa-building"></i>
                         <div class="spec-content">
@@ -919,7 +915,20 @@ document.addEventListener("DOMContentLoaded", function () {
                             <strong>CFM</strong>
                             <p>${product.cfm}</p>
                         </div>
-                    </div>
+                    </div>`;
+    }
+
+    card.innerHTML = `
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}" onerror="this.src='img/products/fireplacekit_product.png'">
+            </div>
+            <div class="product-info">
+                <div class="product-header">
+                    <h3>${product.name}</h3>
+                    <div class="product-code">${product.code}</div>
+                </div>
+                <div class="product-specs">
+                    ${specsHTML}
                 </div>
                 <button class="btn-quote" onclick="openQuoteModal('${product.code}', '${product.name}')">Request a quote</button>
             </div>
