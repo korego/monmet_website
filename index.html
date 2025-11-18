@@ -13,6 +13,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- reCAPTCHA v3 for bot protection -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -378,7 +380,13 @@
             </div>
           </div>
           <div class="contact-form-section">
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <form
+              class="contact-form"
+              id="contactForm"
+              action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+              method="POST"
+              onsubmit="handleContactSubmit(event)"
+            >
               <div class="form-group">
                 <input
                   type="text"
@@ -414,7 +422,9 @@
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">
+              <!-- Hidden reCAPTCHA token field -->
+              <input type="hidden" name="g-recaptcha-response" id="recaptchaToken" />
+              <button type="submit" class="btn btn-primary">
                 Send Message
               </button>
             </form>

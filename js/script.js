@@ -401,3 +401,65 @@ document.addEventListener("DOMContentLoaded", function () {
     "background: #ff6b35; color: white; font-size: 14px; padding: 5px;"
   );
 });
+
+// ===========================
+// reCAPTCHA v3 Integration
+// ===========================
+
+// Initialize reCAPTCHA with YOUR_RECAPTCHA_SITE_KEY
+function initializeRecaptcha() {
+  // Replace YOUR_RECAPTCHA_SITE_KEY with your actual site key
+  const siteKey = "YOUR_RECAPTCHA_SITE_KEY";
+  if (siteKey !== "YOUR_RECAPTCHA_SITE_KEY") {
+    window.grecaptcha.ready(function () {
+      window.grecaptcha.execute(siteKey, { action: "submit" }).then(function (token) {
+        document.getElementById("recaptchaToken").value = token;
+      });
+    });
+  }
+}
+
+// Handle contact form submission with reCAPTCHA
+function handleContactSubmit(event) {
+  event.preventDefault();
+
+  const siteKey = "YOUR_RECAPTCHA_SITE_KEY";
+
+  // If reCAPTCHA not configured, submit normally
+  if (siteKey === "YOUR_RECAPTCHA_SITE_KEY") {
+    document.getElementById("contactForm").submit();
+    return;
+  }
+
+  // Get reCAPTCHA token
+  window.grecaptcha.ready(function () {
+    window.grecaptcha.execute(siteKey, { action: "submit" }).then(function (token) {
+      document.getElementById("recaptchaToken").value = token;
+      
+      // Submit form after token is set
+      document.getElementById("contactForm").submit();
+    });
+  });
+}
+
+// Input validation helper
+function validateFormInput(value, type) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+
+  switch (type) {
+    case "email":
+      return emailRegex.test(value);
+    case "phone":
+      return phoneRegex.test(value) || value === "";
+    case "name":
+      return value.trim().length > 0;
+    default:
+      return true;
+  }
+}
+
+// Initialize reCAPTCHA when page loads
+document.addEventListener("DOMContentLoaded", function () {
+  initializeRecaptcha();
+});

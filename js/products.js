@@ -1000,32 +1000,21 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: comments,
       };
 
-      // Send to Formspree
-      fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(quoteData),
-      })
-        .then((response) => {
-          if (response.ok) {
-            // Show success message
-            alert(
-              `Thank you ${name}! Your quote request for ${productCode} has been sent. We will contact you soon at ${email}.`
-            );
-            closeQuoteModal();
-            quoteForm.reset();
-          } else {
-            alert("Error sending quote request. Please try again.");
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          alert(
-            "Error sending quote request. Please contact us directly at 514-788-6007."
-          );
+      // Get reCAPTCHA token if configured
+      const siteKey = "YOUR_RECAPTCHA_SITE_KEY";
+      
+      if (siteKey === "YOUR_RECAPTCHA_SITE_KEY") {
+        // reCAPTCHA not configured, send without token
+        sendQuoteData(quoteData, name, email, productCode);
+      } else {
+        // Get reCAPTCHA token and then send
+        window.grecaptcha.ready(function () {
+          window.grecaptcha.execute(siteKey, { action: "submit" }).then(function (token) {
+            quoteData.g_recaptcha_response = token;
+            sendQuoteData(quoteData, name, email, productCode);
+          });
         });
+      }
     });
   }
 
@@ -1049,3 +1038,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+// ===========================
+// Quote Form Helper Function
+// ===========================
+
+function sendQuoteData(quoteData, name, email, productCode) {
+  // Send to Formspree
+  fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(quoteData),
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Show success message
+        alert(
+          `Thank you ${name}! Your quote request for ${productCode} has been sent. We will contact you soon at ${email}.`
+        );
+        closeQuoteModal();
+        document.getElementById("quoteForm").reset();
+      } else {
+        alert("Error sending quote request. Please try again.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert(
+        "Error sending quote request. Please contact us directly at 514-788-6007."
+      );
+    });
+}
