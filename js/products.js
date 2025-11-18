@@ -98,17 +98,17 @@ const productsData = {
     description: "Premium fan kits designed for Heat & Glo fireplace systems.",
     products: [
       {
-        code: "MFK-4B",
-        name: "Fan Kit MFK-4B",
-        image: "img/products_catalog/MFK-4B-2017w.jpg",
+        code: "MFK-160",
+        name: "Fan Kit MFK-160",
+        image: "img/products_catalog/MFK-160.jpg",
         oem: "Heat & Glo",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
       },
       {
-        code: "MFK-46",
-        name: "Fan Kit MFK-46",
-        image: "img/products_catalog/MFK-46-2017w.jpg",
+        code: "BLWR-HGLO",
+        name: "Blower BLWR-HGLO",
+        image: "img/products_catalog/BLWR-HGLO.jpg",
         oem: "Heat & Glo",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
