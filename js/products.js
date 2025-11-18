@@ -8,7 +8,7 @@ const productsData = {
       {
         code: "MFK-24",
         name: "Fan Kit MFK-24",
-        image: "img/products_catalog/product_2.jpg",
+        image: "img/products_catalog/mfk-24-w.jpg",
         oem: "CFM / Vermont Castings",
         dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
@@ -16,7 +16,7 @@ const productsData = {
       {
         code: "MFK-12",
         name: "Fan Kit MFK-12",
-        image: "img/products_catalog/product_3.jpg",
+        image: "img/products_catalog/mfk-12-w.jpg",
         oem: "CFM / Vermont Castings",
         dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
@@ -24,7 +24,7 @@ const productsData = {
       {
         code: "BLWR-VC-MAJ",
         name: "Blower BLWR-VC-MAJ",
-        image: "img/products_catalog/product_5.jpg",
+        image: "img/products_catalog/BLWR-VC-MAJ-2-w.jpg",
         oem: "CFM / Vermont Castings",
         dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
@@ -39,7 +39,7 @@ const productsData = {
       {
         code: "MFK-550",
         name: "Fan Kit MFK-550",
-        image: "img/products_catalog/product_7.jpg",
+        image: "img/products_catalog/MFK-550-w.jpg",
         oem: "Napoleon (GZ550)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
@@ -47,7 +47,7 @@ const productsData = {
       {
         code: "MFK-62-1",
         name: "Fan Kit MFK-62-1",
-        image: "img/products_catalog/product_8.jpg",
+        image: "img/products_catalog/MFK-62-1-w.jpg",
         oem: "Napoleon (NZ-62)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
@@ -55,7 +55,7 @@ const productsData = {
       {
         code: "MFK-62",
         name: "Fan Kit MFK-62",
-        image: "img/products_catalog/product_10.jpg",
+        image: "img/products_catalog/MFK-62-w.jpg",
         oem: "Napoleon (EP-62)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
@@ -63,7 +63,7 @@ const productsData = {
       {
         code: "BLWR-NAP",
         name: "Blower BLWR-NAP",
-        image: "img/products_catalog/product_12.jpg",
+        image: "img/products_catalog/BLWR-NAP-w.jpg",
         oem: "Napoleon (GZ552)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
@@ -254,7 +254,7 @@ const productsData = {
       {
         code: "MFK-SLA42",
         name: "Fan Kit MFK-SLA42",
-        image: "img/products_catalog/MFK-SLA42-w.jpg",
+        image: "img/products_catalog/MFK-SLA42-2017w.jpg",
         oem: "Kozy Heat SLA-42",
         dimensions: '1.75" x 7" (45mm x 180mm)',
         cfm: "90",
@@ -262,7 +262,7 @@ const productsData = {
       {
         code: "BLWR-SLA42",
         name: "Blower BLWR-SLA42",
-        image: "img/products_catalog/BLWR-SLA42.jpg",
+        image: "img/products_catalog/BLWR-SLA42-2017w.jpg",
         oem: "Kozy Heat SLA-42",
         dimensions: '1.75" x 7" (45mm x 180mm)',
         cfm: "90",
@@ -277,7 +277,7 @@ const productsData = {
       {
         code: "MFK-24",
         name: "Fan Kit MFK-24",
-        image: "img/products_catalog/MFK-24.jpg",
+        image: "img/products_catalog/mfk-24-w.jpg",
         oem: "Majestic/Vermont Castings (BLOT24)",
         dimensions: '2.5" x 9.5" (63mm x 240mm)',
         cfm: "140",
@@ -285,7 +285,7 @@ const productsData = {
       {
         code: "MFK-12",
         name: "Fan Kit MFK-12",
-        image: "img/products_catalog/MFK-12.jpg",
+        image: "img/products_catalog/mfk-12-w.jpg",
         oem: "Majestic/Vermont Castings (BLOT12)",
         dimensions: '2.5" x 9.5" (63mm x 240mm)',
         cfm: "140",
@@ -293,7 +293,7 @@ const productsData = {
       {
         code: "BLWR-VC-MAJ",
         name: "Blower BLWR-VC-MAJ",
-        image: "img/products_catalog/BLWR-VC-MAJ-2017w.jpg",
+        image: "img/products_catalog/BLWR-VC-MAJ-2-w.jpg",
         oem: "Majestic/Vermont Castings",
         dimensions: '2.5" x 9.5" (63mm x 240mm)',
         cfm: "140",
@@ -315,7 +315,7 @@ const productsData = {
       {
         code: "MFK-BLOT240",
         name: "Fan Kit MFK-BLOT240",
-        image: "img/products_catalog/MFK-BLOT240.jpg",
+        image: "img/products_catalog/MFK-BLOT240-2017w.jpg",
         oem: "Monessen (BLOT240)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
@@ -323,7 +323,7 @@ const productsData = {
       {
         code: "MFK-BLOT180",
         name: "Fan Kit MFK-BLOT180",
-        image: "img/products_catalog/MFK-BLOT180.jpg",
+        image: "img/products_catalog/MFK-BLOT180-w.jpg",
         oem: "Monessen (BLOT180)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "90",
@@ -331,7 +331,7 @@ const productsData = {
       {
         code: "MFK-BLDV",
         name: "Fan Kit MFK-BLDV",
-        image: "img/products_catalog/MFK-BLDV.jpg",
+        image: "img/products_catalog/MFK-BLDV-w.jpg",
         oem: "Monessen (BLDV)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
@@ -339,7 +339,7 @@ const productsData = {
       {
         code: "MFK-BLDV-SC",
         name: "Fan Kit MFK-BLDV-SC",
-        image: "img/products_catalog/MFK-BLDV-SC.jpg",
+        image: "img/products_catalog/MFK-BLDVSC-trial.jpg",
         oem: "Monessen (BLDV-SC)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
@@ -363,7 +363,7 @@ const productsData = {
       {
         code: "BLWR-BLOT180",
         name: "Blower BLWR-BLOT180",
-        image: "img/products_catalog/BLWR-BLOT180.jpg",
+        image: "img/products_catalog/BLWR-BLOT180-w.jpg",
         oem: "Monessen (BLOT180)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "90",
@@ -371,7 +371,7 @@ const productsData = {
       {
         code: "BLWR-BLDV/BLDV-SC/BLOTST-SC",
         name: "Blower BLWR-BLDV/BLDV-SC/BLOTST-SC",
-        image: "img/products_catalog/BLWR-BLDV.jpg",
+        image: "img/products_catalog/BLWR-BLDV-w.jpg",
         oem: "Monessen (BLDV/BLDV-SC/BLOTST-SC)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
@@ -410,7 +410,7 @@ const productsData = {
       {
         code: "MFK-62-1",
         name: "Fan Kit MFK-62-1",
-        image: "img/products_catalog/MFK-62-1.jpg",
+        image: "img/products_catalog/MFK-62-1-w.jpg",
         oem: "Napoleon (GZ62-1)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
@@ -418,7 +418,7 @@ const productsData = {
       {
         code: "MFK-62",
         name: "Fan Kit MFK-62",
-        image: "img/products_catalog/MFK-62.jpg",
+        image: "img/products_catalog/MFK-62-w.jpg",
         oem: "Napoleon (GZ62)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
@@ -426,7 +426,7 @@ const productsData = {
       {
         code: "BLWR-NAP",
         name: "Blower BLWR-NAP",
-        image: "img/products_catalog/BLWR-NAP.jpg",
+        image: "img/products_catalog/BLWR-NAP-w.jpg",
         oem: "Napoleon (GZ552)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
@@ -457,7 +457,7 @@ const productsData = {
       {
         code: "BLWR-PWB",
         name: "Blower BLWR-PWB",
-        image: "img/products_catalog/BLWR-PWB-w.jpg",
+        image: "img/products_catalog/BLWR-PACF-w.jpg",
         oem: "Pacific Energy (PWB)",
         dimensions: '3" x 4" (75mm x 100mm)',
         cfm: "125",
@@ -472,7 +472,7 @@ const productsData = {
       {
         code: "BLWR-TRAVIS",
         name: "Blower BLWR-TRAVIS",
-        image: "img/products_catalog/BLWR-TRAVIS-w.jpg",
+        image: "img/products_catalog/BLWR-VC-MAJ-2-w.jpg",
         oem: "Travis Industries (250-00589)",
         dimensions: '2.5" x 9.5" (63mm x 240mm)',
         cfm: "140",
@@ -485,11 +485,19 @@ const productsData = {
       "Versatile fan kits compatible with multiple fireplace brands.",
     products: [
       {
+        code: "MFK-UNIV60",
+        name: "Fan Kit MFK-UNIV60",
+        image: "img/products_catalog/MFK-UNIV60-w.jpg",
+        oem: "Universal Fan",
+        dimensions: '2.25" x 9.5" (60mm x 240mm)',
+        cfm: "120",
+      },
+      {
         code: "MFK-UNIVDBL",
         name: "Universal Double Blower Kit",
         image: "img/products_catalog/MFK-UNIVDBL-w.jpg",
         oem: "Universal Fit",
-        dimensions: "Adjustable",
+        dimensions: '3" x 4" (75mm x 100mm)',
         cfm: "140",
       },
       {
@@ -509,7 +517,7 @@ const productsData = {
       {
         code: "MFK-24",
         name: "Fan Kit MFK-24",
-        image: "img/products_catalog/MFK-24.jpg",
+        image: "img/products_catalog/MFK-24-w.jpg",
         oem: "Vermont Castings (BLOT24)",
         dimensions: '2.5" x 9.5" (63mm x 240mm)',
         cfm: "140",
@@ -517,7 +525,7 @@ const productsData = {
       {
         code: "MFK-12",
         name: "Fan Kit MFK-12",
-        image: "img/products_catalog/MFK-12.jpg",
+        image: "img/products_catalog/MFK-12-w.jpg",
         oem: "Vermont Castings (BLOT12)",
         dimensions: '2.5" x 9.5" (63mm x 240mm)',
         cfm: "140",
@@ -533,7 +541,7 @@ const productsData = {
       {
         code: "MFK-BLOT240",
         name: "Fan Kit MFK-BLOT240",
-        image: "img/products_catalog/MFK-BLOT240.jpg",
+        image: "img/products_catalog/MFK-BLOT240-2017w.jpg",
         oem: "Vermont Castings (BLOT240)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
@@ -541,7 +549,7 @@ const productsData = {
       {
         code: "MFK-BLOT180",
         name: "Fan Kit MFK-BLOT180",
-        image: "img/products_catalog/MFK-BLOT180.jpg",
+        image: "img/products_catalog/MFK-BLOT180-w.jpg",
         oem: "Vermont Castings (BLOT180)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "90",
@@ -549,7 +557,7 @@ const productsData = {
       {
         code: "MFK-BLDV",
         name: "Fan Kit MFK-BLDV",
-        image: "img/products_catalog/MFK-BLDV.jpg",
+        image: "img/products_catalog/MFK-BLDV-w.jpg",
         oem: "Vermont Castings (BLDV)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
@@ -557,7 +565,7 @@ const productsData = {
       {
         code: "MFK-BLDV-SC",
         name: "Fan Kit MFK-BLDV-SC",
-        image: "img/products_catalog/MFK-BLDV-SC.jpg",
+        image: "img/products_catalog/MFK-BLDVSC-trial.jpg",
         oem: "Vermont Castings (BLDV-SC)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
@@ -573,7 +581,7 @@ const productsData = {
       {
         code: "BLWR-VC-MAJ",
         name: "Blower BLWR-VC-MAJ",
-        image: "img/products_catalog/BLWR-VC-MAJ-2017w.jpg",
+        image: "img/products_catalog/BLWR-VC-MAJ-2-w.jpg",
         oem: "Vermont Castings",
         dimensions: '2.5" x 9.5" (63mm x 240mm)',
         cfm: "140",
@@ -589,7 +597,7 @@ const productsData = {
       {
         code: "BLWR-BLOT180",
         name: "Blower BLWR-BLOT180",
-        image: "img/products_catalog/BLWR-BLOT180.jpg",
+        image: "img/products_catalog/BLWR-BLOT180-w.jpg",
         oem: "Vermont Castings (BLOT180)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "90",
@@ -598,39 +606,23 @@ const productsData = {
   },
   "wolf-steel": {
     title: "Wolf Steel",
-    description: "Reliable fan solutions for Wolf Steel fireplace products.",
+    description: "High-performance fan kits and blowers for Wolf Steel fireplaces.",
     products: [
       {
-        code: "MFK-550",
-        name: "Fan Kit MFK-550",
-        image: "img/products_catalog/MFK-550-w.jpg",
-        oem: "Wolf Steel (GZ550)",
-        dimensions: '2.25" x 7" (60mm x 180mm)',
-        cfm: "115",
+        code: "MFK-FBB4",
+        name: "Fan Kit MFK-FBB4",
+        image: "img/products_catalog/MFK-FBB4-2017w.jpg",
+        oem: "Wolf Steel (FBB4)",
+        dimensions: '2.25" x 9.5" (60mm x 240mm)',
+        cfm: "120",
       },
       {
-        code: "MFK-62-1",
-        name: "Fan Kit MFK-62-1",
-        image: "img/products_catalog/MFK-62-1.jpg",
-        oem: "Wolf Steel (GZ62-1)",
-        dimensions: '2.25" x 7" (60mm x 180mm)',
-        cfm: "115",
-      },
-      {
-        code: "MFK-62",
-        name: "Fan Kit MFK-62",
-        image: "img/products_catalog/MFK-62.jpg",
-        oem: "Wolf Steel (GZ62)",
-        dimensions: '2.25" x 7" (60mm x 180mm)',
-        cfm: "115",
-      },
-      {
-        code: "BLWR-NAP",
-        name: "Blower BLWR-NAP",
-        image: "img/products_catalog/BLWR-NAP.jpg",
-        oem: "Wolf Steel (GZ552)",
-        dimensions: '2.25" x 7" (60mm x 180mm)',
-        cfm: "115",
+        code: "BLWR-FBB4",
+        name: "Blower BLWR-FBB4",
+        image: "img/products_catalog/BLWR-BLOT-2017w.jpg",
+        oem: "Wolf Steel",
+        dimensions: '2.25" x 9.5" (60mm x 240mm)',
+        cfm: "120",
       },
     ],
   },
