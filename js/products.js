@@ -926,7 +926,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     card.innerHTML = `
             <div class="product-image">
-                <img src="${product.image}" alt="${product.name}" onerror="this.src='img/products/fireplacekit_product.png'">
+                <img src="${product.image}" alt="${product.name}" onerror="this.src='img/products_catalog/fireplacekit_product.png'">
             </div>
             <div class="product-info">
                 <div class="product-header">
