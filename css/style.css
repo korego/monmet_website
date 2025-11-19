@@ -1027,3 +1027,90 @@ section {
     gap: 1rem;
   }
 }
+
+/* ===========================
+   Policy Pages Styling
+   =========================== */
+.policy-section {
+  padding: 4rem 0;
+  min-height: 80vh;
+}
+
+.policy-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.last-updated {
+  color: var(--gray-color);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.policy-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  line-height: 1.8;
+}
+
+.policy-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+.policy-content p {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.policy-content ul {
+  margin: 1rem 0 1rem 2rem;
+  color: var(--text-color);
+}
+
+.policy-content li {
+  margin-bottom: 0.6rem;
+  list-style-type: disc;
+}
+
+.policy-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.policy-content a:hover {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+
+.policy-content hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 2px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .policy-section {
+    padding: 2rem 0;
+  }
+
+  .policy-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .policy-content {
+    padding: 1.5rem;
+  }
+
+  .policy-content h2 {
+    font-size: 1.2rem;
+  }
+}
