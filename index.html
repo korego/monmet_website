@@ -31,12 +31,21 @@
           </a>
         </div>
         <ul class="nav-links" id="navLinks">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="#news" class="nav-link">News</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-i18n="nav_about">About</a></li>
+          <li><a href="products.html" class="nav-link" data-i18n="nav_products">Products</a></li>
+          <li><a href="#news" class="nav-link" data-i18n="nav_news">News</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
         </ul>
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="en" onclick="switchLanguage('en')" title="English">
+            EN
+          </button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="fr" onclick="switchLanguage('fr')" title="Français">
+            FR
+          </button>
+        </div>
         <div class="contact-info">
           <a href="tel:514-788-6007" class="phone-link">
             <i class="fas fa-phone"></i> 514-788-6007
@@ -61,8 +70,8 @@
         >
           <div class="slide-overlay"></div>
           <div class="slide-content">
-            <h2 class="slide-title">Efficient Heat Distribution</h2>
-            <p class="slide-subtitle">
+            <h2 class="slide-title" data-i18n="hero_slide1_title">Efficient Heat Distribution</h2>
+            <p class="slide-subtitle" data-i18n="hero_slide1_subtitle">
               Circulate warm air evenly throughout your home
             </p>
           </div>
@@ -75,8 +84,8 @@
         >
           <div class="slide-overlay"></div>
           <div class="slide-content">
-            <h2 class="slide-title">Quiet, Reliable Performance</h2>
-            <p class="slide-subtitle">Enjoy the warmth without the noise</p>
+            <h2 class="slide-title" data-i18n="hero_slide2_title">Quiet, Reliable Performance</h2>
+            <p class="slide-subtitle" data-i18n="hero_slide2_subtitle">Enjoy the warmth without the noise</p>
           </div>
         </div>
         <div
@@ -87,8 +96,8 @@
         >
           <div class="slide-overlay"></div>
           <div class="slide-content">
-            <h2 class="slide-title">Safer for Families & Pets</h2>
-            <p class="slide-subtitle">
+            <h2 class="slide-title" data-i18n="hero_slide3_title">Safer for Families & Pets</h2>
+            <p class="slide-subtitle" data-i18n="hero_slide3_subtitle">
               Designed for safe, consistent operation
             </p>
           </div>
@@ -101,8 +110,8 @@
         >
           <div class="slide-overlay"></div>
           <div class="slide-content">
-            <h2 class="slide-title">Premium Quality Components</h2>
-            <p class="slide-subtitle">
+            <h2 class="slide-title" data-i18n="hero_slide4_title">Premium Quality Components</h2>
+            <p class="slide-subtitle" data-i18n="hero_slide4_subtitle">
               Built with premium materials for years of reliable performance
             </p>
           </div>
@@ -115,8 +124,8 @@
         >
           <div class="slide-overlay"></div>
           <div class="slide-content">
-            <h2 class="slide-title">Easy, Universal Installation</h2>
-            <p class="slide-subtitle">
+            <h2 class="slide-title" data-i18n="hero_slide5_title">Easy, Universal Installation</h2>
+            <p class="slide-subtitle" data-i18n="hero_slide5_subtitle">
               Simple to install on most fireplaces — no special tools required
             </p>
           </div>
@@ -140,15 +149,15 @@
     <section class="cta-section" id="cta">
       <div class="container">
         <h2 class="cta-title">
-          PROUDLY BUILT IN<br /><span class="highlight">NORTH AMERICA</span>
+          <span data-i18n="cta_title_line1">PROUDLY BUILT IN</span><br /><span class="highlight" data-i18n="cta_title_line2">NORTH AMERICA</span>
         </h2>
-        <p class="cta-subtitle">
+        <p class="cta-subtitle" data-i18n="cta_subtitle">
           High-performance fireplace fans and blowers with superior quality and
           prompt service
         </p>
         <div class="cta-buttons">
-          <a href="products.html" class="btn btn-primary">View Products</a>
-          <a href="#contact" class="btn btn-secondary">Contact Us</a>
+          <a href="products.html" class="btn btn-primary" data-i18n="cta_btn_products">View Products</a>
+          <a href="#contact" class="btn btn-secondary" data-i18n="cta_btn_contact">Contact Us</a>
         </div>
       </div>
     </section>
@@ -161,8 +170,8 @@
             <div class="feature-icon">
               <i class="fas fa-certificate"></i>
             </div>
-            <h3>CSA & UL Approved</h3>
-            <p>
+            <h3 data-i18n="feature1_title">CSA & UL Approved</h3>
+            <p data-i18n="feature1_desc">
               All blower kits equipped with certified parts meeting industry
               standards
             </p>
@@ -171,22 +180,22 @@
             <div class="feature-icon">
               <i class="fas fa-shield-alt"></i>
             </div>
-            <h3>Full Warranty</h3>
-            <p>One year guarantee from date of shipping on all products</p>
+            <h3 data-i18n="feature2_title">Full Warranty</h3>
+            <p data-i18n="feature2_desc">One year guarantee from date of shipping on all products</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fas fa-volume-off"></i>
             </div>
-            <h3>Whisper Quiet</h3>
-            <p>Superior performance with minimal noise for comfort</p>
+            <h3 data-i18n="feature3_title">Whisper Quiet</h3>
+            <p data-i18n="feature3_desc">Superior performance with minimal noise for comfort</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fas fa-shipping-fast"></i>
             </div>
-            <h3>Prompt Delivery</h3>
-            <p>Products delivered on time, every time</p>
+            <h3 data-i18n="feature4_title">Prompt Delivery</h3>
+            <p data-i18n="feature4_desc">Products delivered on time, every time</p>
           </div>
         </div>
       </div>
@@ -196,35 +205,35 @@
     <section class="about" id="about">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">About Monmet Technologies</h2>
+          <h2 class="section-title" data-i18n="about_title">About Monmet Technologies</h2>
           <div class="title-underline"></div>
         </div>
         <div class="about-content">
           <div class="about-text">
-            <h3>Quality Fireplace Fans and Blowers</h3>
-            <p>
+            <h3 data-i18n="about_heading">Quality Fireplace Fans and Blowers</h3>
+            <p data-i18n="about_p1">
               Monmet Technologies offers a wide range of high-performance gas
               and wood-burning fireplace fan kits and fireplace blowers,
               featuring improved heat distribution, whisper-quiet function, and
               full warranty coverage.
             </p>
-            <p>
+            <p data-i18n="about_p2">
               Our quality and performance meet or surpass industry standards,
               with physical quality and dimensional integrity meticulously
               checked against specifications and technical drawings.
             </p>
             <div class="about-stats">
               <div class="stat">
-                <h4>100%</h4>
-                <p>Quality Tested</p>
+                <h4 data-i18n="about_stat1_value">100%</h4>
+                <p data-i18n="about_stat1_label">Quality Tested</p>
               </div>
               <div class="stat">
-                <h4>24hrs</h4>
-                <p>Response Time</p>
+                <h4 data-i18n="about_stat2_value">24hrs</h4>
+                <p data-i18n="about_stat2_label">Response Time</p>
               </div>
               <div class="stat">
-                <h4>2 Years</h4>
-                <p>Full Warranty</p>
+                <h4 data-i18n="about_stat3_value">2 Years</h4>
+                <p data-i18n="about_stat3_label">Full Warranty</p>
               </div>
             </div>
           </div>
@@ -241,8 +250,8 @@
     <section class="customer-service">
       <div class="container">
         <div class="service-content">
-          <h2>Exceptional Customer Service</h2>
-          <p>
+          <h2 data-i18n="service_title">Exceptional Customer Service</h2>
+          <p data-i18n="service_p1">
             Like its parent company, Monmet Technologies was built from the
             ground up with a guiding principle: an unswerving devotion to
             customer support. The Monmet team was groomed with this philosophy:
@@ -250,7 +259,7 @@
             are the basis of every contract, and that a client relationship is
             measured in satisfaction.
           </p>
-          <p>
+          <p data-i18n="service_p2">
             The know-how and extensive experience of our highly skilled team
             will ensure you maximize the return on your product investment, with
             fireplace fans and other products delivered on time.
@@ -263,9 +272,9 @@
     <section class="products" id="products">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Our Products</h2>
+          <h2 class="section-title" data-i18n="products_title">Our Products</h2>
           <div class="title-underline"></div>
-          <p class="section-subtitle">
+          <p class="section-subtitle" data-i18n="products_subtitle">
             Quality Fireplace Solutions for Every Need
           </p>
         </div>
@@ -274,12 +283,12 @@
             <div class="product-icon">
               <i class="fas fa-fan"></i>
             </div>
-            <h3>Fan Kits & Blowers</h3>
-            <p>
+            <h3 data-i18n="product1_title">Fan Kits & Blowers</h3>
+            <p data-i18n="product1_desc">
               High-performance fireplace fan kits and blower systems from
               leading manufacturers
             </p>
-            <a href="products.html#manufacturers" class="btn btn-small"
+            <a href="products.html#manufacturers" class="btn btn-small" data-i18n="product1_btn"
               >View Products</a
             >
           </div>
@@ -287,12 +296,12 @@
             <div class="product-icon">
               <i class="fas fa-cogs"></i>
             </div>
-            <h3>Accessories</h3>
-            <p>
+            <h3 data-i18n="product2_title">Accessories</h3>
+            <p data-i18n="product2_desc">
               Speed controllers, thermostats, brackets, and installation
               components
             </p>
-            <a href="products.html#accessories" class="btn btn-small"
+            <a href="products.html#accessories" class="btn btn-small" data-i18n="product2_btn"
               >View Products</a
             >
           </div>
@@ -300,9 +309,9 @@
             <div class="product-icon">
               <i class="fas fa-fire"></i>
             </div>
-            <h3>Pellet Stove Parts</h3>
-            <p>Replacement parts and components for pellet stove systems</p>
-            <a href="products.html#pellet-stove" class="btn btn-small"
+            <h3 data-i18n="product3_title">Pellet Stove Parts</h3>
+            <p data-i18n="product3_desc">Replacement parts and components for pellet stove systems</p>
+            <a href="products.html#pellet-stove" class="btn btn-small" data-i18n="product3_btn"
               >View Products</a
             >
           </div>
@@ -314,9 +323,9 @@
     <section class="testimonials-section" id="testimonials">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Client Success Stories</h2>
+          <h2 class="section-title" data-i18n="testimonials_title">Client Success Stories</h2>
           <div class="title-underline"></div>
-          <p class="section-subtitle">
+          <p class="section-subtitle" data-i18n="testimonials_subtitle">
             Trusted by leading distributors across North America
           </p>
         </div>
@@ -346,7 +355,7 @@
               </p>
             </div>
             <button class="read-more-btn" onclick="toggleTestimonialCard(this)">
-              <span class="read-more-text">Read More</span>
+              <span class="read-more-text" data-i18n="read_more">Read More</span>
               <i class="fas fa-chevron-down"></i>
             </button>
             <div class="testimonial-footer">
@@ -390,7 +399,7 @@
               </p>
             </div>
             <button class="read-more-btn" onclick="toggleTestimonialCard(this)">
-              <span class="read-more-text">Read More</span>
+              <span class="read-more-text" data-i18n="read_more">Read More</span>
               <i class="fas fa-chevron-down"></i>
             </button>
             <div class="testimonial-footer">
@@ -428,7 +437,7 @@
               </p>
             </div>
             <button class="read-more-btn" onclick="toggleTestimonialCard(this)">
-              <span class="read-more-text">Read More</span>
+              <span class="read-more-text" data-i18n="read_more">Read More</span>
               <i class="fas fa-chevron-down"></i>
             </button>
             <div class="testimonial-footer">
@@ -452,30 +461,30 @@
     <section class="contact" id="contact">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Contact Us</h2>
+          <h2 class="section-title" data-i18n="contact_title">Contact Us</h2>
           <div class="title-underline"></div>
-          <p class="section-subtitle">Get in touch with our friendly team</p>
+          <p class="section-subtitle" data-i18n="contact_subtitle">Get in touch with our friendly team</p>
         </div>
         <div class="contact-content">
           <div class="contact-info-section">
             <div class="contact-item">
               <i class="fas fa-map-marker-alt"></i>
               <div>
-                <h4>Address</h4>
-                <p>6205 chemin St-François<br />Saint-Laurent, QC H4S 1W6</p>
+                <h4 data-i18n="contact_address_title">Address</h4>
+                <p data-i18n="contact_address_text" data-i18n-html="true">6205 chemin St-François<br />Saint-Laurent, QC H4S 1W6</p>
               </div>
             </div>
             <div class="contact-item">
               <i class="fas fa-phone"></i>
               <div>
-                <h4>Phone</h4>
+                <h4 data-i18n="contact_phone_title">Phone</h4>
                 <p><a href="tel:514-788-6007">514-788-6007</a></p>
               </div>
             </div>
             <div class="contact-item">
               <i class="fas fa-envelope"></i>
               <div>
-                <h4>Email</h4>
+                <h4 data-i18n="contact_email_title">Email</h4>
                 <p>
                   <a href="mailto:info@monmettech.com">info@monmettech.com</a>
                 </p>
@@ -496,6 +505,7 @@
                   id="name"
                   name="name"
                   placeholder="Your Name"
+                  data-i18n="contact_form_name"
                   required
                 />
               </div>
@@ -505,6 +515,7 @@
                   id="email"
                   name="email"
                   placeholder="Your Email"
+                  data-i18n="contact_form_email"
                   required
                 />
               </div>
@@ -522,6 +533,7 @@
                   name="message"
                   rows="5"
                   placeholder="Your Message"
+                  data-i18n="contact_form_message"
                   required
                 ></textarea>
               </div>
@@ -531,7 +543,7 @@
                 name="g-recaptcha-response"
                 id="recaptchaToken"
               />
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-primary" data-i18n="contact_form_submit">
                 Send Message
               </button>
             </form>
@@ -546,13 +558,13 @@
         <div class="footer-content">
           <div class="footer-section">
             <h3>MONMET TECHNOLOGIES</h3>
-            <p>
+            <p data-i18n="footer_about_text">
               High-performance fireplace fans and blowers proudly built in North
               America.
             </p>
           </div>
           <div class="footer-section">
-            <h4>Quick Links</h4>
+            <h4 data-i18n="footer_quick_links">Quick Links</h4>
             <ul>
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About Us</a></li>
@@ -608,6 +620,31 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Custom Alert Modal -->
+    <div id="customAlertModal" class="custom-alert-overlay" style="display: none;">
+      <div class="custom-alert-box">
+        <div class="custom-alert-icon">
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <h3 class="custom-alert-title" data-i18n="alert_title">Contact Form Temporarily Unavailable</h3>
+        <p class="custom-alert-message" data-i18n="alert_message">
+          Our email service is currently being set up.
+        </p>
+        <div class="custom-alert-contact">
+          <div class="alert-contact-item">
+            <i class="fas fa-phone"></i>
+            <span>514-788-6007</span>
+          </div>
+          <div class="alert-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>info@monmettech.com</span>
+          </div>
+        </div>
+        <button class="custom-alert-btn" onclick="closeCustomAlert()" data-i18n="alert_button">Got it</button>
+      </div>
+    </div>
+
+    <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
     <script src="js/slideshow.js"></script>
     <script>

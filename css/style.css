@@ -116,6 +116,43 @@ body {
   color: var(--primary-color);
 }
 
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1.5rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.lang-btn:hover {
+  color: var(--primary-color);
+  background: rgba(15, 123, 255, 0.1);
+}
+
+.lang-btn.active {
+  color: var(--primary-color);
+  background: rgba(15, 123, 255, 0.15);
+  font-weight: 700;
+}
+
+.lang-divider {
+  color: #ddd;
+  font-weight: 300;
+}
+
 .contact-info .phone-link {
   display: flex;
   align-items: center;
@@ -1137,6 +1174,118 @@ section {
 }
 
 /* ===========================
+   Custom Alert Modal
+   =========================== */
+.custom-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+.custom-alert-box {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease-out;
+  text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-alert-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-alert-icon i {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.custom-alert-title {
+  color: var(--dark-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.custom-alert-message {
+  color: var(--gray-color);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.custom-alert-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.alert-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+.alert-contact-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.custom-alert-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.875rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.custom-alert-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 123, 255, 0.3);
+}
+
+/* ===========================
    Back to Top Button
    =========================== */
 .back-to-top {
@@ -1190,6 +1339,11 @@ section {
 
   .nav-links.active {
     transform: translateX(0);
+  }
+
+  .language-switcher {
+    margin-right: 1rem;
+    order: -1;
   }
 
   .contact-info {

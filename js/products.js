@@ -1244,7 +1244,7 @@ function renderFilteredProducts(filteredProducts) {
     if (!groupedByMfg[product.manufacturerKey]) {
       groupedByMfg[product.manufacturerKey] = {
         title: product.manufacturer,
-        products: []
+        products: [],
       };
     }
     groupedByMfg[product.manufacturerKey].products.push(product);
@@ -1256,12 +1256,14 @@ function renderFilteredProducts(filteredProducts) {
     const section = document.createElement("section");
     section.id = manufacturerKey;
     section.className = "manufacturer-section";
-    
+
     const header = document.createElement("div");
     header.className = "section-header-products";
     header.innerHTML = `
       <h2>${data.title}</h2>
-      <span class="product-count">${data.products.length} product${data.products.length !== 1 ? "s" : ""} found</span>
+      <span class="product-count">${data.products.length} product${
+      data.products.length !== 1 ? "s" : ""
+    } found</span>
     `;
 
     const grid = document.createElement("div");

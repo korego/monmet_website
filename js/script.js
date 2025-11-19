@@ -135,10 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       // Show success message (in production, this would send to a server)
-      showNotification(
-        "Thank you! Your message has been sent. We will respond within 24 hours.",
-        "success"
-      );
+      // showNotification(
+      //   "Thank you! Your message has been sent. We will respond within 24 hours.",
+      //   "success"
+      // );
 
       // Reset form
       contactForm.reset();
@@ -426,15 +426,8 @@ function handleContactSubmit(event) {
   event.preventDefault();
 
   // TEMPORARILY DISABLED - Waiting for info@ approval on Formspree
-  // Show message to user
-  alert(
-    "⚠️ Contact Form Temporarily Unavailable\n\n" +
-    "Our email service is currently being set up.\n\n" +
-    "Please contact us directly:\n" +
-    "📞 Phone: 514-788-6007\n" +
-    "✉️ Email: info@monmettech.com\n\n" +
-    "We apologize for the inconvenience!"
-  );
+  // Show custom modal instead of submitting
+  showCustomAlert();
 
   // Reset form
   document.getElementById("contactForm").reset();
@@ -515,11 +508,15 @@ function toggleTestimonialCard(button) {
   const icon = button.querySelector("i");
   const isExpanded = full.style.display !== "none";
 
+  // Get current language from translations.js (default to 'en' if not available)
+  const lang = typeof currentLanguage !== 'undefined' ? currentLanguage : 'en';
+  const trans = typeof translations !== 'undefined' ? translations : null;
+
   if (isExpanded) {
     // Collapse
     excerpt.style.display = "block";
     full.style.display = "none";
-    readMoreText.textContent = "Read More";
+    readMoreText.textContent = trans && trans[lang] && trans[lang]['read_more'] ? trans[lang]['read_more'] : "Read More";
     icon.classList.remove("fa-chevron-up");
     icon.classList.add("fa-chevron-down");
     button.classList.remove("expanded");
@@ -527,9 +524,33 @@ function toggleTestimonialCard(button) {
     // Expand
     excerpt.style.display = "none";
     full.style.display = "block";
-    readMoreText.textContent = "Read Less";
+    readMoreText.textContent = trans && trans[lang] && trans[lang]['read_less'] ? trans[lang]['read_less'] : "Read Less";
     icon.classList.remove("fa-chevron-down");
     icon.classList.add("fa-chevron-up");
     button.classList.add("expanded");
   }
 }
+
+// Show custom alert modal
+function showCustomAlert() {
+  const modal = document.getElementById("customAlertModal");
+  if (modal) {
+    modal.style.display = "flex";
+  }
+}
+
+// Close custom alert modal
+function closeCustomAlert() {
+  const modal = document.getElementById("customAlertModal");
+  if (modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Close modal when clicking outside
+window.addEventListener("click", function (event) {
+  const modal = document.getElementById("customAlertModal");
+  if (event.target === modal) {
+    closeCustomAlert();
+  }
+});
