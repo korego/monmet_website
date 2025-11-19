@@ -56,7 +56,7 @@
         <div
           class="slide active"
           style="
-            background-image: url('../img/slideshow/Monmettech_Slideshow_0.jpg');
+            background-image: url('img/slideshow/Monmettech_Slideshow_0.jpg');
           "
         >
           <div class="slide-overlay"></div>
@@ -70,7 +70,7 @@
         <div
           class="slide"
           style="
-            background-image: url('../img/slideshow/Monmettech_Slideshow_1.jpg');
+            background-image: url('img/slideshow/Monmettech_Slideshow_1.jpg');
           "
         >
           <div class="slide-overlay"></div>
@@ -82,7 +82,7 @@
         <div
           class="slide"
           style="
-            background-image: url('../img/slideshow/Monmettech_Slideshow_2.jpg');
+            background-image: url('img/slideshow/Monmettech_Slideshow_2.jpg');
           "
         >
           <div class="slide-overlay"></div>
@@ -96,7 +96,7 @@
         <div
           class="slide"
           style="
-            background-image: url('../img/slideshow/Monmettech_Slideshow_3.jpg');
+            background-image: url('img/slideshow/Monmettech_Slideshow_3.jpg');
           "
         >
           <div class="slide-overlay"></div>
@@ -110,7 +110,7 @@
         <div
           class="slide"
           style="
-            background-image: url('../img/slideshow/Monmettech_Slideshow_4.jpg');
+            background-image: url('img/slideshow/Monmettech_Slideshow_4.jpg');
           "
         >
           <div class="slide-overlay"></div>
@@ -595,7 +595,10 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2024 Monmet Technologies Inc. All rights reserved.</p>
+          <p>
+            &copy; <span id="currentYear"></span> Monmet Technologies Inc. All
+            rights reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -607,5 +610,10 @@
 
     <script src="js/script.js"></script>
     <script src="js/slideshow.js"></script>
+    <script>
+      // Auto-update copyright year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
   </body>
 </html>
