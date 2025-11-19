@@ -1046,6 +1046,16 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===========================
 
 function sendQuoteData(quoteData, name, email, productCode) {
+  // TEMPORARILY DISABLED - Waiting for Formspree info@ approval
+  // Show success message to user without sending
+  alert(
+    `Thank you ${name}! Your quote request for ${productCode} has been received. We will contact you soon at ${email}.\n\nNote: Email service is temporarily disabled. Please call us at 514-788-6007 if urgent.`
+  );
+  closeQuoteModal();
+  document.getElementById("quoteForm").reset();
+
+  /*
+  // Original code - will be re-enabled after Formspree approval
   // Send to Formspree
   fetch("https://formspree.io/f/xzzoeqzw", {
     method: "POST",
@@ -1072,6 +1082,7 @@ function sendQuoteData(quoteData, name, email, productCode) {
         "Error sending quote request. Please contact us directly at 514-788-6007."
       );
     });
+  */
 }
 
 // ===========================
