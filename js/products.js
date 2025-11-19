@@ -1174,6 +1174,15 @@ function initializeProductSearch() {
     searchInput.focus();
   });
 
+  // Handle Escape key to clear search
+  searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      searchInput.value = "";
+      searchClear.style.display = "none";
+      renderAllProducts();
+    }
+  });
+
   // Search on Enter key
   searchInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
@@ -1226,41 +1235,47 @@ function filterProductsBySearch(searchTerm) {
 function renderFilteredProducts(filteredProducts) {
   const productsContainer = document.getElementById("products-container");
 
+  // Clear container
+  productsContainer.innerHTML = "";
+
   // Group by manufacturer
   const groupedByMfg = {};
   filteredProducts.forEach((product) => {
-    if (!groupedByMfg[product.manufacturer]) {
-      groupedByMfg[product.manufacturer] = [];
+    if (!groupedByMfg[product.manufacturerKey]) {
+      groupedByMfg[product.manufacturerKey] = {
+        title: product.manufacturer,
+        products: []
+      };
     }
-    groupedByMfg[product.manufacturer].push(product);
+    groupedByMfg[product.manufacturerKey].products.push(product);
   });
 
-  let html = "";
-  Object.keys(groupedByMfg).forEach((manufacturer) => {
-    const products = groupedByMfg[manufacturer];
-    html += `
-      <section class="manufacturer-section">
-        <div class="manufacturer-header">
-          <h2>${manufacturer}</h2>
-          <span class="product-count">${products.length} product${
-      products.length !== 1 ? "s" : ""
-    }</span>
-        </div>
-        <div class="products-grid">
+  // Create sections for each manufacturer with matching products
+  Object.keys(groupedByMfg).forEach((manufacturerKey) => {
+    const data = groupedByMfg[manufacturerKey];
+    const section = document.createElement("section");
+    section.id = manufacturerKey;
+    section.className = "manufacturer-section";
+    
+    const header = document.createElement("div");
+    header.className = "section-header-products";
+    header.innerHTML = `
+      <h2>${data.title}</h2>
+      <span class="product-count">${data.products.length} product${data.products.length !== 1 ? "s" : ""} found</span>
     `;
 
-    products.forEach((product) => {
-      html += createProductCard(product, manufacturer);
+    const grid = document.createElement("div");
+    grid.className = "products-grid-section";
+
+    data.products.forEach((product) => {
+      const productCard = createProductCard(product, 0, manufacturerKey);
+      grid.appendChild(productCard);
     });
 
-    html += `
-        </div>
-      </section>
-    `;
+    section.appendChild(header);
+    section.appendChild(grid);
+    productsContainer.appendChild(section);
   });
-
-  productsContainer.innerHTML = html;
-  attachProductCardListeners();
 }
 
 function renderAllProducts() {
