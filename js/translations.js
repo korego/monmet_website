@@ -98,13 +98,57 @@ const translations = {
     contact_form_message: "Your Message",
     contact_form_submit: "Send Message",
     
+    // Actual Testimonials (from website)
+    testimonial_real1_excerpt: "We have been purchasing Monmet Technologies' fan kits over the past 6 years. Their service has been very professional while still offering a friendly and personal touch...",
+    testimonial_real1_full: "We have been purchasing Monmet Technologies' fan kits over the past 6 years. Their service has been very professional while still offering a friendly and personal touch. The after sales care is excellent with a representative always available to answer our questions and to take care of our needs. We have also been quite impressed by the shipping department's attention to packaging - our fan kits always arrive in perfect condition. They seem to make an extra effort that minimizes any returns. Having quick and immediate action to our requests gives us a sense of confidence that we are in good hands.",
+    testimonial_real1_role: "Purchasing Manager",
+    testimonial_real2_excerpt: "Monmet Technologies has been supplying us with fan kits for the past two years. The delivery times are extremely prompt and the customer service team has gone out of their way...",
+    testimonial_real2_full: "Monmet Technologies has been supplying us with fan kits for the past two years. The delivery times are extremely prompt and the customer service team has gone out of their way to react to some custom changes we were wanting. They were able to engineer the modifications instantly, so that our next orders were exactly what we wanted to make our installations easier and faster. They pay specific attention to their packaging methods and the products always arrive in perfect condition, ready for installation. Monmet Technologies has been instrumental in helping keep our business run smoothly and efficiently and has given us an edge over our competitors by providing us with a product of superior quality on a timely basis.",
+    testimonial_real2_role: "Purchasing Agent",
+    testimonial_real3_excerpt: "One of our strong commitments at National Energy Equipment is to earn our business by exceeding our customers' expectations. Monmet Technologies has shown us their devotion...",
+    testimonial_real3_full: "One of our strong commitments at National Energy Equipment is to earn our business by exceeding our customers' expectations. To achieve this goal, we have aligned ourselves with suppliers who are dedicated to that same philosophy. Monmet Technologies has shown us their devotion and willingness to step up to that challenge. Our client base spreads from the West coast to the East coast, and Monmet Technologies has consistently delivered on time and in top notch condition.",
+    testimonial_real3_role: "Directeur de la Division des Foyers",
+    
     // Footer
     footer_about_title: "About Monmet",
     footer_about_text: "High-performance fireplace fans and blowers proudly built in North America.",
     footer_quick_links: "Quick Links",
-    footer_contact_title: "Contact",
+    footer_links_home: "Home",
+    footer_links_about: "About Us",
+    footer_links_products: "Products",
+    footer_links_contact: "Contact",
+    footer_contact_title: "Contact Info",
+    footer_legal_title: "Legal",
+    footer_privacy: "Privacy Policy",
+    footer_terms: "Terms of Service",
     footer_follow: "Follow Us",
-    footer_copyright: "© {year} Monmet Technologies. All rights reserved.",
+    footer_copyright: "© {year} Monmet Technologies Inc. All rights reserved.",
+    
+    // About Page
+    about_page_title: "About Monmet Technologies",
+    about_page_subtitle: "Proudly Built in North America",
+    about_mission_title: "Our Mission",
+    about_mission_lead: "We combine superior quality with prompt service and delivery, ensuring that our high-performance fireplace blowers and fans arrive in our clients' hands on schedule.",
+    about_mission_p1: "Monmet Technologies offers a wide range of high-performance gas and wood-burning fireplace fan kits and fireplace blowers, featuring improved heat distribution, whisper-quiet function, and full warranty coverage.",
+    about_mission_p2: "Our quality and performance meet or surpass industry standards, with physical quality and dimensional integrity meticulously checked against specifications and technical drawings.",
+    about_quality_title: "Quality First",
+    about_quality_desc: "Every product meets or exceeds industry standards",
+    about_delivery_title: "On-Time Delivery",
+    about_delivery_desc: "Products delivered on schedule, guaranteed",
+    about_values_title: "Our Core Values",
+    about_value1_title: "Customer Relationships",
+    about_value1_desc: "A reputation is created one handshake at a time. People are the basis of every contract, and a client relationship is measured in satisfaction.",
+    about_value2_title: "Expert Craftsmanship",
+    about_value2_desc: "The know-how and extensive experience of our highly skilled team ensures you maximize the return on your product investment.",
+    about_value3_title: "Exceptional Support",
+    about_value3_desc: "An aftermarket team unmatched for its attentiveness and competence. We're committed to timely and professional responses.",
+    
+    // Products Page
+    products_page_title: "Our Products",
+    products_page_subtitle: "Browse our complete catalog of fireplace fan kits and blowers by manufacturer. Scroll through or use the sidebar menu to jump to a specific brand.",
+    products_manufacturers: "Manufacturers",
+    products_accessories: "Accessories",
+    products_pellet_parts: "Pellet Stove Parts",
     
     // Custom Alert Modal
     alert_title: "Contact Form Temporarily Unavailable",
@@ -197,6 +241,17 @@ const translations = {
     read_more: "Lire la suite",
     read_less: "Lire moins",
     
+    // Actual Testimonials (from website)
+    testimonial_real1_excerpt: "Nous achetons les kits de ventilateurs de Monmet Technologies depuis plus de 6 ans. Leur service a été très professionnel tout en offrant une touche amicale et personnelle...",
+    testimonial_real1_full: "Nous achetons les kits de ventilateurs de Monmet Technologies depuis plus de 6 ans. Leur service a été très professionnel tout en offrant une touche amicale et personnelle. Le service après-vente est excellent avec un représentant toujours disponible pour répondre à nos questions et prendre soin de nos besoins. Nous avons également été très impressionnés par l'attention du département d'expédition à l'emballage - nos kits de ventilateurs arrivent toujours en parfait état. Ils semblent faire un effort supplémentaire qui minimise les retours. Avoir une action rapide et immédiate à nos demandes nous donne un sentiment de confiance que nous sommes entre de bonnes mains.",
+    testimonial_real1_role: "Directeur des Achats",
+    testimonial_real2_excerpt: "Monmet Technologies nous fournit des kits de ventilateurs depuis deux ans. Les délais de livraison sont extrêmement rapides et l'équipe du service client s'est surpassée...",
+    testimonial_real2_full: "Monmet Technologies nous fournit des kits de ventilateurs depuis deux ans. Les délais de livraison sont extrêmement rapides et l'équipe du service client s'est surpassée pour répondre à certaines modifications personnalisées que nous souhaitions. Ils ont pu concevoir les modifications instantanément, de sorte que nos prochaines commandes étaient exactement ce que nous voulions pour rendre nos installations plus faciles et plus rapides. Ils accordent une attention particulière à leurs méthodes d'emballage et les produits arrivent toujours en parfait état, prêts à être installés. Monmet Technologies a contribué à maintenir le bon fonctionnement et l'efficacité de notre entreprise et nous a donné un avantage sur nos concurrents en nous fournissant un produit de qualité supérieure dans les délais.",
+    testimonial_real2_role: "Agent d'Achat",
+    testimonial_real3_excerpt: "Un de nos engagements forts chez National Energy Equipment est de gagner notre affaire en dépassant les attentes de nos clients. Monmet Technologies nous a montré leur dévouement...",
+    testimonial_real3_full: "Un de nos engagements forts chez National Energy Equipment est de gagner notre affaire en dépassant les attentes de nos clients. Pour atteindre cet objectif, nous nous sommes alignés avec des fournisseurs qui sont dédiés à cette même philosophie. Monmet Technologies nous a montré leur dévouement et leur volonté de relever ce défi. Notre clientèle s'étend de la côte ouest à la côte est, et Monmet Technologies a systématiquement livré à temps et en parfait état.",
+    testimonial_real3_role: "Directeur de la Division des Foyers",
+    
     // Contact Section
     contact_title: "Nous Contacter",
     contact_subtitle: "Entrez en contact avec notre équipe amicale",
@@ -214,9 +269,42 @@ const translations = {
     footer_about_title: "À propos de Monmet",
     footer_about_text: "Ventilateurs et souffleurs de foyer haute performance fièrement fabriqués en Amérique du Nord.",
     footer_quick_links: "Liens Rapides",
-    footer_contact_title: "Contact",
+    footer_links_home: "Accueil",
+    footer_links_about: "À propos",
+    footer_links_products: "Produits",
+    footer_links_contact: "Contact",
+    footer_contact_title: "Informations de Contact",
+    footer_legal_title: "Légal",
+    footer_privacy: "Politique de Confidentialité",
+    footer_terms: "Conditions d'Utilisation",
     footer_follow: "Suivez-nous",
-    footer_copyright: "© {year} Monmet Technologies. Tous droits réservés.",
+    footer_copyright: "© {year} Monmet Technologies Inc. Tous droits réservés.",
+    
+    // About Page
+    about_page_title: "À propos de Monmet Technologies",
+    about_page_subtitle: "Fièrement Fabriqué en Amérique du Nord",
+    about_mission_title: "Notre Mission",
+    about_mission_lead: "Nous combinons une qualité supérieure avec un service et une livraison rapides, garantissant que nos souffleurs et ventilateurs de foyer haute performance arrivent entre les mains de nos clients à temps.",
+    about_mission_p1: "Monmet Technologies offre une large gamme de kits de ventilateurs et de souffleurs de foyer à gaz et au bois haute performance, avec une distribution de chaleur améliorée, un fonctionnement silencieux et une couverture de garantie complète.",
+    about_mission_p2: "Notre qualité et nos performances répondent ou dépassent les normes de l'industrie, la qualité physique et l'intégrité dimensionnelle étant méticuleusement vérifiées par rapport aux spécifications et aux dessins techniques.",
+    about_quality_title: "Qualité d'Abord",
+    about_quality_desc: "Chaque produit répond ou dépasse les normes de l'industrie",
+    about_delivery_title: "Livraison à Temps",
+    about_delivery_desc: "Produits livrés selon l'horaire, garanti",
+    about_values_title: "Nos Valeurs Fondamentales",
+    about_value1_title: "Relations Clients",
+    about_value1_desc: "Une réputation se crée une poignée de main à la fois. Les gens sont la base de chaque contrat, et une relation client se mesure en satisfaction.",
+    about_value2_title: "Artisanat Expert",
+    about_value2_desc: "Le savoir-faire et l'expérience approfondie de notre équipe hautement qualifiée vous garantissent de maximiser le retour sur votre investissement produit.",
+    about_value3_title: "Support Exceptionnel",
+    about_value3_desc: "Une équipe de service après-vente inégalée pour son attention et sa compétence. Nous nous engageons à des réponses rapides et professionnelles.",
+    
+    // Products Page
+    products_page_title: "Nos Produits",
+    products_page_subtitle: "Parcourez notre catalogue complet de kits de ventilateurs et de souffleurs de foyer par fabricant. Faites défiler ou utilisez le menu latéral pour accéder à une marque spécifique.",
+    products_manufacturers: "Fabricants",
+    products_accessories: "Accessoires",
+    products_pellet_parts: "Pièces pour Poêles à Granules",
     
     // Custom Alert Modal
     alert_title: "Formulaire de Contact Temporairement Indisponible",
@@ -259,7 +347,15 @@ function switchLanguage(lang) {
   const currentYear = new Date().getFullYear();
   const copyrightElement = document.querySelector('[data-i18n="footer_copyright"]');
   if (copyrightElement && translations[lang]['footer_copyright']) {
-    copyrightElement.textContent = translations[lang]['footer_copyright'].replace('{year}', currentYear);
+    const copyrightText = translations[lang]['footer_copyright'].replace('{year}', currentYear);
+    // Only update if element doesn't have a child year span
+    const yearSpan = copyrightElement.querySelector('#currentYear');
+    if (yearSpan) {
+      // Update text while preserving the year span
+      copyrightElement.innerHTML = copyrightText.replace(currentYear, '<span id="currentYear">' + currentYear + '</span>');
+    } else {
+      copyrightElement.textContent = copyrightText;
+    }
   }
   
   // Update active language button
