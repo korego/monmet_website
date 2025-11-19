@@ -427,9 +427,13 @@ function handleContactSubmit(event) {
 
   // TEMPORARILY DISABLED - Waiting for info@ approval on Formspree
   // Show message to user
-  showNotification(
-    "Email service is temporarily disabled. Please try again later or call us at 514-788-6007 or info@monmettech.com.",
-    "warning"
+  alert(
+    "⚠️ Contact Form Temporarily Unavailable\n\n" +
+    "Our email service is currently being set up.\n\n" +
+    "Please contact us directly:\n" +
+    "📞 Phone: 514-788-6007\n" +
+    "✉️ Email: info@monmettech.com\n\n" +
+    "We apologize for the inconvenience!"
   );
 
   // Reset form
