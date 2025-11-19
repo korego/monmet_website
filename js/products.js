@@ -1001,18 +1001,20 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       // Get reCAPTCHA token if configured
-      const siteKey = "YOUR_RECAPTCHA_SITE_KEY";
-      
+      const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
+
       if (siteKey === "YOUR_RECAPTCHA_SITE_KEY") {
         // reCAPTCHA not configured, send without token
         sendQuoteData(quoteData, name, email, productCode);
       } else {
         // Get reCAPTCHA token and then send
         window.grecaptcha.ready(function () {
-          window.grecaptcha.execute(siteKey, { action: "submit" }).then(function (token) {
-            quoteData.g_recaptcha_response = token;
-            sendQuoteData(quoteData, name, email, productCode);
-          });
+          window.grecaptcha
+            .execute(siteKey, { action: "submit" })
+            .then(function (token) {
+              quoteData.g_recaptcha_response = token;
+              sendQuoteData(quoteData, name, email, productCode);
+            });
         });
       }
     });

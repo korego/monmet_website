@@ -409,12 +409,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // Initialize reCAPTCHA with YOUR_RECAPTCHA_SITE_KEY
 function initializeRecaptcha() {
   // Replace YOUR_RECAPTCHA_SITE_KEY with your actual site key
-  const siteKey = "YOUR_RECAPTCHA_SITE_KEY";
+  const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
   if (siteKey !== "YOUR_RECAPTCHA_SITE_KEY") {
     window.grecaptcha.ready(function () {
-      window.grecaptcha.execute(siteKey, { action: "submit" }).then(function (token) {
-        document.getElementById("recaptchaToken").value = token;
-      });
+      window.grecaptcha
+        .execute(siteKey, { action: "submit" })
+        .then(function (token) {
+          document.getElementById("recaptchaToken").value = token;
+        });
     });
   }
 }
@@ -423,7 +425,7 @@ function initializeRecaptcha() {
 function handleContactSubmit(event) {
   event.preventDefault();
 
-  const siteKey = "YOUR_RECAPTCHA_SITE_KEY";
+  const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
 
   // If reCAPTCHA not configured, submit normally
   if (siteKey === "YOUR_RECAPTCHA_SITE_KEY") {
@@ -433,12 +435,14 @@ function handleContactSubmit(event) {
 
   // Get reCAPTCHA token
   window.grecaptcha.ready(function () {
-    window.grecaptcha.execute(siteKey, { action: "submit" }).then(function (token) {
-      document.getElementById("recaptchaToken").value = token;
-      
-      // Submit form after token is set
-      document.getElementById("contactForm").submit();
-    });
+    window.grecaptcha
+      .execute(siteKey, { action: "submit" })
+      .then(function (token) {
+        document.getElementById("recaptchaToken").value = token;
+
+        // Submit form after token is set
+        document.getElementById("contactForm").submit();
+      });
   });
 }
 
