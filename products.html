@@ -54,50 +54,6 @@
           <p>Manufacturers</p>
         </div>
 
-        <!-- Search Box in Sidebar -->
-        <div class="sidebar-search">
-          <div class="search-box-sidebar">
-            <i class="fas fa-search"></i>
-            <input
-              type="text"
-              id="productSearchInput"
-              class="search-input-sidebar"
-              placeholder="Search products..."
-              aria-label="Search products"
-            />
-            <div class="search-controls-sidebar">
-              <button
-                type="button"
-                id="searchPrev"
-                class="search-nav-btn"
-                title="Previous result"
-                style="display: none"
-              >
-                <i class="fas fa-chevron-up"></i>
-              </button>
-              <span id="searchCounter" class="search-counter"></span>
-              <button
-                type="button"
-                id="searchNext"
-                class="search-nav-btn"
-                title="Next result"
-                style="display: none"
-              >
-                <i class="fas fa-chevron-down"></i>
-              </button>
-              <button
-                type="button"
-                id="searchClear"
-                class="search-clear-sidebar"
-                style="display: none"
-              >
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-          </div>
-          </div>
-        </div>
-
         <nav class="manufacturer-nav">
           <a
             href="#cfm"
@@ -275,10 +231,9 @@
     <script src="js/script.js"></script>
     <script src="js/products.js"></script>
     <script>
-      // Initialize products display and search on page load
+      // Initialize products display on page load
       document.addEventListener("DOMContentLoaded", function () {
         renderAllProducts();
-        initializeProductSearch();
       });
     </script>
 
