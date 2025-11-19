@@ -425,6 +425,18 @@ function initializeRecaptcha() {
 function handleContactSubmit(event) {
   event.preventDefault();
 
+  // TEMPORARILY DISABLED - Waiting for info@ approval on Formspree
+  // Show message to user
+  showNotification(
+    "Email service is temporarily disabled. Please try again later or call us at 514-788-6007 or info@monmettech.com.",
+    "warning"
+  );
+
+  // Reset form
+  document.getElementById("contactForm").reset();
+
+  /*
+  // Original code - will be re-enabled after Formspree approval
   const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
 
   // If reCAPTCHA not configured, submit normally
@@ -444,6 +456,7 @@ function handleContactSubmit(event) {
         document.getElementById("contactForm").submit();
       });
   });
+  */
 }
 
 // Input validation helper
