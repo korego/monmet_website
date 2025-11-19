@@ -1073,3 +1073,175 @@ function sendQuoteData(quoteData, name, email, productCode) {
       );
     });
 }
+
+// ===========================
+// Product Search Functionality
+// ===========================
+
+function initializeProductSearch() {
+  const searchInput = document.getElementById("productSearchInput");
+  const searchClear = document.getElementById("searchClear");
+  const searchResults = document.getElementById("searchResults");
+  const productsContainer = document.getElementById("products-container");
+  
+  if (!searchInput) return;
+
+  // Search on input
+  searchInput.addEventListener("input", function() {
+    const searchTerm = this.value.toLowerCase().trim();
+    
+    // Show/hide clear button
+    searchClear.style.display = searchTerm ? "block" : "none";
+    
+    if (searchTerm === "") {
+      // Reset to show all
+      renderAllProducts();
+      searchResults.innerHTML = "";
+      searchResults.classList.remove("active");
+      return;
+    }
+
+    // Filter products
+    const filteredProducts = filterProductsBySearch(searchTerm);
+    
+    if (filteredProducts.length === 0) {
+      searchResults.innerHTML = '<i class="fas fa-search"></i> No products found matching "' + searchTerm + '"';
+      searchResults.classList.add("active");
+      productsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #adb5bd;"><i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i><p>No products found. Try searching by product code (e.g., MFK-24) or manufacturer name.</p></div>';
+    } else {
+      searchResults.innerHTML = '<i class="fas fa-check-circle"></i> Found ' + filteredProducts.length + ' product' + (filteredProducts.length !== 1 ? 's' : '');
+      searchResults.classList.add("active");
+      renderFilteredProducts(filteredProducts);
+    }
+  });
+
+  // Clear search
+  searchClear.addEventListener("click", function() {
+    searchInput.value = "";
+    searchClear.style.display = "none";
+    searchResults.innerHTML = "";
+    searchResults.classList.remove("active");
+    renderAllProducts();
+    searchInput.focus();
+  });
+
+  // Search on Enter key
+  searchInput.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const searchTerm = this.value.toLowerCase().trim();
+      if (searchTerm) {
+        const filteredProducts = filterProductsBySearch(searchTerm);
+        if (filteredProducts.length > 0) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+    }
+  });
+}
+
+function filterProductsBySearch(searchTerm) {
+  const results = [];
+  
+  Object.keys(productsData).forEach(manufacturerKey => {
+    const manufacturer = productsData[manufacturerKey];
+    const manufacturerName = manufacturer.title.toLowerCase();
+    
+    // Check if manufacturer matches
+    const manufacturerMatches = manufacturerName.includes(searchTerm);
+    
+    if (manufacturer.products) {
+      manufacturer.products.forEach(product => {
+        const productCode = product.code.toLowerCase();
+        const productName = product.name.toLowerCase();
+        
+        // Match if product code, name, or manufacturer matches
+        if (
+          productCode.includes(searchTerm) ||
+          productName.includes(searchTerm) ||
+          manufacturerMatches
+        ) {
+          results.push({
+            ...product,
+            manufacturer: manufacturer.title,
+            manufacturerKey: manufacturerKey
+          });
+        }
+      });
+    }
+  });
+  
+  return results;
+}
+
+function renderFilteredProducts(filteredProducts) {
+  const productsContainer = document.getElementById("products-container");
+  
+  // Group by manufacturer
+  const groupedByMfg = {};
+  filteredProducts.forEach(product => {
+    if (!groupedByMfg[product.manufacturer]) {
+      groupedByMfg[product.manufacturer] = [];
+    }
+    groupedByMfg[product.manufacturer].push(product);
+  });
+
+  let html = "";
+  Object.keys(groupedByMfg).forEach(manufacturer => {
+    const products = groupedByMfg[manufacturer];
+    html += `
+      <section class="manufacturer-section">
+        <div class="manufacturer-header">
+          <h2>${manufacturer}</h2>
+          <span class="product-count">${products.length} product${products.length !== 1 ? 's' : ''}</span>
+        </div>
+        <div class="products-grid">
+    `;
+    
+    products.forEach(product => {
+      html += createProductCard(product, manufacturer);
+    });
+    
+    html += `
+        </div>
+      </section>
+    `;
+  });
+
+  productsContainer.innerHTML = html;
+  attachProductCardListeners();
+}
+
+function renderAllProducts() {
+  const productsContainer = document.getElementById("products-container");
+  let html = "";
+  
+  Object.keys(productsData).forEach(manufacturerKey => {
+    const manufacturer = productsData[manufacturerKey];
+    html += `
+      <section class="manufacturer-section">
+        <div class="manufacturer-header">
+          <h2>${manufacturer.title}</h2>
+          <span class="product-count">${manufacturer.products.length} product${manufacturer.products.length !== 1 ? 's' : ''}</span>
+        </div>
+        <div class="products-grid">
+    `;
+    
+    manufacturer.products.forEach(product => {
+      html += createProductCard(product, manufacturer.title);
+    });
+    
+    html += `
+        </div>
+      </section>
+    `;
+  });
+
+  productsContainer.innerHTML = html;
+  attachProductCardListeners();
+}
+
+// Initialize search when page loads
+document.addEventListener("DOMContentLoaded", function() {
+  initializeProductSearch();
+});

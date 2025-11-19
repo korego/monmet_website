@@ -2,6 +2,8 @@
 ═════════════════════════════════════════════════════════════════════════════
 
 YOUR WEBSITE IS PRODUCTION-READY! Use this checklist before deploying.
+OLD IP : 198.71.233.206
+NEW IP : 107.180.12.15
 
 ═════════════════════════════════════════════════════════════════════════════
 📋 PRE-DEPLOYMENT CHECKLIST
