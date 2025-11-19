@@ -147,7 +147,7 @@ const productsData = {
       {
         code: "BLWR-21B",
         name: "Blower BLWR-21B",
-        image: "img/products_catalog/product_10.jpg",
+        image: "img/products_catalog/BLWR-NAP-w.jpg",
         oem: "Heatilator",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
@@ -218,7 +218,7 @@ const productsData = {
         name: "Fan Kit MFK-36",
         image: "img/products_catalog/MFK-36-w.jpg",
         oem: "Kingsman (Z36FK)",
-        dimensions: '2.25" x 9.5"',
+        dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
       },
       {
@@ -226,7 +226,7 @@ const productsData = {
         name: "Fan Kit MFK-46",
         image: "img/products_catalog/MFK-46-2017w.jpg",
         oem: "Kingsman (Z46FK)",
-        dimensions: '1.75" x 9.5"',
+        dimensions: '1.75" x 9.5" (45mm x 240mm)',
         cfm: "120",
       },
       {
@@ -234,14 +234,14 @@ const productsData = {
         name: "Blower BLWR-KNGMN36",
         image: "img/products_catalog/BLWR-BLOT-2017w.jpg",
         oem: "Kingsman 36",
-        dimensions: '2.25" x 9.5"',
+        dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
       },
       {
         code: "BLWR-KNGMN46",
         name: "Blower BLWR-KNGMN46",
         image: "img/products_catalog/BLWR-KNGMN46-2017w.jpg",
-        oem: "Kingsman MDVFK",
+        oem: "Kingsman 46",
         dimensions: '1.75" x 9.5" (45mm x 240mm)',
         cfm: "120",
       },
@@ -255,7 +255,7 @@ const productsData = {
         code: "MFK-SLA42",
         name: "Fan Kit MFK-SLA42",
         image: "img/products_catalog/MFK-SLA42-2017w.jpg",
-        oem: "Kozy Heat SLA-42",
+        oem: "Kozy Heat (SLA42-028)",
         dimensions: '1.75" x 7" (45mm x 180mm)',
         cfm: "90",
       },
@@ -263,7 +263,7 @@ const productsData = {
         code: "BLWR-SLA42",
         name: "Blower BLWR-SLA42",
         image: "img/products_catalog/BLWR-SLA42-2017w.jpg",
-        oem: "Kozy Heat SLA-42",
+        oem: "Kozy Heat",
         dimensions: '1.75" x 7" (45mm x 180mm)',
         cfm: "90",
       },
@@ -278,16 +278,16 @@ const productsData = {
         code: "MFK-24",
         name: "Fan Kit MFK-24",
         image: "img/products_catalog/mfk-24-w.jpg",
-        oem: "Majestic/Vermont Castings (BLOT24)",
-        dimensions: '2.5" x 9.5" (63mm x 240mm)',
+        oem: "Majestic/Vermont Castings (FK24)",
+        dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
       },
       {
         code: "MFK-12",
         name: "Fan Kit MFK-12",
         image: "img/products_catalog/mfk-12-w.jpg",
-        oem: "Majestic/Vermont Castings (BLOT12)",
-        dimensions: '2.5" x 9.5" (63mm x 240mm)',
+        oem: "Majestic/Vermont Castings (FK12)",
+        dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
       },
       {
@@ -295,7 +295,7 @@ const productsData = {
         name: "Blower BLWR-VC-MAJ",
         image: "img/products_catalog/BLWR-VC-MAJ-2-w.jpg",
         oem: "Majestic/Vermont Castings",
-        dimensions: '2.5" x 9.5" (63mm x 240mm)',
+        dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
       },
     ],
@@ -305,8 +305,8 @@ const productsData = {
     description: "Replacement fan solutions for Monessen fireplace models.",
     products: [
       {
-        code: "MFK-BLOT",
-        name: "Fan Kit MFK-BLOT",
+        code: "MFK-BLOT (with deflector and wall mount)",
+        name: "Fan Kit MFK-BLOT (with deflector and wall mount)",
         image: "img/products_catalog/MFK-BLOT-w.jpg",
         oem: "Monessen (BLOT)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
@@ -316,7 +316,7 @@ const productsData = {
         code: "MFK-BLOT240",
         name: "Fan Kit MFK-BLOT240",
         image: "img/products_catalog/MFK-BLOT240-2017w.jpg",
-        oem: "Monessen (BLOT240)",
+        oem: "Monessen (BLOT)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
       },
@@ -324,39 +324,39 @@ const productsData = {
         code: "MFK-BLOT180",
         name: "Fan Kit MFK-BLOT180",
         image: "img/products_catalog/MFK-BLOT180-w.jpg",
-        oem: "Monessen (BLOT180)",
+        oem: "Monessen (BLOT)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
-        cfm: "90",
+        cfm: "115",
       },
       {
         code: "MFK-BLDV",
         name: "Fan Kit MFK-BLDV",
         image: "img/products_catalog/MFK-BLDV-w.jpg",
-        oem: "Monessen (BLDV)",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        oem: "Monessen (BLOTBLDV)",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
+        cfm: "120 (60 per blower)",
       },
       {
         code: "MFK-BLDV-SC",
         name: "Fan Kit MFK-BLDV-SC",
         image: "img/products_catalog/MFK-BLDVSC-trial.jpg",
-        oem: "Monessen (BLDV-SC)",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        oem: "Monessen (BLOTBLDVSC)",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
+        cfm: "120 (60 per blower)",
       },
       {
         code: "MFK-BLOTST-SC",
         name: "Fan Kit MFK-BLOTST-SC",
         image: "img/products_catalog/MFK-BLOTST-SC-w.jpg",
         oem: "Monessen (BLOTST-SC)",
-        dimensions: '1.5" x 9.5" (38mm x 240mm)',
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
         cfm: "60",
       },
       {
         code: "BLWR-BLOT/BLOT240",
         name: "Blower BLWR-BLOT/BLOT240",
         image: "img/products_catalog/BLWR-BLOT-2017w.jpg",
-        oem: "Monessen (BLOT/BLOT240)",
+        oem: "Monessen",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
       },
@@ -364,17 +364,17 @@ const productsData = {
         code: "BLWR-BLOT180",
         name: "Blower BLWR-BLOT180",
         image: "img/products_catalog/BLWR-BLOT180-w.jpg",
-        oem: "Monessen (BLOT180)",
+        oem: "Monessen",
         dimensions: '2.25" x 7" (60mm x 180mm)',
-        cfm: "90",
+        cfm: "115",
       },
       {
         code: "BLWR-BLDV/BLDV-SC/BLOTST-SC",
         name: "Blower BLWR-BLDV/BLDV-SC/BLOTST-SC",
         image: "img/products_catalog/BLWR-BLDV-w.jpg",
-        oem: "Monessen (BLDV/BLDV-SC/BLOTST-SC)",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        oem: "Monessen",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
+        cfm: "60",
       },
     ],
   },
@@ -395,23 +395,23 @@ const productsData = {
         code: "MFK-AUB-M",
         name: "Fan Kit MFK-AUB-M",
         image: "img/products_catalog/MFK-AUB-M-2017w.jpg",
-        oem: "Napoleon (AUB-M)",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        oem: "Napoleon (AUB)",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
+        cfm: "60",
       },
       {
         code: "MFK-AUB",
         name: "Fan Kit MFK-AUB",
         image: "img/products_catalog/MFK-AUB-w.jpg",
         oem: "Napoleon (AUB)",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
+        cfm: "60",
       },
       {
         code: "MFK-62-1",
         name: "Fan Kit MFK-62-1",
         image: "img/products_catalog/MFK-62-1-w.jpg",
-        oem: "Napoleon (GZ62-1)",
+        oem: "Napoleon (GZ62)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
       },
@@ -419,7 +419,7 @@ const productsData = {
         code: "MFK-62",
         name: "Fan Kit MFK-62",
         image: "img/products_catalog/MFK-62-w.jpg",
-        oem: "Napoleon (GZ62)",
+        oem: "Napoleon (EP-62)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
       },
@@ -436,8 +436,8 @@ const productsData = {
         name: "Blower BLWR-AUB",
         image: "img/products_catalog/BLWR-AUB-w.jpg",
         oem: "Napoleon (AUB)",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
+        cfm: "60",
       },
     ],
   },
@@ -450,7 +450,7 @@ const productsData = {
         code: "MFK-PWB",
         name: "Fan Kit MFK-PWB",
         image: "img/products_catalog/MFK-PWB-w.jpg",
-        oem: "Pacific Energy (PWB)",
+        oem: "Pacific Energy (WODC.BLOW)",
         dimensions: '3" x 4" (75mm x 100mm)',
         cfm: "125",
       },
@@ -458,7 +458,7 @@ const productsData = {
         code: "BLWR-PWB",
         name: "Blower BLWR-PWB",
         image: "img/products_catalog/BLWR-PACF-w.jpg",
-        oem: "Pacific Energy (PWB)",
+        oem: "Pacific Energy",
         dimensions: '3" x 4" (75mm x 100mm)',
         cfm: "125",
       },
@@ -474,7 +474,7 @@ const productsData = {
         name: "Blower BLWR-TRAVIS",
         image: "img/products_catalog/BLWR-VC-MAJ-2-w.jpg",
         oem: "Travis Industries (250-00589)",
-        dimensions: '2.5" x 9.5" (63mm x 240mm)',
+        dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
       },
     ],
@@ -494,19 +494,11 @@ const productsData = {
       },
       {
         code: "MFK-UNIVDBL",
-        name: "Universal Double Blower Kit",
+        name: "Fan Kit MFK-UNIVDBL",
         image: "img/products_catalog/MFK-UNIVDBL-w.jpg",
-        oem: "Universal Fit",
+        oem: "Universal Double Fan",
         dimensions: '3" x 4" (75mm x 100mm)',
         cfm: "140",
-      },
-      {
-        code: "UNIV-SPDCTRL",
-        name: "Universal Speed Control",
-        image: "img/products_catalog/UNIV-SPDCTRL-2017w.jpg",
-        oem: "Universal",
-        dimensions: "N/A",
-        cfm: "N/A",
       },
     ],
   },
@@ -518,23 +510,23 @@ const productsData = {
         code: "MFK-24",
         name: "Fan Kit MFK-24",
         image: "img/products_catalog/MFK-24-w.jpg",
-        oem: "Vermont Castings (BLOT24)",
-        dimensions: '2.5" x 9.5" (63mm x 240mm)',
+        oem: "Majestic/Vermont Castings (FK24)",
+        dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
       },
       {
         code: "MFK-12",
         name: "Fan Kit MFK-12",
         image: "img/products_catalog/MFK-12-w.jpg",
-        oem: "Vermont Castings (BLOT12)",
-        dimensions: '2.5" x 9.5" (63mm x 240mm)',
+        oem: "Majestic/Vermont Castings (FK12)",
+        dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
       },
       {
-        code: "MFK-BLOT",
-        name: "Fan Kit MFK-BLOT",
+        code: "MFK-BLOT (with deflector and wall mount)",
+        name: "Fan Kit MFK-BLOT (with deflector and wall mount)",
         image: "img/products_catalog/MFK-BLOT-w.jpg",
-        oem: "Vermont Castings (BLOT)",
+        oem: "'Monessen '(BLOT)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
       },
@@ -542,7 +534,7 @@ const productsData = {
         code: "MFK-BLOT240",
         name: "Fan Kit MFK-BLOT240",
         image: "img/products_catalog/MFK-BLOT240-2017w.jpg",
-        oem: "Vermont Castings (BLOT240)",
+        oem: "Monessen (BLOT)",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
       },
@@ -550,47 +542,47 @@ const productsData = {
         code: "MFK-BLOT180",
         name: "Fan Kit MFK-BLOT180",
         image: "img/products_catalog/MFK-BLOT180-w.jpg",
-        oem: "Vermont Castings (BLOT180)",
+        oem: "Monessen (BLOT)",
         dimensions: '2.25" x 7" (60mm x 180mm)',
-        cfm: "90",
+        cfm: "115",
       },
       {
         code: "MFK-BLDV",
         name: "Fan Kit MFK-BLDV",
         image: "img/products_catalog/MFK-BLDV-w.jpg",
-        oem: "Vermont Castings (BLDV)",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        oem: "Monessen (BLOTBLDV)",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
+        cfm: "60",
       },
       {
         code: "MFK-BLDV-SC",
         name: "Fan Kit MFK-BLDV-SC",
         image: "img/products_catalog/MFK-BLDVSC-trial.jpg",
-        oem: "Vermont Castings (BLDV-SC)",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        oem: "Monessen (BLOTBLDV-SC)",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
+        cfm: "60",
       },
       {
         code: "MFK-BLOTST-SC",
         name: "Fan Kit MFK-BLOTST-SC",
         image: "img/products_catalog/MFK-BLOTST-SC-w.jpg",
-        oem: "Vermont Castings (BLOTST-SC)",
-        dimensions: '1.5" x 9.5" (38mm x 240mm)',
+        oem: "Monessen (BLOTST-SC)",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
         cfm: "60",
       },
       {
         code: "BLWR-VC-MAJ",
         name: "Blower BLWR-VC-MAJ",
         image: "img/products_catalog/BLWR-VC-MAJ-2-w.jpg",
-        oem: "Vermont Castings",
-        dimensions: '2.5" x 9.5" (63mm x 240mm)',
+        oem: "Majestic/Vermont Castings",
+        dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
       },
       {
         code: "BLWR-BLOT/BLOT240",
         name: "Blower BLWR-BLOT/BLOT240",
         image: "img/products_catalog/BLWR-BLOT-2017w.jpg",
-        oem: "Vermont Castings (BLOT/BLOT240)",
+        oem: "Majestic/Vermont Castings",
         dimensions: '2.25" x 9.5" (60mm x 240mm)',
         cfm: "120",
       },
@@ -598,9 +590,40 @@ const productsData = {
         code: "BLWR-BLOT180",
         name: "Blower BLWR-BLOT180",
         image: "img/products_catalog/BLWR-BLOT180-w.jpg",
-        oem: "Vermont Castings (BLOT180)",
+        oem: "Monessen/Vermont Castings",
         dimensions: '2.25" x 7" (60mm x 180mm)',
-        cfm: "90",
+        cfm: "115",
+      },
+      {
+        code: "BLWR-BLDV/BLDV-SC/BLOTST-SC",
+        name: "Blower BLWR-BLDV/BLDV-SC/BLOTST-SC",
+        image: "img/products_catalog/BLWR-BLDV-w.jpg",
+        oem: "Monessen/Vermont Castings",
+        dimensions: '1.75" x 4.75" (45mm x 120mm)',
+        cfm: "60",
+      },
+    ],
+  },
+  "white-mountain-hearth": {
+    title: "White Mountain Hearth",
+    description:
+      "High-performance fan kits and blowers for White Mountain Hearth fireplaces.",
+    products: [
+      {
+        code: "MFK-FBB4",
+        name: "Fan Kit MFK-FBB4",
+        image: "img/products_catalog/MFK-FBB4-2017w.jpg",
+        oem: "Empire Comfort Systems (FBB4)",
+        dimensions: '2.25" x 9.5" (60mm x 240mm)',
+        cfm: "120",
+      },
+      {
+        code: "BLWR-FBB4",
+        name: "Blower BLWR-FBB4",
+        image: "img/products_catalog/BLWR-BLOT-2017w.jpg",
+        oem: "Empire Comfort Systems",
+        dimensions: '2.25" x 9.5" (60mm x 240mm)',
+        cfm: "120",
       },
     ],
   },
@@ -610,20 +633,36 @@ const productsData = {
       "High-performance fan kits and blowers for Wolf Steel fireplaces.",
     products: [
       {
-        code: "MFK-FBB4",
-        name: "Fan Kit MFK-FBB4",
-        image: "img/products_catalog/MFK-FBB4-2017w.jpg",
-        oem: "Wolf Steel (FBB4)",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        code: "MFK-550",
+        name: "Fan Kit MFK-550",
+        image: "img/products_catalog/MFK-550-w.jpg",
+        oem: "Napoleon (GZ550)",
+        dimensions: '2.25" x 7" (60mm x 180mm)',
+        cfm: "115",
       },
       {
-        code: "BLWR-FBB4",
-        name: "Blower BLWR-FBB4",
-        image: "img/products_catalog/BLWR-BLOT-2017w.jpg",
-        oem: "Wolf Steel",
-        dimensions: '2.25" x 9.5" (60mm x 240mm)',
-        cfm: "120",
+        code: "MFK-62-1",
+        name: "Fan Kit MFK-62-1",
+        image: "img/products_catalog/MFK-62-1-w.jpg",
+        oem: "Napoleon (NZ-62)",
+        dimensions: '2.25" x 7" (60mm x 180mm)',
+        cfm: "115",
+      },
+      {
+        code: "MFK-62",
+        name: "Fan Kit MFK-62",
+        image: "img/products_catalog/MFK-62-w.jpg",
+        oem: "Napoleon (EP-62)",
+        dimensions: '2.25" x 7" (60mm x 180mm)',
+        cfm: "115",
+      },
+      {
+        code: "BLWR-NAP",
+        name: "Blower BLWR-NAP",
+        image: "img/products_catalog/BLWR-NAP-w.jpg",
+        oem: "Napoleon (GZ552)",
+        dimensions: '2.25" x 7" (60mm x 180mm)',
+        cfm: "115",
       },
     ],
   },
@@ -898,6 +937,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const isAccessoryOrStove =
       manufacturer === "accessories" || manufacturer === "pellet-stove-parts";
 
+    // Add special class for accessories and pellet stove parts
+    if (isAccessoryOrStove) {
+      card.classList.add("specialty-product");
+    }
+
     let specsHTML = "";
     if (!isAccessoryOrStove) {
       specsHTML = `
@@ -1092,56 +1136,115 @@ function sendQuoteData(quoteData, name, email, productCode) {
 function initializeProductSearch() {
   const searchInput = document.getElementById("productSearchInput");
   const searchClear = document.getElementById("searchClear");
+  const searchPrev = document.getElementById("searchPrev");
+  const searchNext = document.getElementById("searchNext");
+  const searchCounter = document.getElementById("searchCounter");
   const productsContainer = document.getElementById("products-container");
 
   if (!searchInput) return;
 
-  // Search on input
-  searchInput.addEventListener("input", function () {
-    const searchTerm = this.value.toLowerCase().trim();
+  let searchResults = [];
+  let currentResultIndex = -1;
 
-    // Show/hide clear button
-    searchClear.style.display = searchTerm ? "block" : "none";
+  function updateSearchResults() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
 
     if (searchTerm === "") {
       // Reset to show all
       renderAllProducts();
+      searchResults = [];
+      currentResultIndex = -1;
+      searchClear.style.display = "none";
+      searchPrev.style.display = "none";
+      searchNext.style.display = "none";
+      searchCounter.textContent = "";
       return;
     }
 
-    // Filter products
-    const filteredProducts = filterProductsBySearch(searchTerm);
+    // Show/hide controls
+    searchClear.style.display = "block";
 
-    if (filteredProducts.length === 0) {
+    // Filter products
+    searchResults = filterProductsBySearch(searchTerm);
+    currentResultIndex = -1;
+
+    if (searchResults.length === 0) {
       productsContainer.innerHTML =
         '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #adb5bd;"><i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i><p>No products found matching "' +
         searchTerm +
         '". Try searching by product code (e.g., MFK-24) or manufacturer name.</p></div>';
+      searchPrev.style.display = "none";
+      searchNext.style.display = "none";
+      searchCounter.textContent = "";
     } else {
-      renderFilteredProducts(filteredProducts);
+      renderFilteredProducts(searchResults);
+      searchPrev.style.display = "block";
+      searchNext.style.display = "block";
+      highlightNextResult();
+    }
+  }
+
+  function highlightNextResult() {
+    if (searchResults.length === 0) return;
+
+    currentResultIndex = (currentResultIndex + 1) % searchResults.length;
+    updateHighlight();
+  }
+
+  function highlightPrevResult() {
+    if (searchResults.length === 0) return;
+
+    currentResultIndex =
+      (currentResultIndex - 1 + searchResults.length) % searchResults.length;
+    updateHighlight();
+  }
+
+  function updateHighlight() {
+    // Remove previous highlight
+    document
+      .querySelectorAll(".product-card.search-highlighted")
+      .forEach((card) => {
+        card.classList.remove("search-highlighted");
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+
+    // Highlight current result
+    const cards = document.querySelectorAll(".product-card");
+    if (cards[currentResultIndex]) {
+      cards[currentResultIndex].classList.add("search-highlighted");
+      cards[currentResultIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+
+    // Update counter
+    searchCounter.textContent = `${currentResultIndex + 1}/${searchResults.length}`;
+  }
+
+  // Search on input
+  searchInput.addEventListener("input", updateSearchResults);
+
+  // Navigate results
+  searchNext.addEventListener("click", highlightNextResult);
+  searchPrev.addEventListener("click", highlightPrevResult);
+
+  // Keyboard navigation
+  searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      highlightNextResult();
+    } else if (e.shiftKey && e.key === "Enter") {
+      e.preventDefault();
+      highlightPrevResult();
     }
   });
 
   // Clear search
   searchClear.addEventListener("click", function () {
     searchInput.value = "";
-    searchClear.style.display = "none";
-    renderAllProducts();
+    updateSearchResults();
     searchInput.focus();
-  });
-
-  // Search on Enter key
-  searchInput.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      const searchTerm = this.value.toLowerCase().trim();
-      if (searchTerm) {
-        const filteredProducts = filterProductsBySearch(searchTerm);
-        if (filteredProducts.length > 0) {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      }
-    }
   });
 }
 

@@ -96,6 +96,36 @@
   transform: translateX(3px);
 }
 
+/* Specialty menu items (Accessories and Pellet Stove Parts) */
+.manufacturer-link[data-manufacturer="accessories"],
+.manufacturer-link[data-manufacturer="pellet-stove-parts"] {
+  border-left-color: #ff9800;
+  border-left-width: 3px;
+  padding-left: calc(1rem - 2px);
+}
+
+.manufacturer-link[data-manufacturer="accessories"]:hover,
+.manufacturer-link[data-manufacturer="pellet-stove-parts"]:hover {
+  border-left-color: #e65100;
+  background: rgba(255, 152, 0, 0.1);
+}
+
+.manufacturer-link[data-manufacturer="accessories"].active,
+.manufacturer-link[data-manufacturer="pellet-stove-parts"].active {
+  border-left-color: #ff9800;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 152, 0, 0.15) 0%,
+    rgba(255, 152, 0, 0.05) 100%
+  );
+  color: #e65100;
+}
+
+.manufacturer-link[data-manufacturer="accessories"].active i,
+.manufacturer-link[data-manufacturer="pellet-stove-parts"].active i {
+  color: #ff9800;
+}
+
 /* Sidebar Search Box */
 .sidebar-search {
   padding: 1rem;
@@ -137,6 +167,43 @@
 
 .search-input-sidebar::placeholder {
   color: #bcc1c7;
+}
+
+.search-controls-sidebar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.search-counter {
+  font-size: 0.75rem;
+  color: var(--gray-color);
+  min-width: 45px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.search-nav-btn {
+  background: none;
+  border: none;
+  color: var(--gray-color);
+  cursor: pointer;
+  padding: 0.3rem 0.25rem;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-nav-btn:hover:not(:disabled) {
+  color: var(--primary-color);
+}
+
+.search-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .search-clear-sidebar {
@@ -346,6 +413,32 @@
   box-shadow: 0 12px 32px rgba(15, 123, 255, 0.15);
   transform: translateY(-6px);
   border-color: #0f7bff;
+}
+
+/* Specialty Products (Accessories and Pellet Stove Parts) */
+.product-card.specialty-product {
+  border-left: 4px solid #ff9800;
+}
+
+.product-card.specialty-product:hover {
+  border-left-color: #e65100;
+  box-shadow: 0 12px 32px rgba(255, 152, 0, 0.2);
+}
+
+/* Search Result Highlight */
+.product-card.search-highlighted {
+  box-shadow: 0 0 0 3px rgba(15, 123, 255, 0.5), 0 12px 32px rgba(15, 123, 255, 0.2);
+  border-color: #0f7bff;
+  animation: searchPulse 0.6s ease;
+}
+
+@keyframes searchPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(15, 123, 255, 0.7), 0 12px 32px rgba(15, 123, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(15, 123, 255, 0), 0 12px 32px rgba(15, 123, 255, 0.2);
+  }
 }
 
 .product-image {
