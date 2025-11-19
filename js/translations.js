@@ -149,6 +149,22 @@ const translations = {
     products_manufacturers: "Manufacturers",
     products_accessories: "Accessories",
     products_pellet_parts: "Pellet Stove Parts",
+    products_btn_quote: "Request a quote",
+    products_oem_label: "OEM",
+    products_dimensions_label: "Dimensions",
+    products_cfm_label: "CFM",
+    
+    // Quote Modal
+    quote_modal_title: "Request a Quote",
+    quote_modal_product_label: "Product:",
+    quote_modal_qty_label: "Qty:",
+    quote_modal_section_title: "Enter your information",
+    quote_modal_company: "Company:",
+    quote_modal_name: "Name:",
+    quote_modal_email: "Email:",
+    quote_modal_phone: "Phone:",
+    quote_modal_comments: "Comments:",
+    quote_modal_send: "Send",
     
     // Custom Alert Modal
     alert_title: "Contact Form Temporarily Unavailable",
@@ -305,6 +321,22 @@ const translations = {
     products_manufacturers: "Fabricants",
     products_accessories: "Accessoires",
     products_pellet_parts: "Pièces pour Poêles à Granules",
+    products_btn_quote: "Demander un devis",
+    products_oem_label: "FEO",
+    products_dimensions_label: "Dimensions",
+    products_cfm_label: "CFM",
+    
+    // Quote Modal
+    quote_modal_title: "Demander un Devis",
+    quote_modal_product_label: "Produit:",
+    quote_modal_qty_label: "Qté:",
+    quote_modal_section_title: "Entrez vos informations",
+    quote_modal_company: "Compagnie:",
+    quote_modal_name: "Nom:",
+    quote_modal_email: "Courriel:",
+    quote_modal_phone: "Téléphone:",
+    quote_modal_comments: "Commentaires:",
+    quote_modal_send: "Envoyer",
     
     // Custom Alert Modal
     alert_title: "Formulaire de Contact Temporairement Indisponible",
@@ -371,6 +403,11 @@ function switchLanguage(lang) {
     const isExpanded = btn.closest('.read-more-btn').classList.contains('expanded');
     btn.textContent = translations[lang][isExpanded ? 'read_less' : 'read_more'];
   });
+  
+  // Re-render products if on products page
+  if (typeof renderAllProducts === 'function') {
+    renderAllProducts();
+  }
 }
 
 // Initialize language on page load
