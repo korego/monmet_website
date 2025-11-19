@@ -52,6 +52,29 @@
           <h3>Fan Kits & Blowers</h3>
           <p>Manufacturers</p>
         </div>
+
+        <!-- Search Box in Sidebar -->
+        <div class="sidebar-search">
+          <div class="search-box-sidebar">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="productSearchInput"
+              class="search-input-sidebar"
+              placeholder="Search products..."
+              aria-label="Search products"
+            />
+            <button
+              type="button"
+              id="searchClear"
+              class="search-clear-sidebar"
+              style="display: none"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
         <nav class="manufacturer-nav">
           <a
             href="#cfm"
@@ -211,30 +234,6 @@
           </p>
         </div>
 
-        <!-- Search Box -->
-        <div class="products-search-container">
-          <div class="search-box">
-            <i class="fas fa-search search-icon"></i>
-            <input
-              type="text"
-              id="productSearchInput"
-              class="search-input"
-              placeholder="Search by product code or name... (e.g., MFK-24, CFM, Blower)"
-              aria-label="Search products"
-            />
-            <button
-              type="button"
-              id="searchClear"
-              class="search-clear"
-              aria-label="Clear search"
-              style="display: none;"
-            >
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <div id="searchResults" class="search-results-info"></div>
-        </div>
-
         <div id="products-container" class="products-sections-container">
           <!-- Manufacturer sections will be dynamically loaded here -->
         </div>
@@ -252,6 +251,13 @@
 
     <script src="js/script.js"></script>
     <script src="js/products.js"></script>
+    <script>
+      // Initialize products display and search on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        renderAllProducts();
+        initializeProductSearch();
+      });
+    </script>
 
     <!-- Quote Request Modal -->
     <div id="quoteModal" class="modal">

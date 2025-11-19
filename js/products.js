@@ -147,7 +147,7 @@ const productsData = {
       {
         code: "BLWR-21B",
         name: "Blower BLWR-21B",
-        image: "img/products_catalog/product_13.jpg",
+        image: "img/products_catalog/product_10.jpg",
         oem: "Heatilator",
         dimensions: '2.25" x 7" (60mm x 180mm)',
         cfm: "115",
@@ -926,7 +926,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     card.innerHTML = `
             <div class="product-image">
-                <img src="${product.image}" alt="${product.name}" onerror="this.src='img/products_catalog/fireplacekit_product.png'">
+                <img src="${product.image}" alt="${product.name}" onerror="this.src='img/products_catalog/product_photo1.png'">
             </div>
             <div class="product-info">
                 <div class="product-header">
@@ -1081,52 +1081,46 @@ function sendQuoteData(quoteData, name, email, productCode) {
 function initializeProductSearch() {
   const searchInput = document.getElementById("productSearchInput");
   const searchClear = document.getElementById("searchClear");
-  const searchResults = document.getElementById("searchResults");
   const productsContainer = document.getElementById("products-container");
-  
+
   if (!searchInput) return;
 
   // Search on input
-  searchInput.addEventListener("input", function() {
+  searchInput.addEventListener("input", function () {
     const searchTerm = this.value.toLowerCase().trim();
-    
+
     // Show/hide clear button
     searchClear.style.display = searchTerm ? "block" : "none";
-    
+
     if (searchTerm === "") {
       // Reset to show all
       renderAllProducts();
-      searchResults.innerHTML = "";
-      searchResults.classList.remove("active");
       return;
     }
 
     // Filter products
     const filteredProducts = filterProductsBySearch(searchTerm);
-    
+
     if (filteredProducts.length === 0) {
-      searchResults.innerHTML = '<i class="fas fa-search"></i> No products found matching "' + searchTerm + '"';
-      searchResults.classList.add("active");
-      productsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #adb5bd;"><i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i><p>No products found. Try searching by product code (e.g., MFK-24) or manufacturer name.</p></div>';
+      productsContainer.innerHTML =
+        '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #adb5bd;"><i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i><p>No products found matching "' +
+        searchTerm +
+        '". Try searching by product code (e.g., MFK-24) or manufacturer name.</p></div>';
     } else {
-      searchResults.innerHTML = '<i class="fas fa-check-circle"></i> Found ' + filteredProducts.length + ' product' + (filteredProducts.length !== 1 ? 's' : '');
-      searchResults.classList.add("active");
       renderFilteredProducts(filteredProducts);
     }
   });
 
   // Clear search
-  searchClear.addEventListener("click", function() {
+  searchClear.addEventListener("click", function () {
     searchInput.value = "";
     searchClear.style.display = "none";
-    searchResults.innerHTML = "";
-    searchResults.classList.remove("active");
     renderAllProducts();
     searchInput.focus();
   });
 
   // Search on Enter key
-  searchInput.addEventListener("keypress", function(e) {
+  searchInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
       e.preventDefault();
       const searchTerm = this.value.toLowerCase().trim();
@@ -1142,19 +1136,19 @@ function initializeProductSearch() {
 
 function filterProductsBySearch(searchTerm) {
   const results = [];
-  
-  Object.keys(productsData).forEach(manufacturerKey => {
+
+  Object.keys(productsData).forEach((manufacturerKey) => {
     const manufacturer = productsData[manufacturerKey];
     const manufacturerName = manufacturer.title.toLowerCase();
-    
+
     // Check if manufacturer matches
     const manufacturerMatches = manufacturerName.includes(searchTerm);
-    
+
     if (manufacturer.products) {
-      manufacturer.products.forEach(product => {
+      manufacturer.products.forEach((product) => {
         const productCode = product.code.toLowerCase();
         const productName = product.name.toLowerCase();
-        
+
         // Match if product code, name, or manufacturer matches
         if (
           productCode.includes(searchTerm) ||
@@ -1164,22 +1158,22 @@ function filterProductsBySearch(searchTerm) {
           results.push({
             ...product,
             manufacturer: manufacturer.title,
-            manufacturerKey: manufacturerKey
+            manufacturerKey: manufacturerKey,
           });
         }
       });
     }
   });
-  
+
   return results;
 }
 
 function renderFilteredProducts(filteredProducts) {
   const productsContainer = document.getElementById("products-container");
-  
+
   // Group by manufacturer
   const groupedByMfg = {};
-  filteredProducts.forEach(product => {
+  filteredProducts.forEach((product) => {
     if (!groupedByMfg[product.manufacturer]) {
       groupedByMfg[product.manufacturer] = [];
     }
@@ -1187,21 +1181,23 @@ function renderFilteredProducts(filteredProducts) {
   });
 
   let html = "";
-  Object.keys(groupedByMfg).forEach(manufacturer => {
+  Object.keys(groupedByMfg).forEach((manufacturer) => {
     const products = groupedByMfg[manufacturer];
     html += `
       <section class="manufacturer-section">
         <div class="manufacturer-header">
           <h2>${manufacturer}</h2>
-          <span class="product-count">${products.length} product${products.length !== 1 ? 's' : ''}</span>
+          <span class="product-count">${products.length} product${
+      products.length !== 1 ? "s" : ""
+    }</span>
         </div>
         <div class="products-grid">
     `;
-    
-    products.forEach(product => {
+
+    products.forEach((product) => {
       html += createProductCard(product, manufacturer);
     });
-    
+
     html += `
         </div>
       </section>
@@ -1215,22 +1211,24 @@ function renderFilteredProducts(filteredProducts) {
 function renderAllProducts() {
   const productsContainer = document.getElementById("products-container");
   let html = "";
-  
-  Object.keys(productsData).forEach(manufacturerKey => {
+
+  Object.keys(productsData).forEach((manufacturerKey) => {
     const manufacturer = productsData[manufacturerKey];
     html += `
       <section class="manufacturer-section">
         <div class="manufacturer-header">
           <h2>${manufacturer.title}</h2>
-          <span class="product-count">${manufacturer.products.length} product${manufacturer.products.length !== 1 ? 's' : ''}</span>
+          <span class="product-count">${manufacturer.products.length} product${
+      manufacturer.products.length !== 1 ? "s" : ""
+    }</span>
         </div>
         <div class="products-grid">
     `;
-    
-    manufacturer.products.forEach(product => {
+
+    manufacturer.products.forEach((product) => {
       html += createProductCard(product, manufacturer.title);
     });
-    
+
     html += `
         </div>
       </section>
@@ -1242,6 +1240,6 @@ function renderAllProducts() {
 }
 
 // Initialize search when page loads
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   initializeProductSearch();
 });
