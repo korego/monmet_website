@@ -1,0 +1,43 @@
+# Development and Build Files
+.git/
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Backup Files
+*.bak
+*.backup
+*.old
+*.tmp
+
+# Temporary Files
+temp_html/
+temp_pages/
+temp/
+
+# Legacy/Old Files
+old_site_images/
+old page.txt
+old_site_urls.txt
+sample_cfm.html
+wget.exe
+
+# Documentation (keep locally, don't upload)
+README.md
+DEPLOYMENT_SETUP.md
+DEPLOYMENT_CHECKLIST.txt
+FORMSPREE_SETUP.txt
+QUICK_START.txt
+README_DEPLOYMENT.txt
+SECURITY_GUIDE.md
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Files
+*.log
+.env

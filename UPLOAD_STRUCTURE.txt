@@ -1,0 +1,39 @@
+# Upload to GoDaddy - File Structure
+
+## Root Level Files to Upload
+- index.html
+- about.html
+- products.html
+- privacy-policy.html
+- terms-of-service.html
+
+## Folders to Upload
+/css/
+- style.css
+- products.css
+- about.css
+
+/js/
+- script.js
+- products.js
+- slideshow.js
+
+/img/
+- /logos/
+- /slideshow/
+- /products_catalog/
+- /products/
+
+## Notes
+- All documentation files (README, DEPLOYMENT_SETUP, etc.) stay on your local machine
+- Don't upload .git folder
+- Don't upload .gitignore (optional - keeps repo clean)
+- Don't upload backup/temp files
+
+## File Count Summary
+- HTML files: 5 pages
+- CSS files: 3 stylesheets
+- JavaScript files: 3 scripts
+- Image directories: 4 folders with 100+ product images
+
+Total: ~120 files and folders ready for production
