@@ -1136,115 +1136,56 @@ function sendQuoteData(quoteData, name, email, productCode) {
 function initializeProductSearch() {
   const searchInput = document.getElementById("productSearchInput");
   const searchClear = document.getElementById("searchClear");
-  const searchPrev = document.getElementById("searchPrev");
-  const searchNext = document.getElementById("searchNext");
-  const searchCounter = document.getElementById("searchCounter");
   const productsContainer = document.getElementById("products-container");
 
   if (!searchInput) return;
 
-  let searchResults = [];
-  let currentResultIndex = -1;
+  // Search on input
+  searchInput.addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase().trim();
 
-  function updateSearchResults() {
-    const searchTerm = searchInput.value.toLowerCase().trim();
+    // Show/hide clear button
+    searchClear.style.display = searchTerm ? "block" : "none";
 
     if (searchTerm === "") {
       // Reset to show all
       renderAllProducts();
-      searchResults = [];
-      currentResultIndex = -1;
-      searchClear.style.display = "none";
-      searchPrev.style.display = "none";
-      searchNext.style.display = "none";
-      searchCounter.textContent = "";
       return;
     }
 
-    // Show/hide controls
-    searchClear.style.display = "block";
-
     // Filter products
-    searchResults = filterProductsBySearch(searchTerm);
-    currentResultIndex = -1;
+    const filteredProducts = filterProductsBySearch(searchTerm);
 
-    if (searchResults.length === 0) {
+    if (filteredProducts.length === 0) {
       productsContainer.innerHTML =
         '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #adb5bd;"><i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i><p>No products found matching "' +
         searchTerm +
         '". Try searching by product code (e.g., MFK-24) or manufacturer name.</p></div>';
-      searchPrev.style.display = "none";
-      searchNext.style.display = "none";
-      searchCounter.textContent = "";
     } else {
-      renderFilteredProducts(searchResults);
-      searchPrev.style.display = "block";
-      searchNext.style.display = "block";
-      highlightNextResult();
-    }
-  }
-
-  function highlightNextResult() {
-    if (searchResults.length === 0) return;
-
-    currentResultIndex = (currentResultIndex + 1) % searchResults.length;
-    updateHighlight();
-  }
-
-  function highlightPrevResult() {
-    if (searchResults.length === 0) return;
-
-    currentResultIndex =
-      (currentResultIndex - 1 + searchResults.length) % searchResults.length;
-    updateHighlight();
-  }
-
-  function updateHighlight() {
-    // Remove previous highlight
-    document
-      .querySelectorAll(".product-card.search-highlighted")
-      .forEach((card) => {
-        card.classList.remove("search-highlighted");
-        card.scrollIntoView({ behavior: "smooth", block: "center" });
-      });
-
-    // Highlight current result
-    const cards = document.querySelectorAll(".product-card");
-    if (cards[currentResultIndex]) {
-      cards[currentResultIndex].classList.add("search-highlighted");
-      cards[currentResultIndex].scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }
-
-    // Update counter
-    searchCounter.textContent = `${currentResultIndex + 1}/${searchResults.length}`;
-  }
-
-  // Search on input
-  searchInput.addEventListener("input", updateSearchResults);
-
-  // Navigate results
-  searchNext.addEventListener("click", highlightNextResult);
-  searchPrev.addEventListener("click", highlightPrevResult);
-
-  // Keyboard navigation
-  searchInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      highlightNextResult();
-    } else if (e.shiftKey && e.key === "Enter") {
-      e.preventDefault();
-      highlightPrevResult();
+      renderFilteredProducts(filteredProducts);
     }
   });
 
   // Clear search
   searchClear.addEventListener("click", function () {
     searchInput.value = "";
-    updateSearchResults();
+    searchClear.style.display = "none";
+    renderAllProducts();
     searchInput.focus();
+  });
+
+  // Search on Enter key
+  searchInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const searchTerm = this.value.toLowerCase().trim();
+      if (searchTerm) {
+        const filteredProducts = filterProductsBySearch(searchTerm);
+        if (filteredProducts.length > 0) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+    }
   });
 }
 

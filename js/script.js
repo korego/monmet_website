@@ -480,3 +480,52 @@ function validateFormInput(value, type) {
 document.addEventListener("DOMContentLoaded", function () {
   initializeRecaptcha();
 });
+
+// Testimonial toggle function
+function toggleTestimonial(headerElement) {
+  const testimonialItem = headerElement.closest(".testimonial-item");
+  const content = testimonialItem.querySelector(".testimonial-content");
+  const preview = testimonialItem.querySelector(".testimonial-preview");
+  const expandBtn = headerElement.querySelector(".expand-btn");
+  const isOpen = content.style.display !== "none";
+
+  if (isOpen) {
+    // Close
+    content.style.display = "none";
+    preview.style.display = "block";
+    expandBtn.classList.remove("active");
+  } else {
+    // Open
+    content.style.display = "block";
+    preview.style.display = "none";
+    expandBtn.classList.add("active");
+  }
+}
+
+// New testimonial card toggle function
+function toggleTestimonialCard(button) {
+  const card = button.closest(".testimonial-card");
+  const excerpt = card.querySelector(".testimonial-excerpt");
+  const full = card.querySelector(".testimonial-full");
+  const readMoreText = button.querySelector(".read-more-text");
+  const icon = button.querySelector("i");
+  const isExpanded = full.style.display !== "none";
+
+  if (isExpanded) {
+    // Collapse
+    excerpt.style.display = "block";
+    full.style.display = "none";
+    readMoreText.textContent = "Read More";
+    icon.classList.remove("fa-chevron-up");
+    icon.classList.add("fa-chevron-down");
+    button.classList.remove("expanded");
+  } else {
+    // Expand
+    excerpt.style.display = "none";
+    full.style.display = "block";
+    readMoreText.textContent = "Read Less";
+    icon.classList.remove("fa-chevron-down");
+    icon.classList.add("fa-chevron-up");
+    button.classList.add("expanded");
+  }
+}
