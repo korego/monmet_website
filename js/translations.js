@@ -235,11 +235,6 @@ const translations = {
     quote_modal_comments: "Comments:",
     quote_modal_send: "Send",
 
-    // Custom Alert Modal
-    alert_title: "Contact Form Temporarily Unavailable",
-    alert_message: "Our email service is currently being set up.",
-    alert_button: "Got it",
-
     // Privacy Policy
     privacy_policy_title: "Privacy Policy",
     privacy_last_updated: "Last Updated: November 19, 2025",
@@ -530,12 +525,6 @@ const translations = {
     quote_modal_phone: "Téléphone:",
     quote_modal_comments: "Commentaires:",
     quote_modal_send: "Envoyer",
-
-    // Custom Alert Modal
-    alert_title: "Formulaire de Contact Temporairement Indisponible",
-    alert_message:
-      "Notre service de courriel est actuellement en cours de configuration.",
-    alert_button: "Compris",
 
     // Privacy Policy
     privacy_policy_title: "Politique de Confidentialité",

@@ -520,27 +520,3 @@ function toggleTestimonialCard(button) {
     button.classList.add("expanded");
   }
 }
-
-// Show custom alert modal
-function showCustomAlert() {
-  const modal = document.getElementById("customAlertModal");
-  if (modal) {
-    modal.style.display = "flex";
-  }
-}
-
-// Close custom alert modal
-function closeCustomAlert() {
-  const modal = document.getElementById("customAlertModal");
-  if (modal) {
-    modal.style.display = "none";
-  }
-}
-
-// Close modal when clicking outside
-window.addEventListener("click", function (event) {
-  const modal = document.getElementById("customAlertModal");
-  if (event.target === modal) {
-    closeCustomAlert();
-  }
-});
