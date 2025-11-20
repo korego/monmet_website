@@ -421,82 +421,54 @@ function initializeRecaptcha() {
   }
 }
 
-// Handle contact form submission with reCAPTCHA
+// Handle contact form submission
 function handleContactSubmit(event) {
   event.preventDefault();
-  console.log("Form submit triggered");
-
+  
   const form = document.getElementById("contactForm");
   const submitButton = form.querySelector('button[type="submit"]');
-  const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
+  
+  if (!form || !submitButton) {
+    console.error("Form or button not found");
+    return;
+  }
 
   // Disable submit button
   submitButton.disabled = true;
   const originalText = submitButton.textContent;
-  submitButton.textContent = "Sending...";
+  const currentLang = localStorage.getItem("language") || "en";
+  submitButton.textContent = currentLang === "en" ? "Sending..." : "Envoi...";
 
-  // Check if grecaptcha is loaded
-  if (typeof grecaptcha === "undefined") {
-    console.error("reCAPTCHA not loaded");
-    showErrorToast();
-    submitButton.disabled = false;
-    submitButton.textContent = originalText;
-    return;
-  }
+  // Prepare form data
+  const formData = new FormData(form);
 
-  // Execute reCAPTCHA
-  grecaptcha.ready(function () {
-    grecaptcha
-      .execute(siteKey, { action: "submit" })
-      .then(function (token) {
-        console.log("reCAPTCHA token received");
-        
-        // Add token to form
-        const tokenInput = document.getElementById("recaptchaToken");
-        if (tokenInput) {
-          tokenInput.value = token;
-        }
-
-        // Prepare form data
-        const formData = new FormData(form);
-
-        // Submit via AJAX
-        console.log("Submitting to:", form.action);
-        fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        })
-          .then(function (response) {
-            console.log("Response status:", response.status);
-            if (response.ok) {
-              showSuccessToast();
-              form.reset();
-            } else {
-              return response.json().then(function (data) {
-                console.error("Form error:", data);
-                showErrorToast();
-              });
-            }
-          })
-          .catch(function (error) {
-            console.error("Fetch error:", error);
-            showErrorToast();
-          })
-          .finally(function () {
-            submitButton.disabled = false;
-            submitButton.textContent = originalText;
-          });
-      })
-      .catch(function (error) {
-        console.error("reCAPTCHA error:", error);
-        showErrorToast();
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
-      });
-  });
+  // Submit via AJAX to Formspree
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then(function (response) {
+      if (response.ok) {
+        showSuccessToast();
+        form.reset();
+      } else {
+        return response.json().then(function (data) {
+          console.error("Form error:", data);
+          showErrorToast();
+        });
+      }
+    })
+    .catch(function (error) {
+      console.error("Fetch error:", error);
+      showErrorToast();
+    })
+    .finally(function () {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    });
 }
 
 // Show success toast notification
@@ -646,7 +618,7 @@ function updateFooterYear() {
 }
 
 // Call updateFooterYear when DOM is loaded and after includes are loaded
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Wait a bit for includes to load
   setTimeout(updateFooterYear, 100);
 });

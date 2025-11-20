@@ -14,8 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- reCAPTCHA v3 for bot protection -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij" async defer></script>
+
   </head>
   <body>
     <!-- Navigation -->
@@ -586,12 +585,6 @@
                   required
                 ></textarea>
               </div>
-              <!-- Hidden reCAPTCHA token field -->
-              <input
-                type="hidden"
-                name="g-recaptcha-response"
-                id="recaptchaToken"
-              />
               <button
                 type="submit"
                 class="btn btn-primary"
@@ -612,10 +605,5 @@
     <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
     <script src="js/slideshow.js"></script>
-    <script>
-      // Auto-update copyright year
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
-    </script>
   </body>
 </html>
