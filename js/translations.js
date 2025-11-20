@@ -35,7 +35,7 @@ const translations = {
     feature1_desc:
       "All blower kits equipped with certified parts meeting industry standards",
     feature2_title: "Full Warranty",
-    feature2_desc: "One year guarantee from date of shipping on all products",
+    feature2_desc: "Two years guarantee from date of shipping on all products",
     feature3_title: "Whisper Quiet",
     feature3_desc: "Superior performance with minimal noise for comfort",
     feature4_title: "Prompt Delivery",
@@ -286,7 +286,7 @@ const translations = {
       "Tous les kits de soufflerie équipés de pièces certifiées conformes aux normes de l'industrie",
     feature2_title: "Garantie Complète",
     feature2_desc:
-      "Garantie d'un an à partir de la date d'expédition sur tous les produits",
+      "Garantie de deux ans à partir de la date d'expédition sur tous les produits",
     feature3_title: "Silencieux",
     feature3_desc:
       "Performance supérieure avec un minimum de bruit pour votre confort",
@@ -480,25 +480,44 @@ const translations = {
     products_cfm_label: "CFM",
 
     // Product category descriptions (French)
-    products_cfm_desc: "Des kits ventilateurs et souffleurs de foyer de qualité compatibles avec les foyers CFM et Vermont Castings.",
-    products_continental_desc: "Kits ventilateurs de remplacement et souffleurs pour les modèles de foyers Napoleon.",
-    products_empire_desc: "Kits ventilateurs haute performance et souffleurs pour les foyers Empire Comfort Systems.",
-    products_heat_glo_desc: "Kits ventilateurs haut de gamme conçus pour les systèmes de foyers Heat & Glo.",
-    products_heatilator_desc: "Ventilateurs de remplacement fiables et souffleurs pour les modèles de foyers Heatilator.",
-    products_ihp_lennox_desc: "Kits ventilateurs compatibles pour les installations de foyers IHP et Lennox.",
-    products_kingsman_desc: "Systèmes ventilateurs efficaces pour les modèles de foyers Kingsman.",
-    products_kozy_heat_desc: "Souffleurs de remplacement de qualité pour les systèmes de foyers Kozy Heat.",
-    products_majestic_desc: "Kits ventilateurs durables conçus pour les applications de foyers Majestic.",
-    products_monessen_desc: "Solutions ventilateurs de remplacement pour les modèles de foyers Monessen.",
-    products_napoleon_desc: "Kits ventilateurs de haute qualité et souffleurs pour les systèmes de foyers Napoleon.",
-    products_pacific_energy_desc: "Systèmes ventilateurs efficaces pour les foyers au bois et au gaz Pacific Energy.",
-    products_travis_desc: "Souffleurs de remplacement pour les produits de foyers Travis Industries.",
-    products_universal_desc: "Kits ventilateurs polyvalents compatibles avec plusieurs marques de foyers.",
-    products_vermont_castings_desc: "Kits ventilateurs haut de gamme pour les poêles au bois et au gaz Vermont Castings.",
-    products_white_mountain_hearth_desc: "Kits ventilateurs haute performance et souffleurs pour les foyers White Mountain Hearth.",
-    products_wolf_steel_desc: "Kits ventilateurs haute performance et souffleurs pour les foyers Wolf Steel.",
-    products_accessories_desc: "Contrôles de vitesse, supports de montage et autres accessoires de souffleurs de foyer.",
-    products_pellet_stove_parts_desc: "Pièces de remplacement et composants pour les poêles à granules.",
+    products_cfm_desc:
+      "Des kits ventilateurs et souffleurs de foyer de qualité compatibles avec les foyers CFM et Vermont Castings.",
+    products_continental_desc:
+      "Kits ventilateurs de remplacement et souffleurs pour les modèles de foyers Napoleon.",
+    products_empire_desc:
+      "Kits ventilateurs haute performance et souffleurs pour les foyers Empire Comfort Systems.",
+    products_heat_glo_desc:
+      "Kits ventilateurs haut de gamme conçus pour les systèmes de foyers Heat & Glo.",
+    products_heatilator_desc:
+      "Ventilateurs de remplacement fiables et souffleurs pour les modèles de foyers Heatilator.",
+    products_ihp_lennox_desc:
+      "Kits ventilateurs compatibles pour les installations de foyers IHP et Lennox.",
+    products_kingsman_desc:
+      "Systèmes ventilateurs efficaces pour les modèles de foyers Kingsman.",
+    products_kozy_heat_desc:
+      "Souffleurs de remplacement de qualité pour les systèmes de foyers Kozy Heat.",
+    products_majestic_desc:
+      "Kits ventilateurs durables conçus pour les applications de foyers Majestic.",
+    products_monessen_desc:
+      "Solutions ventilateurs de remplacement pour les modèles de foyers Monessen.",
+    products_napoleon_desc:
+      "Kits ventilateurs de haute qualité et souffleurs pour les systèmes de foyers Napoleon.",
+    products_pacific_energy_desc:
+      "Systèmes ventilateurs efficaces pour les foyers au bois et au gaz Pacific Energy.",
+    products_travis_desc:
+      "Souffleurs de remplacement pour les produits de foyers Travis Industries.",
+    products_universal_desc:
+      "Kits ventilateurs polyvalents compatibles avec plusieurs marques de foyers.",
+    products_vermont_castings_desc:
+      "Kits ventilateurs haut de gamme pour les poêles au bois et au gaz Vermont Castings.",
+    products_white_mountain_hearth_desc:
+      "Kits ventilateurs haute performance et souffleurs pour les foyers White Mountain Hearth.",
+    products_wolf_steel_desc:
+      "Kits ventilateurs haute performance et souffleurs pour les foyers Wolf Steel.",
+    products_accessories_desc:
+      "Contrôles de vitesse, supports de montage et autres accessoires de souffleurs de foyer.",
+    products_pellet_stove_parts_desc:
+      "Pièces de remplacement et composants pour les poêles à granules.",
 
     // Quote Modal
     quote_modal_title: "Demander un Devis",
