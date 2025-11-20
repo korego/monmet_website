@@ -943,15 +943,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Get current language for translations
-    const lang = typeof currentLanguage !== 'undefined' ? currentLanguage : 'en';
-    const trans = typeof translations !== 'undefined' ? translations[lang] : null;
-    
+    const lang =
+      typeof currentLanguage !== "undefined" ? currentLanguage : "en";
+    const trans =
+      typeof translations !== "undefined" ? translations[lang] : null;
+
     let specsHTML = "";
     if (!isAccessoryOrStove) {
-      const oemLabel = trans && trans.products_oem_label ? trans.products_oem_label : 'OEM';
-      const dimLabel = trans && trans.products_dimensions_label ? trans.products_dimensions_label : 'Dimensions';
-      const cfmLabel = trans && trans.products_cfm_label ? trans.products_cfm_label : 'CFM';
-      
+      const oemLabel =
+        trans && trans.products_oem_label ? trans.products_oem_label : "OEM";
+      const dimLabel =
+        trans && trans.products_dimensions_label
+          ? trans.products_dimensions_label
+          : "Dimensions";
+      const cfmLabel =
+        trans && trans.products_cfm_label ? trans.products_cfm_label : "CFM";
+
       specsHTML = `
                     <div class="spec">
                         <i class="fas fa-building"></i>
@@ -976,7 +983,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>`;
     }
 
-    const btnQuoteText = trans && trans.products_btn_quote ? trans.products_btn_quote : 'Request a quote';
+    const btnQuoteText =
+      trans && trans.products_btn_quote
+        ? trans.products_btn_quote
+        : "Request a quote";
 
     card.innerHTML = `
             <div class="product-image">

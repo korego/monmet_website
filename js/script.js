@@ -509,14 +509,17 @@ function toggleTestimonialCard(button) {
   const isExpanded = full.style.display !== "none";
 
   // Get current language from translations.js (default to 'en' if not available)
-  const lang = typeof currentLanguage !== 'undefined' ? currentLanguage : 'en';
-  const trans = typeof translations !== 'undefined' ? translations : null;
+  const lang = typeof currentLanguage !== "undefined" ? currentLanguage : "en";
+  const trans = typeof translations !== "undefined" ? translations : null;
 
   if (isExpanded) {
     // Collapse
     excerpt.style.display = "block";
     full.style.display = "none";
-    readMoreText.textContent = trans && trans[lang] && trans[lang]['read_more'] ? trans[lang]['read_more'] : "Read More";
+    readMoreText.textContent =
+      trans && trans[lang] && trans[lang]["read_more"]
+        ? trans[lang]["read_more"]
+        : "Read More";
     icon.classList.remove("fa-chevron-up");
     icon.classList.add("fa-chevron-down");
     button.classList.remove("expanded");
@@ -524,7 +527,10 @@ function toggleTestimonialCard(button) {
     // Expand
     excerpt.style.display = "none";
     full.style.display = "block";
-    readMoreText.textContent = trans && trans[lang] && trans[lang]['read_less'] ? trans[lang]['read_less'] : "Read Less";
+    readMoreText.textContent =
+      trans && trans[lang] && trans[lang]["read_less"]
+        ? trans[lang]["read_less"]
+        : "Read Less";
     icon.classList.remove("fa-chevron-down");
     icon.classList.add("fa-chevron-up");
     button.classList.add("expanded");
