@@ -425,22 +425,7 @@ function initializeRecaptcha() {
 function handleContactSubmit(event) {
   event.preventDefault();
 
-  // TEMPORARILY DISABLED - Waiting for info@ approval on Formspree
-  // Show custom modal instead of submitting
-  showCustomAlert();
-
-  // Reset form
-  document.getElementById("contactForm").reset();
-
-  /*
-  // Original code - will be re-enabled after Formspree approval
   const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
-
-  // If reCAPTCHA not configured, submit normally
-  if (siteKey === "YOUR_RECAPTCHA_SITE_KEY") {
-    document.getElementById("contactForm").submit();
-    return;
-  }
 
   // Get reCAPTCHA token
   window.grecaptcha.ready(function () {
@@ -453,7 +438,6 @@ function handleContactSubmit(event) {
         document.getElementById("contactForm").submit();
       });
   });
-  */
 }
 
 // Input validation helper
