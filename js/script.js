@@ -426,6 +426,12 @@ function handleContactSubmit(event) {
   event.preventDefault();
 
   const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
+  const form = document.getElementById("contactForm");
+  const submitButton = form.querySelector('button[type="submit"]');
+  
+  // Disable submit button to prevent double submission
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending...";
 
   // Get reCAPTCHA token
   window.grecaptcha.ready(function () {
@@ -434,10 +440,95 @@ function handleContactSubmit(event) {
       .then(function (token) {
         document.getElementById("recaptchaToken").value = token;
 
-        // Submit form after token is set
-        document.getElementById("contactForm").submit();
+        // Submit form via AJAX
+        const formData = new FormData(form);
+        
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              // Show success toast
+              showSuccessToast();
+              // Reset form
+              form.reset();
+            } else {
+              // Show error toast
+              showErrorToast();
+            }
+          })
+          .catch((error) => {
+            console.error("Form submission error:", error);
+            showErrorToast();
+          })
+          .finally(() => {
+            // Re-enable submit button
+            submitButton.disabled = false;
+            const currentLang = localStorage.getItem("language") || "en";
+            submitButton.textContent =
+              currentLang === "en" ? "Send Message" : "Envoyer le Message";
+          });
       });
   });
+}
+
+// Show success toast notification
+function showSuccessToast() {
+  const currentLang = localStorage.getItem("language") || "en";
+  const message =
+    currentLang === "en"
+      ? "Message sent successfully! We'll get back to you soon."
+      : "Message envoyé avec succès ! Nous vous répondrons bientôt.";
+  
+  showToast(message, "success");
+}
+
+// Show error toast notification
+function showErrorToast() {
+  const currentLang = localStorage.getItem("language") || "en";
+  const message =
+    currentLang === "en"
+      ? "Oops! Something went wrong. Please try again or call us at 514-788-6007."
+      : "Oups ! Une erreur s'est produite. Veuillez réessayer ou appelez-nous au 514-788-6007.";
+  
+  showToast(message, "error");
+}
+
+// Generic toast notification function
+function showToast(message, type = "success") {
+  // Remove existing toast if any
+  const existingToast = document.querySelector(".toast-notification");
+  if (existingToast) {
+    existingToast.remove();
+  }
+
+  // Create toast element
+  const toast = document.createElement("div");
+  toast.className = `toast-notification toast-${type}`;
+  toast.innerHTML = `
+    <i class="fas fa-${type === "success" ? "check-circle" : "exclamation-circle"}"></i>
+    <span>${message}</span>
+  `;
+
+  // Add to body
+  document.body.appendChild(toast);
+
+  // Show toast with animation
+  setTimeout(() => {
+    toast.classList.add("show");
+  }, 10);
+
+  // Remove toast after 5 seconds
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, 5000);
 }
 
 // Input validation helper
