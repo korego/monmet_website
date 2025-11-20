@@ -205,7 +205,8 @@ const translations = {
     about_location_email_title: "Email",
     about_location_button: "Contact Us",
     about_cta_title: "Ready to Get Started?",
-    about_cta_subtitle: "Contact us today to discuss your fireplace blower needs",
+    about_cta_subtitle:
+      "Contact us today to discuss your fireplace blower needs",
     about_cta_button1: "View Products",
     about_cta_button2: "Get in Touch",
 
@@ -440,9 +441,11 @@ const translations = {
     about_service_feature3: "Garantie complète du produit",
     about_service_feature4: "Expertise technique",
     about_cert_title: "Certifications Qualité",
-    about_cert_subtitle: "Nos produits répondent aux plus hautes normes de l'industrie",
+    about_cert_subtitle:
+      "Nos produits répondent aux plus hautes normes de l'industrie",
     about_cert1_title: "Approuvé CSA",
-    about_cert1_desc: "Composants certifiés par l'Association canadienne de normalisation",
+    about_cert1_desc:
+      "Composants certifiés par l'Association canadienne de normalisation",
     about_cert2_title: "Approuvé UL",
     about_cert2_desc: "Certifié sécurité par Underwriters Laboratories",
     about_cert3_title: "Qualité Testée",
@@ -457,7 +460,8 @@ const translations = {
     about_location_email_title: "Courriel",
     about_location_button: "Nous Contacter",
     about_cta_title: "Prêt à Commencer?",
-    about_cta_subtitle: "Contactez-nous dès aujourd'hui pour discuter de vos besoins en souffleurs de foyer",
+    about_cta_subtitle:
+      "Contactez-nous dès aujourd'hui pour discuter de vos besoins en souffleurs de foyer",
     about_cta_button1: "Voir les Produits",
     about_cta_button2: "Entrer en Contact",
 
