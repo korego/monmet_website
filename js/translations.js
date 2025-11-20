@@ -148,7 +148,7 @@ const translations = {
     footer_privacy: "Privacy Policy",
     footer_terms: "Terms of Service",
     footer_follow: "Follow Us",
-    footer_copyright: "© {year} Monmet Technologies Inc. All rights reserved.",
+    footer_copyright_text: "Monmet Technologies Inc. All rights reserved.",
 
     // About Page
     about_page_title: "About Monmet Technologies",
@@ -396,7 +396,7 @@ const translations = {
     footer_privacy: "Politique de Confidentialité",
     footer_terms: "Conditions d'Utilisation",
     footer_follow: "Suivez-nous",
-    footer_copyright: "© {year} Monmet Technologies Inc. Tous droits réservés.",
+    footer_copyright_text: "Monmet Technologies Inc. Tous droits réservés.",
 
     // About Page
     about_page_title: "À propos de Monmet Technologies",
@@ -565,29 +565,6 @@ function switchLanguage(lang) {
       }
     }
   });
-
-  // Update copyright year dynamically
-  const currentYear = new Date().getFullYear();
-  const copyrightElement = document.querySelector(
-    '[data-i18n="footer_copyright"]'
-  );
-  if (copyrightElement && translations[lang]["footer_copyright"]) {
-    const copyrightText = translations[lang]["footer_copyright"].replace(
-      "{year}",
-      currentYear
-    );
-    // Only update if element doesn't have a child year span
-    const yearSpan = copyrightElement.querySelector("#currentYear");
-    if (yearSpan) {
-      // Update text while preserving the year span
-      copyrightElement.innerHTML = copyrightText.replace(
-        currentYear,
-        '<span id="currentYear">' + currentYear + "</span>"
-      );
-    } else {
-      copyrightElement.textContent = copyrightText;
-    }
-  }
 
   // Update active language button
   document.querySelectorAll(".lang-btn").forEach((btn) => {

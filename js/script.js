@@ -424,25 +424,44 @@ function initializeRecaptcha() {
 // Handle contact form submission with reCAPTCHA
 function handleContactSubmit(event) {
   event.preventDefault();
+  console.log("Form submit triggered");
 
-  const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
   const form = document.getElementById("contactForm");
   const submitButton = form.querySelector('button[type="submit"]');
-  
-  // Disable submit button to prevent double submission
+  const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
+
+  // Disable submit button
   submitButton.disabled = true;
+  const originalText = submitButton.textContent;
   submitButton.textContent = "Sending...";
 
-  // Get reCAPTCHA token
-  window.grecaptcha.ready(function () {
-    window.grecaptcha
+  // Check if grecaptcha is loaded
+  if (typeof grecaptcha === "undefined") {
+    console.error("reCAPTCHA not loaded");
+    showErrorToast();
+    submitButton.disabled = false;
+    submitButton.textContent = originalText;
+    return;
+  }
+
+  // Execute reCAPTCHA
+  grecaptcha.ready(function () {
+    grecaptcha
       .execute(siteKey, { action: "submit" })
       .then(function (token) {
-        document.getElementById("recaptchaToken").value = token;
-
-        // Submit form via AJAX
-        const formData = new FormData(form);
+        console.log("reCAPTCHA token received");
         
+        // Add token to form
+        const tokenInput = document.getElementById("recaptchaToken");
+        if (tokenInput) {
+          tokenInput.value = token;
+        }
+
+        // Prepare form data
+        const formData = new FormData(form);
+
+        // Submit via AJAX
+        console.log("Submitting to:", form.action);
         fetch(form.action, {
           method: "POST",
           body: formData,
@@ -450,28 +469,32 @@ function handleContactSubmit(event) {
             Accept: "application/json",
           },
         })
-          .then((response) => {
+          .then(function (response) {
+            console.log("Response status:", response.status);
             if (response.ok) {
-              // Show success toast
               showSuccessToast();
-              // Reset form
               form.reset();
             } else {
-              // Show error toast
-              showErrorToast();
+              return response.json().then(function (data) {
+                console.error("Form error:", data);
+                showErrorToast();
+              });
             }
           })
-          .catch((error) => {
-            console.error("Form submission error:", error);
+          .catch(function (error) {
+            console.error("Fetch error:", error);
             showErrorToast();
           })
-          .finally(() => {
-            // Re-enable submit button
+          .finally(function () {
             submitButton.disabled = false;
-            const currentLang = localStorage.getItem("language") || "en";
-            submitButton.textContent =
-              currentLang === "en" ? "Send Message" : "Envoyer le Message";
+            submitButton.textContent = originalText;
           });
+      })
+      .catch(function (error) {
+        console.error("reCAPTCHA error:", error);
+        showErrorToast();
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
       });
   });
 }
@@ -483,7 +506,7 @@ function showSuccessToast() {
     currentLang === "en"
       ? "Message sent successfully! We'll get back to you soon."
       : "Message envoyé avec succès ! Nous vous répondrons bientôt.";
-  
+
   showToast(message, "success");
 }
 
@@ -494,7 +517,7 @@ function showErrorToast() {
     currentLang === "en"
       ? "Oops! Something went wrong. Please try again or call us at 514-788-6007."
       : "Oups ! Une erreur s'est produite. Veuillez réessayer ou appelez-nous au 514-788-6007.";
-  
+
   showToast(message, "error");
 }
 
@@ -510,7 +533,9 @@ function showToast(message, type = "success") {
   const toast = document.createElement("div");
   toast.className = `toast-notification toast-${type}`;
   toast.innerHTML = `
-    <i class="fas fa-${type === "success" ? "check-circle" : "exclamation-circle"}"></i>
+    <i class="fas fa-${
+      type === "success" ? "check-circle" : "exclamation-circle"
+    }"></i>
     <span>${message}</span>
   `;
 
@@ -611,3 +636,20 @@ function toggleTestimonialCard(button) {
     button.classList.add("expanded");
   }
 }
+
+// Update footer copyright year
+function updateFooterYear() {
+  const yearElement = document.getElementById("footerYear");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+}
+
+// Call updateFooterYear when DOM is loaded and after includes are loaded
+document.addEventListener("DOMContentLoaded", function() {
+  // Wait a bit for includes to load
+  setTimeout(updateFooterYear, 100);
+});
+
+// Also update immediately if footer already exists
+updateFooterYear();
