@@ -769,17 +769,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.querySelector(".products-sidebar");
   const productsMain = document.querySelector(".products-main");
 
-  console.log("Products page loaded");
-  console.log("Container found:", productsContainer);
-  console.log("Products data keys:", Object.keys(productsData));
-
   // Load all manufacturers as sections
   loadAllManufacturers();
-
-  console.log(
-    "Products loaded, container children:",
-    productsContainer.children.length
-  );
 
   // Scroll spy functionality
   let scrollTimeout;
@@ -1126,7 +1117,7 @@ function sendQuoteData(quoteData, name, email, productCode) {
           currentLang === "en"
             ? `Thank you ${name}! Your quote request for ${productCode} has been received. We will contact you soon at ${email}.`
             : `Merci ${name}! Votre demande de soumission pour ${productCode} a été reçue. Nous vous contactons bientôt à ${email}.`;
-        
+
         alert(successMsg);
         closeQuoteModal();
         document.getElementById("quoteForm").reset();
@@ -1140,7 +1131,6 @@ function sendQuoteData(quoteData, name, email, productCode) {
       }
     })
     .catch(function (error) {
-      console.error("Quote submission error:", error);
       const currentLang = localStorage.getItem("language") || "en";
       const errorMsg =
         currentLang === "en"
@@ -1172,7 +1162,6 @@ function sendQuoteData(quoteData, name, email, productCode) {
       }
     })
     .catch((error) => {
-      console.error("Error:", error);
       alert(
         "Error sending quote request. Please contact us directly at 514-788-6007."
       );
