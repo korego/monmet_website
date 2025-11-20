@@ -173,6 +173,41 @@ const translations = {
     about_value3_title: "Exceptional Support",
     about_value3_desc:
       "An aftermarket team unmatched for its attentiveness and competence. We're committed to timely and professional responses.",
+    about_value4_title: "Industry Standards",
+    about_value4_desc:
+      "All blower kits are equipped with CSA and UL-approved parts, ensuring safety and reliability in every product.",
+    about_service_title: "Customer Service Excellence",
+    about_service_p1:
+      "Like its parent company, Monmet Technologies was built from the ground up with a guiding principle: an unswerving devotion to customer support.",
+    about_service_p2:
+      "The Monmet team was groomed with this philosophy: that a reputation is created one handshake at a time, that people are the basis of every contract, and that a client relationship is measured in satisfaction.",
+    about_service_p3:
+      "The know-how and extensive experience of our highly skilled team will ensure you maximize the return on your product investment, with fireplace fans and other products delivered on time.",
+    about_service_feature1: "Prompt and professional support",
+    about_service_feature2: "Experienced support team",
+    about_service_feature3: "Full product warranty",
+    about_service_feature4: "Technical expertise",
+    about_cert_title: "Quality Certifications",
+    about_cert_subtitle: "Our products meet the highest industry standards",
+    about_cert1_title: "CSA Approved",
+    about_cert1_desc: "Canadian Standards Association certified components",
+    about_cert2_title: "UL Approved",
+    about_cert2_desc: "Underwriters Laboratories safety certified",
+    about_cert3_title: "Quality Tested",
+    about_cert3_desc: "Rigorous testing against specifications",
+    about_cert4_title: "Industry Leading",
+    about_cert4_desc: "Meeting or exceeding all standards",
+    about_location_title: "Our Location",
+    about_location_subtitle:
+      "Serving customers across North America from our Montreal headquarters",
+    about_location_address_title: "Address",
+    about_location_phone_title: "Phone",
+    about_location_email_title: "Email",
+    about_location_button: "Contact Us",
+    about_cta_title: "Ready to Get Started?",
+    about_cta_subtitle: "Contact us today to discuss your fireplace blower needs",
+    about_cta_button1: "View Products",
+    about_cta_button2: "Get in Touch",
 
     // Products Page
     products_page_title: "Our Products",
@@ -202,11 +237,11 @@ const translations = {
     alert_title: "Contact Form Temporarily Unavailable",
     alert_message: "Our email service is currently being set up.",
     alert_button: "Got it",
-    
+
     // Privacy Policy
     privacy_policy_title: "Privacy Policy",
     privacy_last_updated: "Last Updated: November 19, 2025",
-    
+
     // Terms of Service
     terms_of_service_title: "Terms of Service",
     terms_last_updated: "Last Updated: November 19, 2025",
@@ -384,12 +419,47 @@ const translations = {
     about_value1_title: "Relations Clients",
     about_value1_desc:
       "Une réputation se crée une poignée de main à la fois. Les gens sont la base de chaque contrat, et une relation client se mesure en satisfaction.",
-    about_value2_title: "Artisanat Expert",
+    about_value2_title: "Savoir-Faire d'Expert",
     about_value2_desc:
       "Le savoir-faire et l'expérience approfondie de notre équipe hautement qualifiée vous garantissent de maximiser le retour sur votre investissement produit.",
     about_value3_title: "Support Exceptionnel",
     about_value3_desc:
       "Une équipe de service après-vente inégalée pour son attention et sa compétence. Nous nous engageons à des réponses rapides et professionnelles.",
+    about_value4_title: "Normes de l'Industrie",
+    about_value4_desc:
+      "Tous les kits de souffleurs sont équipés de pièces approuvées CSA et UL, garantissant sécurité et fiabilité dans chaque produit.",
+    about_service_title: "Excellence du Service Client",
+    about_service_p1:
+      "Comme sa société mère, Monmet Technologies a été construite de toutes pièces avec un principe directeur : un dévouement inébranlable au support client.",
+    about_service_p2:
+      "L'équipe Monmet a été formée avec cette philosophie : qu'une réputation se crée une poignée de main à la fois, que les gens sont la base de chaque contrat, et qu'une relation client se mesure en satisfaction.",
+    about_service_p3:
+      "Le savoir-faire et l'expérience approfondie de notre équipe hautement qualifiée vous garantiront de maximiser le retour sur votre investissement produit, avec des ventilateurs de foyer et autres produits livrés à temps.",
+    about_service_feature1: "Support rapide et professionnel",
+    about_service_feature2: "Équipe de support expérimentée",
+    about_service_feature3: "Garantie complète du produit",
+    about_service_feature4: "Expertise technique",
+    about_cert_title: "Certifications Qualité",
+    about_cert_subtitle: "Nos produits répondent aux plus hautes normes de l'industrie",
+    about_cert1_title: "Approuvé CSA",
+    about_cert1_desc: "Composants certifiés par l'Association canadienne de normalisation",
+    about_cert2_title: "Approuvé UL",
+    about_cert2_desc: "Certifié sécurité par Underwriters Laboratories",
+    about_cert3_title: "Qualité Testée",
+    about_cert3_desc: "Tests rigoureux contre les spécifications",
+    about_cert4_title: "Leader de l'Industrie",
+    about_cert4_desc: "Répondant ou dépassant toutes les normes",
+    about_location_title: "Notre Emplacement",
+    about_location_subtitle:
+      "Au service des clients partout en Amérique du Nord depuis notre siège social de Montréal",
+    about_location_address_title: "Adresse",
+    about_location_phone_title: "Téléphone",
+    about_location_email_title: "Courriel",
+    about_location_button: "Nous Contacter",
+    about_cta_title: "Prêt à Commencer?",
+    about_cta_subtitle: "Contactez-nous dès aujourd'hui pour discuter de vos besoins en souffleurs de foyer",
+    about_cta_button1: "Voir les Produits",
+    about_cta_button2: "Entrer en Contact",
 
     // Products Page
     products_page_title: "Nos Produits",
@@ -420,11 +490,11 @@ const translations = {
     alert_message:
       "Notre service de courriel est actuellement en cours de configuration.",
     alert_button: "Compris",
-    
+
     // Privacy Policy
     privacy_policy_title: "Politique de Confidentialité",
     privacy_last_updated: "Dernière mise à jour : 19 novembre 2025",
-    
+
     // Terms of Service
     terms_of_service_title: "Conditions d'Utilisation",
     terms_last_updated: "Dernière mise à jour : 19 novembre 2025",
