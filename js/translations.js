@@ -5,7 +5,7 @@ const translations = {
     nav_home: "Home",
     nav_about: "About",
     nav_products: "Products",
-    nav_news: "News",
+    nav_news: "Client Success Stories",
     nav_contact: "Contact",
 
     // Hero Slideshow
@@ -253,7 +253,7 @@ const translations = {
     nav_home: "Accueil",
     nav_about: "À propos",
     nav_products: "Produits",
-    nav_news: "Nouvelles",
+    nav_news: "Histoires de Succès",
     nav_contact: "Contact",
 
     // Hero Slideshow
