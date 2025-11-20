@@ -421,7 +421,7 @@ function initializeRecaptcha() {
   }
 }
 
-// Handle contact form submission
+// Handle contact form submission with reCAPTCHA v3
 function handleContactSubmit(event) {
   event.preventDefault();
   
@@ -439,36 +439,42 @@ function handleContactSubmit(event) {
   const currentLang = localStorage.getItem("language") || "en";
   submitButton.textContent = currentLang === "en" ? "Sending..." : "Envoi...";
 
-  // Prepare form data
-  const formData = new FormData(form);
+  // Execute reCAPTCHA v3 (invisible)
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij', {action: 'submit'}).then(function(token) {
+      // Add reCAPTCHA token to form data
+      const formData = new FormData(form);
+      formData.append('g-recaptcha-response', token);
 
-  // Submit via AJAX to Formspree
-  fetch(form.action, {
-    method: "POST",
-    body: formData,
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then(function (response) {
-      if (response.ok) {
-        showSuccessToast();
-        form.reset();
-      } else {
-        return response.json().then(function (data) {
-          console.error("Form error:", data);
+      // Submit via AJAX to Formspree
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            showSuccessToast();
+            form.reset();
+          } else {
+            return response.json().then(function (data) {
+              console.error("Form error:", data);
+              showErrorToast();
+            });
+          }
+        })
+        .catch(function (error) {
+          console.error("Fetch error:", error);
           showErrorToast();
+        })
+        .finally(function () {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
         });
-      }
-    })
-    .catch(function (error) {
-      console.error("Fetch error:", error);
-      showErrorToast();
-    })
-    .finally(function () {
-      submitButton.disabled = false;
-      submitButton.textContent = originalText;
     });
+  });
 }
 
 // Show success toast notification
