@@ -1059,33 +1059,58 @@ section {
 
 .contact-item {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 1rem;
-  align-items: flex-start;
+  padding: 2.5rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .contact-item i {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: var(--primary-color);
-  margin-top: 5px;
+  background: linear-gradient(135deg, rgba(15, 123, 255, 0.1) 0%, rgba(0, 86, 210, 0.1) 100%);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
 }
 
 .contact-item h4 {
   color: var(--dark-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .contact-item p {
   color: var(--gray-color);
+  line-height: 1.6;
 }
 
 .contact-item a {
-  color: var(--gray-color);
+  color: var(--primary-color);
   text-decoration: none;
   transition: var(--transition);
+  font-weight: 500;
 }
 
 .contact-item a:hover {
-  color: var(--primary-color);
+  color: #0055cc;
+  text-decoration: underline;
 }
 
 .contact-form {
