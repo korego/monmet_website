@@ -522,7 +522,7 @@
 }
 
 .btn-quote {
-  display: block;
+  display: none !important;
   width: 100%;
   padding: 0.75rem;
   background: linear-gradient(135deg, var(--primary-color) 0%, #0055cc 100%);

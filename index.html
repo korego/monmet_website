@@ -14,6 +14,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- reCAPTCHA v3 Invisible Bot Protection -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -509,8 +511,8 @@
             Get in touch with our friendly team
           </p>
         </div>
-        <div class="contact-content">
-          <div class="contact-info-section">
+        <div class="contact-content" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+          <div class="contact-info-section" style="display: contents;">
             <div class="contact-item">
               <i class="fas fa-map-marker-alt"></i>
               <div>
@@ -537,7 +539,7 @@
               </div>
             </div>
           </div>
-          <div class="contact-form-section">
+          <div class="contact-form-section" style="display: none;">
             <form
               class="contact-form"
               id="contactForm"
