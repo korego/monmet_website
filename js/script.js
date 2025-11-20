@@ -421,13 +421,13 @@ function initializeRecaptcha() {
   }
 }
 
-// Handle contact form submission with reCAPTCHA v3
+// Handle contact form submission
 function handleContactSubmit(event) {
   event.preventDefault();
-  
+
   const form = document.getElementById("contactForm");
   const submitButton = form.querySelector('button[type="submit"]');
-  
+
   if (!form || !submitButton) {
     console.error("Form or button not found");
     return;
@@ -439,42 +439,36 @@ function handleContactSubmit(event) {
   const currentLang = localStorage.getItem("language") || "en";
   submitButton.textContent = currentLang === "en" ? "Sending..." : "Envoi...";
 
-  // Execute reCAPTCHA v3 (invisible)
-  grecaptcha.ready(function() {
-    grecaptcha.execute('6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij', {action: 'submit'}).then(function(token) {
-      // Add reCAPTCHA token to form data
-      const formData = new FormData(form);
-      formData.append('g-recaptcha-response', token);
+  // Prepare form data
+  const formData = new FormData(form);
 
-      // Submit via AJAX to Formspree
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      })
-        .then(function (response) {
-          if (response.ok) {
-            showSuccessToast();
-            form.reset();
-          } else {
-            return response.json().then(function (data) {
-              console.error("Form error:", data);
-              showErrorToast();
-            });
-          }
-        })
-        .catch(function (error) {
-          console.error("Fetch error:", error);
+  // Submit via AJAX to Formspree (Formspree has built-in spam protection)
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then(function (response) {
+      if (response.ok) {
+        showSuccessToast();
+        form.reset();
+      } else {
+        return response.json().then(function (data) {
+          console.error("Form error:", data);
           showErrorToast();
-        })
-        .finally(function () {
-          submitButton.disabled = false;
-          submitButton.textContent = originalText;
         });
+      }
+    })
+    .catch(function (error) {
+      console.error("Fetch error:", error);
+      showErrorToast();
+    })
+    .finally(function () {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
     });
-  });
 }
 
 // Show success toast notification

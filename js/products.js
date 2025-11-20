@@ -1110,13 +1110,44 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===========================
 
 function sendQuoteData(quoteData, name, email, productCode) {
-  // TEMPORARILY DISABLED - Waiting for Formspree info@ approval
-  // Show success message to user without sending
-  alert(
-    `Thank you ${name}! Your quote request for ${productCode} has been received. We will contact you soon at ${email}.\n\nNote: Email service is temporarily disabled. Please call us at 514-788-6007 if urgent.`
-  );
-  closeQuoteModal();
-  document.getElementById("quoteForm").reset();
+  // Submit to Formspree
+  fetch("https://formspree.io/f/movrrwlw", {
+    method: "POST",
+    body: JSON.stringify(quoteData),
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  })
+    .then(function (response) {
+      if (response.ok) {
+        const currentLang = localStorage.getItem("language") || "en";
+        const successMsg =
+          currentLang === "en"
+            ? `Thank you ${name}! Your quote request for ${productCode} has been received. We will contact you soon at ${email}.`
+            : `Merci ${name}! Votre demande de soumission pour ${productCode} a été reçue. Nous vous contactons bientôt à ${email}.`;
+        
+        alert(successMsg);
+        closeQuoteModal();
+        document.getElementById("quoteForm").reset();
+      } else {
+        const currentLang = localStorage.getItem("language") || "en";
+        const errorMsg =
+          currentLang === "en"
+            ? "Oops! Something went wrong. Please try again or call us at 514-788-6007."
+            : "Oups! Une erreur s'est produite. Veuillez réessayer ou appelez-nous au 514-788-6007.";
+        alert(errorMsg);
+      }
+    })
+    .catch(function (error) {
+      console.error("Quote submission error:", error);
+      const currentLang = localStorage.getItem("language") || "en";
+      const errorMsg =
+        currentLang === "en"
+          ? "Oops! Something went wrong. Please try again or call us at 514-788-6007."
+          : "Oups! Une erreur s'est produite. Veuillez réessayer ou appelez-nous au 514-788-6007.";
+      alert(errorMsg);
+    });
 
   /*
   // Original code - will be re-enabled after Formspree approval
