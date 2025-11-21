@@ -441,6 +441,9 @@ function handleContactSubmit(event) {
 
   // Submit form with reCAPTCHA v2 response
   const formData = new FormData(form);
+  
+  // IMPORTANT: Append reCAPTCHA token for Web3Forms
+  formData.append("g-recaptcha-response", recaptchaResponse);
 
   fetch(form.action, {
     method: "POST",
