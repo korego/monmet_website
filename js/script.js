@@ -421,29 +421,14 @@ function handleContactSubmit(event) {
     return;
   }
 
-  // Verify reCAPTCHA v2 checkbox
-  const recaptchaResponse = grecaptcha.getResponse();
-  if (!recaptchaResponse) {
-    const currentLang = localStorage.getItem("language") || "en";
-    const message =
-      currentLang === "en"
-        ? "Please complete the reCAPTCHA verification."
-        : "Veuillez compléter la vérification reCAPTCHA.";
-    showToast(message, "error");
-    return;
-  }
-
   // Disable submit button
   submitButton.disabled = true;
   const originalText = submitButton.textContent;
   const currentLang = localStorage.getItem("language") || "en";
   submitButton.textContent = currentLang === "en" ? "Sending..." : "Envoi...";
 
-  // Submit form with reCAPTCHA v2 response
+  // Submit form data
   const formData = new FormData(form);
-  
-  // IMPORTANT: Append reCAPTCHA token for Web3Forms
-  formData.append("g-recaptcha-response", recaptchaResponse);
 
   fetch(form.action, {
     method: "POST",
@@ -459,7 +444,6 @@ function handleContactSubmit(event) {
       if (data.success) {
         showSuccessToast();
         form.reset();
-        grecaptcha.reset(); // Reset reCAPTCHA after successful submission
       } else {
         showErrorToast();
       }
