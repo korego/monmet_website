@@ -511,17 +511,8 @@
             Get in touch with our friendly team
           </p>
         </div>
-        <div
-          class="contact-content"
-          style="
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-          "
-        >
-          <div class="contact-info-section" style="display: contents">
+        <div class="contact-content">
+          <div class="contact-info-section">
             <div class="contact-item">
               <i class="fas fa-map-marker-alt"></i>
               <div>
@@ -548,11 +539,12 @@
               </div>
             </div>
           </div>
-          <div class="contact-form-section" style="display: none">
+          <div class="contact-form-section">
+            <h3 data-i18n="contact_form_title">Send us a Message</h3>
             <form
               class="contact-form"
               id="contactForm"
-              action="https://formspree.io/f/movrrwlw"
+              action="https://formspree.io/f/mpwnajye"
               method="POST"
               onsubmit="handleContactSubmit(event)"
             >
