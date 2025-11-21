@@ -1055,6 +1055,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-top: 3.5rem;
 }
 
 .contact-item {
