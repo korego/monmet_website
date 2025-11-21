@@ -421,50 +421,52 @@ function handleContactSubmit(event) {
     return;
   }
 
+  // Verify reCAPTCHA v2 checkbox
+  const recaptchaResponse = grecaptcha.getResponse();
+  if (!recaptchaResponse) {
+    const currentLang = localStorage.getItem("language") || "en";
+    const message =
+      currentLang === "en"
+        ? "Please complete the reCAPTCHA verification."
+        : "Veuillez compléter la vérification reCAPTCHA.";
+    showToast(message, "error");
+    return;
+  }
+
   // Disable submit button
   submitButton.disabled = true;
   const originalText = submitButton.textContent;
   const currentLang = localStorage.getItem("language") || "en";
   submitButton.textContent = currentLang === "en" ? "Sending..." : "Envoi...";
 
-  // Execute reCAPTCHA v3 (invisible)
-  grecaptcha.ready(function () {
-    grecaptcha
-      .execute("6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij", { action: "submit" })
-      .then(function (token) {
-        // Add reCAPTCHA token to form data
-        const formData = new FormData(form);
-        formData.append("g-recaptcha-response", token);
+  // Submit form with reCAPTCHA v2 response
+  const formData = new FormData(form);
 
-        // Submit via AJAX to Formspree
-        fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        })
-          .then(function (response) {
-            if (response.ok) {
-              showSuccessToast();
-              form.reset();
-            } else {
-              return response.json().then(function (data) {
-                console.error("Form error:", data);
-                showErrorToast();
-              });
-            }
-          })
-          .catch(function (error) {
-            console.error("Fetch error:", error);
-            showErrorToast();
-          })
-          .finally(function () {
-            submitButton.disabled = false;
-            submitButton.textContent = originalText;
-          });
-      });
-  });
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then(function (response) {
+      if (response.ok) {
+        showSuccessToast();
+        form.reset();
+        grecaptcha.reset(); // Reset reCAPTCHA after successful submission
+      } else {
+        return response.json().then(function (data) {
+          showErrorToast();
+        });
+      }
+    })
+    .catch(function (error) {
+      showErrorToast();
+    })
+    .finally(function () {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    });
 }
 
 // Show success toast notification
