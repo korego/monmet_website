@@ -1,0 +1,15 @@
+# Monmet Technologies - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.monmettech.com/sitemap.xml
+
+# Disallow admin/private areas if any exist in the future
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all CSS, JS, and images for proper rendering
+Allow: /css/
+Allow: /js/
+Allow: /img/
