@@ -397,8 +397,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // Initialize reCAPTCHA with YOUR_RECAPTCHA_SITE_KEY
 function initializeRecaptcha() {
   // Replace YOUR_RECAPTCHA_SITE_KEY with your actual site key
-  const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
-  if (siteKey !== "YOUR_RECAPTCHA_SITE_KEY") {
+  const siteKey = "6LejEhQsAAAAAL44bRANg4Mij7BOFm_-e-jZy-hX";
+  if (siteKey !== "6LejEhQsAAAAAL44bRANg4Mij7BOFm_-e-jZy-hX") {
     window.grecaptcha.ready(function () {
       window.grecaptcha
         .execute(siteKey, { action: "submit" })
@@ -450,14 +450,15 @@ function handleContactSubmit(event) {
     },
   })
     .then(function (response) {
-      if (response.ok) {
+      return response.json();
+    })
+    .then(function (data) {
+      if (data.success) {
         showSuccessToast();
         form.reset();
         grecaptcha.reset(); // Reset reCAPTCHA after successful submission
       } else {
-        return response.json().then(function (data) {
-          showErrorToast();
-        });
+        showErrorToast();
       }
     })
     .catch(function (error) {

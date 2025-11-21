@@ -1055,8 +1055,8 @@ document.addEventListener("DOMContentLoaded", function () {
         comments: comments,
       };
 
-      // Get reCAPTCHA token if configured
-      const siteKey = "6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij";
+      // Get reCAPTCHA v2 token if configured
+      const siteKey = "6LejEhQsAAAAAL44bRANg4Mij7BOFm_-e-jZy-hX";
 
       if (siteKey === "YOUR_RECAPTCHA_SITE_KEY") {
         // reCAPTCHA not configured, send without token

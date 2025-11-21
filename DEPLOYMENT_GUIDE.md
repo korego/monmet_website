@@ -120,9 +120,9 @@ public_html/
 - **Reason:** Awaiting Formspree info@monmettech.com account approval
 - **Action:** When Formspree is ready, contact your developer to re-enable
 
-### reCAPTCHA v3
+### reCAPTCHA v2
 
-- **Site Key:** `6LfcJxEsAAAAGXg4YV9FtkPQjlkzWFPbjsAfij`
+- **Site Key:** `6LejEhQsAAAAAL44bRANg4Mij7BOFm_-e-jZy-hX`
 - Already integrated and working
 - No configuration needed
 
