@@ -107,7 +107,7 @@ const translations = {
     contact_subtitle: "Get in touch with our friendly team",
     contact_address_title: "Address",
     contact_address_text:
-      "6205 chemin St-François<br />Saint-Laurent, QC H4S 1W6",
+      "6205 chemin St-François<br />Saint-Laurent, QC H4S 1B6",
     contact_phone_title: "Phone",
     contact_email_title: "Email",
     contact_form_title: "Send us a Message",
@@ -373,7 +373,7 @@ const translations = {
     contact_subtitle: "Entrez en contact avec notre équipe amicale",
     contact_address_title: "Adresse",
     contact_address_text:
-      "6205 chemin St-François<br />Saint-Laurent, QC H4S 1W6",
+      "6205 chemin St-François<br />Saint-Laurent, QC H4S 1B6",
     contact_phone_title: "Téléphone",
     contact_email_title: "Courriel",
     contact_form_title: "Envoyez-nous un message",
