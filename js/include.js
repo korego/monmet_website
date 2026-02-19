@@ -10,6 +10,11 @@ async function loadIncludes() {
 
       // Set active nav link based on current page
       setActiveNavLink();
+
+      // Re-apply current language to the freshly injected header
+      if (typeof switchLanguage === "function" && typeof currentLanguage !== "undefined") {
+        switchLanguage(currentLanguage);
+      }
     } catch (error) {
       console.error("Error loading header:", error);
     }
