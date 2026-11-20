@@ -14,29 +14,29 @@ document.addEventListener("DOMContentLoaded", async function () {
   const backToTop = document.getElementById("backToTop");
   const navLinkElements = document.querySelectorAll(".nav-link");
 
-  // Mobile menu toggle
-  hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
-  });
-
-  // Close mobile menu when clicking a link
-  navLinkElements.forEach((link) => {
-    link.addEventListener("click", function () {
-      hamburger.classList.remove("active");
-      navLinks.classList.remove("active");
+  // Mobile menu toggle (guarded so a missing header never stops the rest)
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
     });
-  });
+
+    // Close mobile menu when clicking a link
+    navLinkElements.forEach((link) => {
+      link.addEventListener("click", function () {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+      });
+    });
+  }
 
   // ===========================
   // Scroll Effects
   // ===========================
   window.addEventListener("scroll", function () {
     // Navbar shadow on scroll
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
+    if (navbar) {
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
     }
 
     // Back to top button

@@ -793,6 +793,16 @@ document.addEventListener("DOMContentLoaded", function () {
     initScrollSpy();
   }, 100);
 
+  // Expose the card builder and full reload to the search and language
+  // switcher, which live outside this handler (see renderAllProducts).
+  window.createProductCard = createProductCard;
+  window.reloadAllManufacturers = function () {
+    loadAllManufacturers();
+    sections.forEach((s) => {
+      s.element = document.getElementById(s.id) || s.element;
+    });
+  };
+
   function initScrollSpy() {
     productsMain.addEventListener("scroll", () => {
       clearTimeout(scrollTimeout);
@@ -1320,35 +1330,13 @@ function renderFilteredProducts(filteredProducts) {
   });
 }
 
+// Redraw the full catalogue (search cleared, language switched).
+// Before the products page has initialised this is a no-op; the
+// DOMContentLoaded handler above draws the catalogue itself.
 function renderAllProducts() {
-  const productsContainer = document.getElementById("products-container");
-  let html = "";
-
-  Object.keys(productsData).forEach((manufacturerKey) => {
-    const manufacturer = productsData[manufacturerKey];
-    html += `
-      <section class="manufacturer-section">
-        <div class="manufacturer-header">
-          <h2>${manufacturer.title}</h2>
-          <span class="product-count">${manufacturer.products.length} product${
-      manufacturer.products.length !== 1 ? "s" : ""
-    }</span>
-        </div>
-        <div class="products-grid">
-    `;
-
-    manufacturer.products.forEach((product) => {
-      html += createProductCard(product, manufacturer.title);
-    });
-
-    html += `
-        </div>
-      </section>
-    `;
-  });
-
-  productsContainer.innerHTML = html;
-  attachProductCardListeners();
+  if (typeof window.reloadAllManufacturers === "function") {
+    window.reloadAllManufacturers();
+  }
 }
 
 // Initialize search when page loads
