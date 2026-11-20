@@ -761,6 +761,46 @@ const productsData = {
   },
 };
 
+// ===========================
+// French display names and descriptions
+// ===========================
+// Product names in productsData are English ("Fan Kit MFK-24"). In French
+// the type word is translated; part numbers stay as they are.
+const productNameFr = [
+  ["Temperature Sensor Bracket", "Support de capteur de température"],
+  ["Speed Control Bracket", "Support de contrôleur de vitesse"],
+  ["Universal Speed Control", "Contrôleur de vitesse universel"],
+  ["Temperature Sensor", "Capteur de température"],
+  ["Electronic Parts", "Pièces électroniques"],
+  ["HVAC Product List", "Liste de produits CVC"],
+  ["HVAC Component", "Composant CVC"],
+  ["Fan Kit", "Kit de ventilateur"],
+  ["Blower", "Souffleur"],
+  ["(with deflector and wall mount)", "(avec déflecteur et support mural)"],
+];
+
+function currentLang() {
+  return typeof currentLanguage !== "undefined" ? currentLanguage : "en";
+}
+
+function localizeProductName(name) {
+  if (currentLang() !== "fr") return name;
+  let out = name;
+  productNameFr.forEach(([en, fr]) => {
+    out = out.replace(en, fr);
+  });
+  // "Quadra-Fire 812-4421 Part" -> "Pièce Quadra-Fire 812-4421"
+  out = out.replace(/^(.+) Part$/, "Pièce $1");
+  return out;
+}
+
+function localizeManufacturerDescription(key, fallback) {
+  const lang = currentLang();
+  const trans = typeof translations !== "undefined" ? translations[lang] : null;
+  const translated = trans && trans[`products_${key.replace(/-/g, "_")}_desc`];
+  return lang === "en" ? fallback : translated || fallback;
+}
+
 // Initialize products page
 document.addEventListener("DOMContentLoaded", function () {
   const manufacturerLinks = document.querySelectorAll(".manufacturer-link");
@@ -892,7 +932,7 @@ document.addEventListener("DOMContentLoaded", function () {
     header.className = "section-header-products";
     header.innerHTML = `
       <h2>${data.title}</h2>
-      <p>${data.description}</p>
+      <p>${localizeManufacturerDescription(manufacturer, data.description)}</p>
     `;
 
     const grid = document.createElement("div");
@@ -989,19 +1029,21 @@ document.addEventListener("DOMContentLoaded", function () {
         ? trans.products_btn_quote
         : "Request a quote";
 
+    const displayName = localizeProductName(product.name);
+
     card.innerHTML = `
             <div class="product-image">
-                <img src="${product.image}" alt="${product.name}" onerror="this.src='img/products_catalog/product_photo1.png'">
+                <img src="${product.image}" alt="${displayName}" onerror="this.src='img/products_catalog/product_photo1.png'">
             </div>
             <div class="product-info">
                 <div class="product-header">
-                    <h3>${product.name}</h3>
+                    <h3>${displayName}</h3>
                     <div class="product-code">${product.code}</div>
                 </div>
                 <div class="product-specs">
                     ${specsHTML}
                 </div>
-                <button class="btn-quote" onclick="openQuoteModal('${product.code}', '${product.name}')">${btnQuoteText}</button>
+                <button class="btn-quote" onclick="openQuoteModal('${product.code}', '${displayName.replace(/'/g, "\\'")}')">${btnQuoteText}</button>
             </div>
         `;
 

@@ -132,7 +132,7 @@ const translations = {
       "One of our strong commitments at National Energy Equipment is to earn our business by exceeding our customers' expectations. Monmet Technologies has shown us their devotion...",
     testimonial_real3_full:
       "One of our strong commitments at National Energy Equipment is to earn our business by exceeding our customers' expectations. To achieve this goal, we have aligned ourselves with suppliers who are dedicated to that same philosophy. Monmet Technologies has shown us their devotion and willingness to step up to that challenge. Our client base spreads from the West coast to the East coast, and Monmet Technologies has consistently delivered on time and in top notch condition.",
-    testimonial_real3_role: "Directeur de la Division des Foyers",
+    testimonial_real3_role: "Director, Fireplace Division",
 
     // Footer
     footer_about_title: "About Monmet",
@@ -237,11 +237,24 @@ const translations = {
 
     // Privacy Policy
     privacy_policy_title: "Privacy Policy",
-    privacy_last_updated: "Last Updated: November 19, 2025",
+    privacy_last_updated: "Last Updated: November 20, 2026",
+
+    location_city_short: "Montreal, QC",
+    location_city_long: "Montreal, Quebec",
+
+    // Browser tab titles
+    page_title_home:
+      "Monmet Technologies | CSA/UL Certified Fireplace Fans & Blowers - Made in North America",
+    page_title_about:
+      "About Us | Monmet Technologies - Fireplace Fans & Blowers, Montreal",
+    page_title_products:
+      "Products - Fireplace Fan Kits & Blowers | Monmet Technologies",
+    page_title_privacy: "Privacy Policy - Monmet Technologies",
+    page_title_terms: "Terms of Service - Monmet Technologies",
 
     // Terms of Service
     terms_of_service_title: "Terms of Service",
-    terms_last_updated: "Last Updated: November 19, 2025",
+    terms_last_updated: "Last Updated: November 20, 2026",
   },
 
   fr: {
@@ -528,11 +541,24 @@ const translations = {
 
     // Privacy Policy
     privacy_policy_title: "Politique de Confidentialité",
-    privacy_last_updated: "Dernière mise à jour : 19 novembre 2025",
+    privacy_last_updated: "Dernière mise à jour : 20 novembre 2026",
+
+    location_city_short: "Montréal, QC",
+    location_city_long: "Montréal, Québec",
+
+    // Titres des onglets du navigateur
+    page_title_home:
+      "Monmet Technologies | Ventilateurs et souffleurs de foyer certifiés CSA/UL - Fabriqués en Amérique du Nord",
+    page_title_about:
+      "À propos | Monmet Technologies - Ventilateurs et souffleurs de foyer, Montréal",
+    page_title_products:
+      "Produits - Kits de ventilateurs et souffleurs de foyer | Monmet Technologies",
+    page_title_privacy: "Politique de confidentialité - Monmet Technologies",
+    page_title_terms: "Conditions d'utilisation - Monmet Technologies",
 
     // Terms of Service
     terms_of_service_title: "Conditions d'Utilisation",
-    terms_last_updated: "Dernière mise à jour : 19 novembre 2025",
+    terms_last_updated: "Dernière mise à jour : 20 novembre 2026",
   },
 };
 
@@ -564,6 +590,12 @@ function switchLanguage(lang) {
         element.textContent = translations[lang][key];
       }
     }
+  });
+
+  // Long content written out in both languages (privacy policy, terms):
+  // show only the block for the current language
+  document.querySelectorAll("[data-lang-block]").forEach((block) => {
+    block.hidden = block.getAttribute("data-lang-block") !== lang;
   });
 
   // Update active language button
