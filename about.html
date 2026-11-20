@@ -23,8 +23,8 @@
     />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="css/style.css?v=20261120b" />
-    <link rel="stylesheet" href="css/about.css?v=20261120b" />
+    <link rel="stylesheet" href="css/style.css?v=20261120d" />
+    <link rel="stylesheet" href="css/about.css?v=20261120d" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -213,9 +213,14 @@
       <div class="container">
         <div class="service-grid">
           <div class="service-image">
-            <div class="image-placeholder">
-              <i class="fas fa-users"></i>
-            </div>
+            <img
+              src="img/about/AJ_Profile.jpg"
+              alt="Monmet Technologies team at work"
+              class="about-photo"
+              width="309"
+              height="282"
+              loading="lazy"
+            />
           </div>
           <div class="service-text">
             <h2 data-i18n="about_service_title">Customer Service Excellence</h2>
@@ -364,9 +369,20 @@
             >
           </div>
           <div class="location-map">
-            <div class="map-placeholder">
-              <i class="fas fa-map"></i>
-              <p data-i18n="location_city_long">Montreal, Quebec</p>
+            <div class="map-frame">
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-73.7505%2C45.4810%2C-73.7345%2C45.4890&amp;layer=mapnik&amp;marker=45.4850519%2C-73.7424542"
+                title="Map: 6205 chemin St-François, Saint-Laurent, QC"
+                loading="lazy"
+              ></iframe>
+              <a
+                class="map-link"
+                href="https://www.google.com/maps/search/?api=1&amp;query=6205+chemin+St-Fran%C3%A7ois%2C+Saint-Laurent%2C+QC"
+                target="_blank"
+                rel="noopener"
+                ><i class="fas fa-directions"></i>
+                <span data-i18n="about_map_directions">Get directions</span></a
+              >
             </div>
           </div>
         </div>
@@ -400,8 +416,8 @@
     <!-- Footer (shared, see includes/footer.html) -->
     <div id="footer-placeholder"></div>
 
-    <script src="js/include.js?v=20261120b"></script>
-    <script src="js/translations.js?v=20261120b"></script>
-    <script src="js/script.js?v=20261120b"></script>
+    <script src="js/include.js?v=20261120d"></script>
+    <script src="js/translations.js?v=20261120d"></script>
+    <script src="js/script.js?v=20261120d"></script>
   </body>
 </html>

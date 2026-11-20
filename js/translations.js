@@ -241,6 +241,7 @@ const translations = {
 
     location_city_short: "Montreal, QC",
     location_city_long: "Montreal, Quebec",
+    about_map_directions: "Get directions",
 
     // Browser tab titles
     page_title_home:
@@ -545,6 +546,7 @@ const translations = {
 
     location_city_short: "Montréal, QC",
     location_city_long: "Montréal, Québec",
+    about_map_directions: "Itinéraire",
 
     // Titres des onglets du navigateur
     page_title_home:

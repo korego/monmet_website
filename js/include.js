@@ -4,7 +4,9 @@ async function loadIncludes() {
   const headerPlaceholder = document.getElementById("header-placeholder");
   if (headerPlaceholder) {
     try {
-      const response = await fetch("includes/header.html");
+      // no-cache: always check with the server so returning visitors get
+      // the current header (the server sends no cache headers for .html)
+      const response = await fetch("includes/header.html", { cache: "no-cache" });
       const html = await response.text();
       headerPlaceholder.innerHTML = html;
 
@@ -24,7 +26,7 @@ async function loadIncludes() {
   const footerPlaceholder = document.getElementById("footer-placeholder");
   if (footerPlaceholder) {
     try {
-      const response = await fetch("includes/footer.html");
+      const response = await fetch("includes/footer.html", { cache: "no-cache" });
       const html = await response.text();
       footerPlaceholder.innerHTML = html;
     } catch (error) {

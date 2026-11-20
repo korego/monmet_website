@@ -8,7 +8,7 @@ const productsData = {
       {
         code: "MFK-24",
         name: "Fan Kit MFK-24",
-        image: "img/products_catalog/mfk-24-w.jpg",
+        image: "img/products_catalog/MFK-24-w.jpg",
         oem: "CFM / Vermont Castings",
         dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
@@ -16,7 +16,7 @@ const productsData = {
       {
         code: "MFK-12",
         name: "Fan Kit MFK-12",
-        image: "img/products_catalog/mfk-12-w.jpg",
+        image: "img/products_catalog/MFK-12-w.jpg",
         oem: "CFM / Vermont Castings",
         dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
@@ -277,7 +277,7 @@ const productsData = {
       {
         code: "MFK-24",
         name: "Fan Kit MFK-24",
-        image: "img/products_catalog/mfk-24-w.jpg",
+        image: "img/products_catalog/MFK-24-w.jpg",
         oem: "Majestic/Vermont Castings (FK24)",
         dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
@@ -285,7 +285,7 @@ const productsData = {
       {
         code: "MFK-12",
         name: "Fan Kit MFK-12",
-        image: "img/products_catalog/mfk-12-w.jpg",
+        image: "img/products_catalog/MFK-12-w.jpg",
         oem: "Majestic/Vermont Castings (FK12)",
         dimensions: '2.5" x 9.5" (65mm x 240mm)',
         cfm: "140",
