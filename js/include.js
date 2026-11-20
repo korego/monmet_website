@@ -54,9 +54,13 @@ function setActiveNavLink() {
   });
 }
 
-// Load includes when DOM is ready
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", loadIncludes);
-} else {
-  loadIncludes();
-}
+// Load includes when DOM is ready. Other scripts wait on window.includesReady
+// before touching header/footer elements (navbar, hamburger, back-to-top).
+window.includesReady = new Promise((resolve) => {
+  const run = () => loadIncludes().then(resolve, resolve);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", run);
+  } else {
+    run();
+  }
+});

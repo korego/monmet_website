@@ -1,7 +1,13 @@
 // ===========================
 // Navigation & Mobile Menu
 // ===========================
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+  // On pages that inject the header/footer (js/include.js), wait for them:
+  // the elements below don't exist until the injection finishes.
+  if (window.includesReady) {
+    await window.includesReady;
+  }
+
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("navLinks");
   const navbar = document.getElementById("navbar");
@@ -119,31 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(el);
   });
 
-  // ===========================
-  // Contact Form Handling
-  // ===========================
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const formData = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        message: document.getElementById("message").value,
-      };
-
-      // Show success message (in production, this would send to a server)
-      // showNotification(
-      //   "Thank you! Your message has been sent. We will respond within 24 hours.",
-      //   "success"
-      // );
-
-      // Reset form
-      contactForm.reset();
-    });
-  }
+  // Contact form submission is handled by handleContactSubmit() below.
 
   // ===========================
   // Notification System
@@ -241,7 +223,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===========================
   const currentYear = new Date().getFullYear();
   const footerYear = document.querySelector(".footer-bottom p");
-  if (footerYear) {
+  // The injected footer has its own translated copyright line (#footerYear);
+  // only fill in the plain text on pages that don't.
+  if (footerYear && !document.getElementById("footerYear")) {
     footerYear.textContent = `© ${currentYear} Monmet Technologies Inc. All rights reserved.`;
   }
 
@@ -605,8 +589,8 @@ function updateFooterYear() {
 
 // Call updateFooterYear when DOM is loaded and after includes are loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Wait a bit for includes to load
-  setTimeout(updateFooterYear, 100);
+  // Wait for the injected footer, if this page uses one
+  (window.includesReady || Promise.resolve()).then(updateFooterYear);
 });
 
 // Also update immediately if footer already exists

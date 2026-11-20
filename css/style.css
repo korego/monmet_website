@@ -1329,6 +1329,22 @@ section {
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+  }
+
+  /* Let the logo shrink so the hamburger stays on screen on narrow phones */
+  .logo {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .logo img {
+    display: block;
+    max-width: 100%;
+    max-height: 50px;
+    width: auto;
+    height: auto;
   }
 
   .nav-links {

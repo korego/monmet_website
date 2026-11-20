@@ -38,6 +38,20 @@ SECURITY_GUIDE.md
 *.swo
 *~
 
+# Private / local-only files (this repo is public and is deployed as-is,
+# so anything tracked here can be downloaded from the website)
+monmet_deploy
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.zip
+old site.txt
+monmet old page.txt
+DEPLOYMENT_GUIDE.md
+package-lock.json
+.claude/
+
 # OS Files
 *.log
 .env
